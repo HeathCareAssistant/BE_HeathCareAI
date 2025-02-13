@@ -1,0 +1,14 @@
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.GeneratedMSBuildEditorConfig.editorconfig
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfoInputs.cache
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfo.cs
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.CoreCompileInputs.cache
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\refint\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.AssemblyReference.cache
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache

@@ -1,0 +1,15 @@
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\bin\Debug\net8.0\HealthyCareAssistant.Contract.Service.deps.json
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\bin\Debug\net8.0\HealthyCareAssistant.Contract.Service.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\bin\Debug\net8.0\HealthyCareAssistant.Contract.Service.pdb
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.csproj.AssemblyReference.cache
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.AssemblyInfoInputs.cache
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.AssemblyInfo.cs
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.csproj.CoreCompileInputs.cache
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyC.75724F39.Up2Date
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\refint\HealthyCareAssistant.Contract.Service.dll
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.pdb
+F:\TempSchool\7\SWD392\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\ref\HealthyCareAssistant.Contract.Service.dll

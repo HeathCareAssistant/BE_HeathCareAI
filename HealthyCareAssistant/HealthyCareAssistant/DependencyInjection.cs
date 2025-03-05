@@ -122,7 +122,9 @@ namespace HealthyCareAssistant.API
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
-            services.AddScoped<IUserService, UserService>(); 
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGenericRepository<Drug>, GenericRepository<Drug>>();
+            services.AddScoped<IDrugService, DrugService>();
         }
     }
 }

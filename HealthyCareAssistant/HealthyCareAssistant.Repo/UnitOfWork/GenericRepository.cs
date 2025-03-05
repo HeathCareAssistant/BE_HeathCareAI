@@ -14,12 +14,22 @@ namespace HealthyCareAssistant.Repo.UnitOfWork
     {
         protected readonly HealthCareAssistantContext _context;
         protected readonly DbSet<T> _dbSet;
+
         public GenericRepository(HealthCareAssistantContext dbContext)
         {
             _context = dbContext;
             _dbSet = _context.Set<T>();
         }
-        public IQueryable<T> Entities => _context.Set<T>();
+
+        public IQueryable<T> Entities => _dbSet.AsNoTracking().AsQueryable();
+
+        //public IQueryable<T> Entities => _dbSet.AsNoTracking();
+
+        //public IQueryable<T> Entities => _dbSet.AsQueryable().AsNoTracking();
+        //public IQueryable<T> Entities => _dbSet.AsQueryable(); // Đảm bảo là IQueryable từ DbSet
+
+        //public IQueryable<T> Entities => _dbSet;
+        //public IQueryable<T> Entities => _context.Set<T>().AsQueryable();
 
         public void Delete(object id)
         {

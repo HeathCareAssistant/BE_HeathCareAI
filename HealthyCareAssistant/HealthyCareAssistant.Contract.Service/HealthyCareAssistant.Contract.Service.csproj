@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HealthyCareAssistant.Contact.Repo\HealthyCareAssistant.Contact.Repo.csproj" />
     <ProjectReference Include="..\HealthyCareAssistant.ModelViews\HealthyCareAssistant.ModelViews.csproj" />
   </ItemGroup>
 

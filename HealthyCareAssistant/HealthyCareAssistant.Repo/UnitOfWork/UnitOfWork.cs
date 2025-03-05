@@ -8,10 +8,16 @@ using System.Threading.Tasks;
 
 namespace HealthyCareAssistant.Repo.UnitOfWork
 {
-    public class UnitOfWork(HealthCareAssistantContext dbContext) : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private bool disposed = false;
-        private readonly HealthCareAssistantContext _dbContext = dbContext;
+        private readonly HealthCareAssistantContext _dbContext;
+
+        public UnitOfWork(HealthCareAssistantContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public void BeginTransaction()
         {
             _dbContext.Database.BeginTransaction();
@@ -20,23 +26,6 @@ namespace HealthyCareAssistant.Repo.UnitOfWork
         public void CommitTransaction()
         {
             _dbContext.Database.CommitTransaction();
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposed)
-            {
-                if (disposing)
-                {
-                    _dbContext.Dispose();
-                }
-            }
-            disposed = true;
         }
 
         public void RollBack()
@@ -57,6 +46,24 @@ namespace HealthyCareAssistant.Repo.UnitOfWork
         public IGenericRepository<T> GetRepository<T>() where T : class
         {
             return new GenericRepository<T>(_dbContext);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    _dbContext.Dispose();
+                }
+            }
+            disposed = true;
         }
     }
 }

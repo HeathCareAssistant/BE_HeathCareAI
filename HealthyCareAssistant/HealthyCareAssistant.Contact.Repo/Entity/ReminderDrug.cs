@@ -5,19 +5,15 @@ using System.Collections.Generic;
 
 namespace HealthyCareAssistant.Contact.Repo.Entity;
 
-public partial class ReminderProduct
+public partial class ReminderDrug
 {
-    public int ReminderProductId { get; set; }
+    public int ReminderDrugId { get; set; }
 
     public int? ReminderId { get; set; }
 
-    public int? ProductId { get; set; }
+    public string DrugId { get; set; }
 
-    public int? Quantity { get; set; }
-
-    public string Note { get; set; }
-
-    public virtual Product Product { get; set; }
+    public virtual Drug Drug { get; set; }
 
     public virtual Reminder Reminder { get; set; }
 }

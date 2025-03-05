@@ -1,4 +1,5 @@
-﻿using HealthyCareAssistant.API; 
+﻿using HealthyCareAssistant.API;
+
 
 namespace HealthyCareAssistant
 {
@@ -23,7 +24,23 @@ namespace HealthyCareAssistant
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Cấu hình CORS cho phép tất cả các nguồn gốc
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowLocalhost",
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:5173") 
+                              .AllowAnyMethod()
+                              .AllowAnyHeader()
+                              .AllowCredentials(); 
+                    });
+            });
+
+
+
             var app = builder.Build();
+            app.UseCors("AllowLocalhost");
 
             // Configure the HTTP request pipeline.
 
@@ -31,7 +48,6 @@ namespace HealthyCareAssistant
             app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
             app.UseAuthorization();
             app.MapControllers();
 

@@ -69,6 +69,7 @@ public partial class HealthCareAssistantContext : DbContext
             entity.Property(e => e.NuocDk).HasMaxLength(100);
             entity.Property(e => e.NuocSx).HasMaxLength(100);
             entity.Property(e => e.PhanLoai).HasMaxLength(255);
+            entity.Property(e => e.SearchCount).HasDefaultValue(0);
             entity.Property(e => e.SoDangKy).HasMaxLength(50);
             entity.Property(e => e.SoQuyetDinh).HasMaxLength(50);
             entity.Property(e => e.TenThuoc).HasMaxLength(255);

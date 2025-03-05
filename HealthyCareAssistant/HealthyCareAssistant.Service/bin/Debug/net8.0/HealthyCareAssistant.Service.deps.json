@@ -660,18 +660,19 @@
         },
         "runtime": {
           "HealthyCareAssistant.Contact.Repo.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
       },
       "HealthyCareAssistant.Contract.Service/1.0.0": {
         "dependencies": {
+          "HealthyCareAssistant.Contact.Repo": "1.0.0",
           "HealthyCareAssistant.ModelViews": "1.0.0"
         },
         "runtime": {
           "HealthyCareAssistant.Contract.Service.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -679,7 +680,7 @@
       "HealthyCareAssistant.Core/1.0.0": {
         "runtime": {
           "HealthyCareAssistant.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -692,7 +693,7 @@
         },
         "runtime": {
           "HealthyCareAssistant.ModelViews.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -705,7 +706,7 @@
         },
         "runtime": {
           "HealthyCareAssistant.Repo.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

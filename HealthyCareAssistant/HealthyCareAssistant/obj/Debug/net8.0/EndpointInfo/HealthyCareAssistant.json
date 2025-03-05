@@ -67,41 +67,263 @@
         }
       }
     },
-    "/WeatherForecast": {
+    "/api/drugs": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Drug"
         ],
-        "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Drug"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugModelView"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugModelView"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugModelView"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/{id}": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugModelView"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugModelView"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugModelView"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/search/name": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/search/ingredient": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "ingredient",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/filter/company": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "companyName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/filter/category": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/related/ingredient/{id}": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/related/company": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/top-searched": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -109,6 +331,159 @@
   },
   "components": {
     "schemas": {
+      "DrugModelView": {
+        "type": "object",
+        "properties": {
+          "drugId": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenThuoc": {
+            "type": "string",
+            "nullable": true
+          },
+          "dotPheDuyet": {
+            "type": "string",
+            "nullable": true
+          },
+          "soQuyetDinh": {
+            "type": "string",
+            "nullable": true
+          },
+          "pheDuyet": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "hieuLuc": {
+            "type": "string",
+            "nullable": true
+          },
+          "soDangKy": {
+            "type": "string",
+            "nullable": true
+          },
+          "hoatChat": {
+            "type": "string",
+            "nullable": true
+          },
+          "phanLoai": {
+            "type": "string",
+            "nullable": true
+          },
+          "nongDo": {
+            "type": "string",
+            "nullable": true
+          },
+          "taDuoc": {
+            "type": "string",
+            "nullable": true
+          },
+          "baoChe": {
+            "type": "string",
+            "nullable": true
+          },
+          "dongGoi": {
+            "type": "string",
+            "nullable": true
+          },
+          "tieuChuan": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuoiTho": {
+            "type": "string",
+            "nullable": true
+          },
+          "congTySx": {
+            "type": "string",
+            "nullable": true
+          },
+          "congTySxCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuocSx": {
+            "type": "string",
+            "nullable": true
+          },
+          "diaChiSx": {
+            "type": "string",
+            "nullable": true
+          },
+          "congTyDk": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuocDk": {
+            "type": "string",
+            "nullable": true
+          },
+          "diaChiDk": {
+            "type": "string",
+            "nullable": true
+          },
+          "giaKeKhai": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "huongDanSuDung": {
+            "type": "string",
+            "nullable": true
+          },
+          "huongDanSuDungBn": {
+            "type": "string",
+            "nullable": true
+          },
+          "nhomThuoc": {
+            "type": "string",
+            "nullable": true
+          },
+          "isHide": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "rate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "rutSdk": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "images": {
+            "type": "string",
+            "nullable": true
+          },
+          "searchCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginModelViews": {
         "required": [
           "email",
@@ -157,29 +532,6 @@
           "roleId": {
             "type": "integer",
             "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false

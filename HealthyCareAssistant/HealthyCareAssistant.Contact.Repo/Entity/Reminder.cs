@@ -13,11 +13,19 @@ public partial class Reminder
 
     public string Note { get; set; }
 
+    public TimeOnly? ReminderTime { get; set; }
+
+    public string RepeatDays { get; set; }
+
+    public bool? IsOneTime { get; set; }
+
+    public bool? IsActive { get; set; }
+
     public DateTime? CreatedAt { get; set; }
 
-    public virtual ICollection<ReminderProduct> ReminderProducts { get; set; } = new List<ReminderProduct>();
+    public DateTime? UpdatedAt { get; set; }
 
-    public virtual ICollection<ReminderTimeSlot> ReminderTimeSlots { get; set; } = new List<ReminderTimeSlot>();
+    public virtual ICollection<ReminderDrug> ReminderDrugs { get; set; } = new List<ReminderDrug>();
 
     public virtual User User { get; set; }
 }

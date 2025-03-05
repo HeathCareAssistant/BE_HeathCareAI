@@ -14,23 +14,19 @@ public partial class HealthCareAssistantContext : DbContext
     {
     }
 
-    public virtual DbSet<Category> Categories { get; set; }
-
     public virtual DbSet<ChatbotService> ChatbotServices { get; set; }
 
-    public virtual DbSet<HealthProfile> HealthProfiles { get; set; }
+    public virtual DbSet<Drug> Drugs { get; set; }
+
+    public virtual DbSet<MedicineCabinet> MedicineCabinets { get; set; }
+
+    public virtual DbSet<MedicineCabinetDrug> MedicineCabinetDrugs { get; set; }
 
     public virtual DbSet<MessageHistory> MessageHistories { get; set; }
 
-    public virtual DbSet<Packaging> Packagings { get; set; }
-
-    public virtual DbSet<Product> Products { get; set; }
-
     public virtual DbSet<Reminder> Reminders { get; set; }
 
-    public virtual DbSet<ReminderProduct> ReminderProducts { get; set; }
-
-    public virtual DbSet<ReminderTimeSlot> ReminderTimeSlots { get; set; }
+    public virtual DbSet<ReminderDrug> ReminderDrugs { get; set; }
 
     public virtual DbSet<Role> Roles { get; set; }
 
@@ -38,58 +34,102 @@ public partial class HealthCareAssistantContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Categori__19093A2B3A0DFFAB");
-
-            entity.HasIndex(e => e.Name, "UQ__Categori__737584F68849DDED").IsUnique();
-
-            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-            entity.Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(100);
-        });
-
         modelBuilder.Entity<ChatbotService>(entity =>
         {
-            entity.HasKey(e => e.ServiceId).HasName("PK__ChatbotS__C51BB0EA492287F2");
+            entity.HasKey(e => e.ServiceId).HasName("PK__ChatbotS__C51BB0EA17768971");
+
+            entity.ToTable("ChatbotService");
 
             entity.Property(e => e.ServiceId).HasColumnName("ServiceID");
-            entity.Property(e => e.ServiceType)
-                .IsRequired()
-                .HasMaxLength(50);
+            entity.Property(e => e.ServiceType).HasMaxLength(50);
         });
 
-        modelBuilder.Entity<HealthProfile>(entity =>
+        modelBuilder.Entity<Drug>(entity =>
         {
-            entity.HasKey(e => e.ProfileId).HasName("PK__HealthPr__290C88844BA2F2C1");
+            entity.HasKey(e => e.DrugId).HasName("PK__Drug__908D66F6CC3EC020");
 
-            entity.Property(e => e.ProfileId).HasColumnName("ProfileID");
-            entity.Property(e => e.Bmi)
-                .HasComputedColumnSql("([Weight]/((([Height]/(100.0))*[Height])/(100.0)))", false)
-                .HasColumnType("numeric(38, 21)")
-                .HasColumnName("BMI");
-            entity.Property(e => e.Height).HasColumnType("decimal(5, 2)");
+            entity.ToTable("Drug");
+
+            entity.HasIndex(e => e.SoDangKy, "UQ__Drug__6886EC6723D0FB50").IsUnique();
+
+            entity.Property(e => e.DrugId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("DrugID");
+            entity.Property(e => e.CongTyDk).HasMaxLength(255);
+            entity.Property(e => e.CongTySx).HasMaxLength(255);
+            entity.Property(e => e.CongTySxCode).HasMaxLength(100);
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.DotPheDuyet).HasMaxLength(50);
+            entity.Property(e => e.FileName).HasMaxLength(255);
+            entity.Property(e => e.HieuLuc).HasMaxLength(50);
+            entity.Property(e => e.NongDo).HasMaxLength(255);
+            entity.Property(e => e.NuocDk).HasMaxLength(100);
+            entity.Property(e => e.NuocSx).HasMaxLength(100);
+            entity.Property(e => e.PhanLoai).HasMaxLength(255);
+            entity.Property(e => e.SoDangKy).HasMaxLength(50);
+            entity.Property(e => e.SoQuyetDinh).HasMaxLength(50);
+            entity.Property(e => e.TenThuoc).HasMaxLength(255);
+            entity.Property(e => e.TuoiTho).HasMaxLength(50);
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<MedicineCabinet>(entity =>
+        {
+            entity.HasKey(e => e.CabinetId).HasName("PK__Medicine__9C173EB3C58BD564");
+
+            entity.ToTable("MedicineCabinet");
+
+            entity.Property(e => e.CabinetId).HasColumnName("CabinetID");
+            entity.Property(e => e.CabinetName).HasMaxLength(255);
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
             entity.Property(e => e.UserId).HasColumnName("UserID");
-            entity.Property(e => e.Weight).HasColumnType("decimal(5, 2)");
 
-            entity.HasOne(d => d.User).WithMany(p => p.HealthProfiles)
+            entity.HasOne(d => d.User).WithMany(p => p.MedicineCabinets)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__HealthPro__UserI__5DCAEF64");
+                .HasConstraintName("FK__MedicineC__UserI__52593CB8");
+        });
+
+        modelBuilder.Entity<MedicineCabinetDrug>(entity =>
+        {
+            entity.HasKey(e => e.CabinetDrugId).HasName("PK__Medicine__11F6C2AC1F6C418D");
+
+            entity.ToTable("MedicineCabinetDrug");
+
+            entity.Property(e => e.CabinetDrugId).HasColumnName("CabinetDrugID");
+            entity.Property(e => e.CabinetId).HasColumnName("CabinetID");
+            entity.Property(e => e.DrugId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("DrugID");
+
+            entity.HasOne(d => d.Cabinet).WithMany(p => p.MedicineCabinetDrugs)
+                .HasForeignKey(d => d.CabinetId)
+                .HasConstraintName("FK__MedicineC__Cabin__5BE2A6F2");
+
+            entity.HasOne(d => d.Drug).WithMany(p => p.MedicineCabinetDrugs)
+                .HasForeignKey(d => d.DrugId)
+                .HasConstraintName("FK__MedicineC__DrugI__5CD6CB2B");
         });
 
         modelBuilder.Entity<MessageHistory>(entity =>
         {
-            entity.HasKey(e => e.MessageId).HasName("PK__MessageH__C87C037C3B0E29C0");
+            entity.HasKey(e => e.MessageId).HasName("PK__MessageH__C87C037C2404515E");
 
             entity.ToTable("MessageHistory");
 
             entity.Property(e => e.MessageId).HasColumnName("MessageID");
             entity.Property(e => e.ChatbotServiceId).HasColumnName("ChatbotServiceID");
-            entity.Property(e => e.Content).IsRequired();
-            entity.Property(e => e.MessageType)
-                .IsRequired()
-                .HasMaxLength(50);
+            entity.Property(e => e.MessageType).HasMaxLength(50);
             entity.Property(e => e.SentAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -97,136 +137,86 @@ public partial class HealthCareAssistantContext : DbContext
 
             entity.HasOne(d => d.ChatbotService).WithMany(p => p.MessageHistories)
                 .HasForeignKey(d => d.ChatbotServiceId)
-                .HasConstraintName("FK__MessageHi__Chatb__6E01572D");
+                .HasConstraintName("FK__MessageHi__Chatb__6D0D32F4");
 
             entity.HasOne(d => d.User).WithMany(p => p.MessageHistories)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__MessageHi__UserI__6D0D32F4");
-        });
-
-        modelBuilder.Entity<Packaging>(entity =>
-        {
-            entity.HasKey(e => e.PackagingId).HasName("PK__Packagin__BD507F585CF64473");
-
-            entity.ToTable("Packaging");
-
-            entity.HasIndex(e => e.Code, "UQ__Packagin__A25C5AA765583FF0").IsUnique();
-
-            entity.Property(e => e.PackagingId).HasColumnName("PackagingID");
-            entity.Property(e => e.Code)
-                .IsRequired()
-                .HasMaxLength(100);
-            entity.Property(e => e.ProductId).HasColumnName("ProductID");
-            entity.Property(e => e.Type)
-                .IsRequired()
-                .HasMaxLength(50);
-
-            entity.HasOne(d => d.Product).WithMany(p => p.Packagings)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Packaging__Produ__5AEE82B9");
-        });
-
-        modelBuilder.Entity<Product>(entity =>
-        {
-            entity.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6EDEBD1EBF0");
-
-            entity.Property(e => e.ProductId).HasColumnName("ProductID");
-            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.Dosage).HasMaxLength(100);
-            entity.Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(100);
-            entity.Property(e => e.UpdatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-
-            entity.HasOne(d => d.Category).WithMany(p => p.Products)
-                .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Products__Catego__5535A963");
+                .HasConstraintName("FK__MessageHi__UserI__6C190EBB");
         });
 
         modelBuilder.Entity<Reminder>(entity =>
         {
-            entity.HasKey(e => e.ReminderId).HasName("PK__Reminder__01A830A7EC73A239");
+            entity.HasKey(e => e.ReminderId).HasName("PK__Reminder__01A830A76731D668");
+
+            entity.ToTable("Reminder");
 
             entity.Property(e => e.ReminderId).HasColumnName("ReminderID");
             entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.IsOneTime).HasDefaultValue(false);
+            entity.Property(e => e.RepeatDays).HasMaxLength(50);
+            entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.User).WithMany(p => p.Reminders)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Reminders__UserI__60A75C0F");
+                .HasConstraintName("FK__Reminder__UserID__5FB337D6");
         });
 
-        modelBuilder.Entity<ReminderProduct>(entity =>
+        modelBuilder.Entity<ReminderDrug>(entity =>
         {
-            entity.HasKey(e => e.ReminderProductId).HasName("PK__Reminder__D5B541A54D54749C");
+            entity.HasKey(e => e.ReminderDrugId).HasName("PK__Reminder__ECB1E6FF0BDE1221");
 
-            entity.Property(e => e.ReminderProductId).HasColumnName("ReminderProductID");
-            entity.Property(e => e.ProductId).HasColumnName("ProductID");
+            entity.ToTable("ReminderDrug");
+
+            entity.Property(e => e.ReminderDrugId).HasColumnName("ReminderDrugID");
+            entity.Property(e => e.DrugId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("DrugID");
             entity.Property(e => e.ReminderId).HasColumnName("ReminderID");
 
-            entity.HasOne(d => d.Product).WithMany(p => p.ReminderProducts)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__ReminderP__Produ__656C112C");
+            entity.HasOne(d => d.Drug).WithMany(p => p.ReminderDrugs)
+                .HasForeignKey(d => d.DrugId)
+                .HasConstraintName("FK__ReminderD__DrugI__6754599E");
 
-            entity.HasOne(d => d.Reminder).WithMany(p => p.ReminderProducts)
+            entity.HasOne(d => d.Reminder).WithMany(p => p.ReminderDrugs)
                 .HasForeignKey(d => d.ReminderId)
-                .HasConstraintName("FK__ReminderP__Remin__6477ECF3");
-        });
-
-        modelBuilder.Entity<ReminderTimeSlot>(entity =>
-        {
-            entity.HasKey(e => e.TimeSlotId).HasName("PK__Reminder__41CC1F52847A491F");
-
-            entity.Property(e => e.TimeSlotId).HasColumnName("TimeSlotID");
-            entity.Property(e => e.DayOfWeek).HasMaxLength(50);
-            entity.Property(e => e.ReminderId).HasColumnName("ReminderID");
-            entity.Property(e => e.Time)
-                .IsRequired()
-                .HasMaxLength(10);
-
-            entity.HasOne(d => d.Reminder).WithMany(p => p.ReminderTimeSlots)
-                .HasForeignKey(d => d.ReminderId)
-                .HasConstraintName("FK__ReminderT__Remin__68487DD7");
+                .HasConstraintName("FK__ReminderD__Remin__66603565");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Roles__8AFACE3A7738AD5C");
+            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE3A3E96480B");
 
-            entity.HasIndex(e => e.RoleName, "UQ__Roles__8A2B616098552E67").IsUnique();
+            entity.ToTable("Role");
+
+            entity.HasIndex(e => e.RoleName, "UQ__Role__8A2B6160712AC5BF").IsUnique();
 
             entity.Property(e => e.RoleId).HasColumnName("RoleID");
-            entity.Property(e => e.RoleName)
-                .IsRequired()
-                .HasMaxLength(50);
+            entity.Property(e => e.RoleName).HasMaxLength(50);
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CCAC55B967F7");
+            entity.HasKey(e => e.UserId).HasName("PK__User__1788CCAC08D588F2");
 
-            entity.HasIndex(e => e.Email, "UQ__Users__A9D105347A0B40D9").IsUnique();
+            entity.ToTable("User");
+
+            entity.HasIndex(e => e.Email, "UQ__User__A9D105341CD0AF4A").IsUnique();
 
             entity.Property(e => e.UserId).HasColumnName("UserID");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.Email)
-                .IsRequired()
-                .HasMaxLength(100);
-            entity.Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(100);
-            entity.Property(e => e.PasswordHash)
-                .IsRequired()
-                .HasMaxLength(255);
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Fcmtoken).HasColumnName("FCMToken");
+            entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.PasswordHash).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber).HasMaxLength(15);
             entity.Property(e => e.RoleId).HasColumnName("RoleID");
             entity.Property(e => e.UpdatedAt)
@@ -235,7 +225,7 @@ public partial class HealthCareAssistantContext : DbContext
 
             entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.RoleId)
-                .HasConstraintName("FK__Users__RoleID__4D94879B");
+                .HasConstraintName("FK__User__RoleID__4D94879B");
         });
 
         OnModelCreatingPartial(modelBuilder);

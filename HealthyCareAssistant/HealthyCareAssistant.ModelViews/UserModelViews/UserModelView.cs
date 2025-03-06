@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
 using HealthyCareAssistant.Contact.Repo.Entity;
+>>>>>>> main
 
 namespace HealthyCareAssistant.ModelViews.UserModelViews
 {
     public class UserModelView
     {
+<<<<<<< HEAD
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Fcmtoken { get; set; }
+        public DateTime? CreatedAt { get; set; }
+=======
         public string Name { get; set; }
         public string Email { get; set; }
         public object UserId { get; set; }
@@ -22,5 +33,6 @@ namespace HealthyCareAssistant.ModelViews.UserModelViews
             Name = user.Name;
             Email = user.Email;
         }
+>>>>>>> main
     }
 }

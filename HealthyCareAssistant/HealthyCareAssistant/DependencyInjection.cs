@@ -170,11 +170,8 @@ namespace HealthyCareAssistant.API
             services.AddScoped<IGenericRepository<MedicineCabinetDrug>, GenericRepository<MedicineCabinetDrug>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDrugService, DrugService>();
-<<<<<<< HEAD
             services.AddScoped<IEmailService, EmailService>();
-=======
             services.AddScoped<IMedicineCabinetService, MedicineCabinetService>();
->>>>>>> 44a72070c00c982ed2b43322e93830c4cb784bfd
         }
     }
 }

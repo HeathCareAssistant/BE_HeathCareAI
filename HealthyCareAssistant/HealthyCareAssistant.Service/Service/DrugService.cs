@@ -168,14 +168,14 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id)
         {
-            
+
             var currentDrug = await _drugRepo.GetByIdAsync(id);
             if (currentDrug == null || string.IsNullOrEmpty(currentDrug.HoatChat))
             {
                 return new List<Drug>();
             }
 
-            
+
             return await _drugRepo.Entities
                 .Where(d => d.DrugId != id && d.HoatChat != null && d.HoatChat.ToLower().Contains(currentDrug.HoatChat.ToLower()))
                 .ToListAsync();

@@ -2,7 +2,7 @@
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
+USER app
 WORKDIR /app
 EXPOSE 8080
 
@@ -13,10 +13,10 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["HealthyCareAssistant/HealthyCareAssistant.csproj", "HealthyCareAssistant/"]
 COPY ["HealthyCareAssistant.Contract.Service/HealthyCareAssistant.Contract.Service.csproj", "HealthyCareAssistant.Contract.Service/"]
-COPY ["HealthyCareAssistant.ModelViews/HealthyCareAssistant.ModelViews.csproj", "HealthyCareAssistant.ModelViews/"]
-COPY ["HealthyCareAssistant.Repo/HealthyCareAssistant.Repo.csproj", "HealthyCareAssistant.Repo/"]
 COPY ["HealthyCareAssistant.Contact.Repo/HealthyCareAssistant.Contact.Repo.csproj", "HealthyCareAssistant.Contact.Repo/"]
 COPY ["HealthyCareAssistant.Core/HealthyCareAssistant.Core.csproj", "HealthyCareAssistant.Core/"]
+COPY ["HealthyCareAssistant.ModelViews/HealthyCareAssistant.ModelViews.csproj", "HealthyCareAssistant.ModelViews/"]
+COPY ["HealthyCareAssistant.Repo/HealthyCareAssistant.Repo.csproj", "HealthyCareAssistant.Repo/"]
 COPY ["HealthyCareAssistant.Service/HealthyCareAssistant.Service.csproj", "HealthyCareAssistant.Service/"]
 RUN dotnet restore "./HealthyCareAssistant/HealthyCareAssistant.csproj"
 COPY . .

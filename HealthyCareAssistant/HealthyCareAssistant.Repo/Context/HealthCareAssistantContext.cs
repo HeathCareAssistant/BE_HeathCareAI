@@ -217,8 +217,13 @@ public partial class HealthCareAssistantContext : DbContext
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.Fcmtoken).HasColumnName("FCMToken");
             entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.Otp)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .HasColumnName("OTP");
             entity.Property(e => e.PasswordHash).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber).HasMaxLength(15);
+            entity.Property(e => e.RefreshToken).HasColumnName("refreshToken");
             entity.Property(e => e.RoleId).HasColumnName("RoleID");
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")

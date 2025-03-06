@@ -7,14 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentEmail.Core" Version="3.0.2" />
+    <PackageReference Include="FluentEmail.Mailgun" Version="3.0.2" />
+    <PackageReference Include="FluentEmail.Razor" Version="3.0.2" />
+    <PackageReference Include="FluentEmail.SendGrid" Version="3.0.2" />
+    <PackageReference Include="FluentEmail.Smtp" Version="3.0.2" />
+    <PackageReference Include="MailKit" Version="4.10.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.4.0" />
+    <PackageReference Include="MimeKit" Version="4.10.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HealthyCareAssistant.Contact.Repo\HealthyCareAssistant.Contact.Repo.csproj" />
     <ProjectReference Include="..\HealthyCareAssistant.Contract.Service\HealthyCareAssistant.Contract.Service.csproj" />
+    <ProjectReference Include="..\HealthyCareAssistant.ModelViews\HealthyCareAssistant.ModelViews.csproj" />
     <ProjectReference Include="..\HealthyCareAssistant.Repo\HealthyCareAssistant.Repo.csproj" />
   </ItemGroup>
 

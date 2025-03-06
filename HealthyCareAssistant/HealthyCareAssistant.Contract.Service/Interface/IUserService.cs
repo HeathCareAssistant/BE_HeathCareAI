@@ -1,11 +1,7 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
-<<<<<<< HEAD
 using HealthyCareAssistant.Core.Base;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
 using HealthyCareAssistant.ModelViews.DrugModelViews;
-=======
-using HealthyCareAssistant.ModelViews.AuthModelViews;
->>>>>>> main
 using HealthyCareAssistant.ModelViews.UserModelViews;
 using System;
 using System.Collections.Generic;
@@ -19,7 +15,6 @@ namespace HealthyCareAssistant.Contract.Service.Interface
     {
         Task<string> RegisterAsync(RegisterModelViews model);
         Task<string> LoginAsync(LoginModelViews model);
-<<<<<<< HEAD
         Task<(IEnumerable<UserModelView> users, int totalElement, int totalPage)> GetAllUsersPaginatedAsync(int page, int pageSize);
         Task<UserModelView> GetUserByIdAsync(int userId);
         Task<string> CreateUserAsync(UserCreateRequest request);
@@ -27,12 +22,10 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<string> DeleteUserAsync(int userId);
         Task<IEnumerable<UserModelView>> SearchUsersAsync(string keyword);
 
-=======
         Task<bool> ForgotPasswordAsync(string email);
         Task<bool> ResetPasswordAsync(ResetPasswordModel model);
         Task<UserModelView?> GetUserByIdAsync(string userId);
         Task<bool> ValidatePasswordAsync(User user, string password);
->>>>>>> main
     }
 
 }

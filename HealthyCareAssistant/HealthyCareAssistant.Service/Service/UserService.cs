@@ -3,13 +3,12 @@ using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.Core.Base;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
-<<<<<<< HEAD
 using HealthyCareAssistant.ModelViews.DrugModelViews;
 using HealthyCareAssistant.ModelViews.UserModelViews;
-=======
+using HealthyCareAssistant.Repo.Context;
+
 using HealthyCareAssistant.ModelViews.UserModelViews;
 using HealthyCareAssistant.Repo.Context;
->>>>>>> main
 using HealthyCareAssistant.Service.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -51,11 +50,7 @@ namespace HealthyCareAssistant.Service.Service
             }
 
             // Lấy thông tin vai trò
-<<<<<<< HEAD
-            var role = user.Role?.RoleName ?? "User"; // Mặc định là Customer nếu không tìm thấy Role
-=======
             var role = user.RoleId == 1 ? "Admin" : "User";
->>>>>>> main
 
             var roleName = user.Role?.RoleName ?? "User";
             // Lấy danh sách quyền của người dùng (nếu có)
@@ -80,12 +75,8 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<string> RegisterAsync(RegisterModelViews model)
         {
-<<<<<<< HEAD
-            int assignedRoleId = model.RoleId >= 0 ? model.RoleId : 2;
-=======
             // Chỉ chấp nhận RoleID 1 (Admin) hoặc 2 (User), mặc định là User
             int assignedRoleId = (model.RoleId == 1 || model.RoleId == 2) ? model.RoleId : 2;
->>>>>>> main
 
             // Kiểm tra xem Role có tồn tại không
             var role = await _unitOfWork.GetRepository<Role>().Entities
@@ -125,7 +116,6 @@ namespace HealthyCareAssistant.Service.Service
             return "User registered successfully.";
         }
 
-<<<<<<< HEAD
 
         public async Task<(IEnumerable<UserModelView> users, int totalElement, int totalPage)> GetAllUsersPaginatedAsync(int page, int pageSize)
         {
@@ -235,7 +225,6 @@ namespace HealthyCareAssistant.Service.Service
                 })
                 .ToListAsync();
         }
-=======
         public async Task<bool> ForgotPasswordAsync(string email)
         {
             var user = await _userRepo.Entities.FirstOrDefaultAsync(u => u.Email == email);
@@ -309,7 +298,6 @@ namespace HealthyCareAssistant.Service.Service
             return user == null ? null : new UserModelView(user);
         }
 
->>>>>>> main
     }
 }
 

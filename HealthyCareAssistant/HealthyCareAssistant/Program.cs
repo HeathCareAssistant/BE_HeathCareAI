@@ -1,6 +1,11 @@
 ﻿using HealthyCareAssistant.API;
-
-
+using HealthyCareAssistant.Middleware;
+using System.Net;
+using FluentEmail.Core;
+using FluentEmail.Smtp;
+using FluentEmail.Razor;
+using System.Net.Mail;
+using Microsoft.Extensions.DependencyInjection;
 namespace HealthyCareAssistant
 {
     public class Program
@@ -22,7 +27,9 @@ namespace HealthyCareAssistant
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddFluentEmail("a.bellybabe@gmail.com")
+                    .AddSmtpSender("smtp.mailserver.com", 587, "a.bellybabe@gmail.com", "Nhom1passed");
+            //builder.Services.AddSwaggerGen();
 
             // Cấu hình CORS cho phép tất cả các nguồn gốc
             builder.Services.AddCors(options =>
@@ -37,18 +44,30 @@ namespace HealthyCareAssistant
                     });
             });
 
-
+            
 
             var app = builder.Build();
             app.UseCors("AllowLocalhost");
+            app.Use(async (context, next) =>
+            {
+                var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+                Console.WriteLine($"[JWT] Extracted Token: {token}");
+                await next();
+            });
 
             // Configure the HTTP request pipeline.
+            app.UseMiddleware<LoggingMiddleware>();
 
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            if (app.Environment.IsDevelopment()) 
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+
             app.MapControllers();
 
             app.Run();

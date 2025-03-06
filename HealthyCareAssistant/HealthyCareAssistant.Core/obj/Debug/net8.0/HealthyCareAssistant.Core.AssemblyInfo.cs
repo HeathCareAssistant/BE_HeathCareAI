@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthyCareAssistant.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4d573dbb74073326c2c97b94db1e1c77545807f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43224c48feb39584291b0ac5dcf11454d14f787a")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthyCareAssistant.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthyCareAssistant.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

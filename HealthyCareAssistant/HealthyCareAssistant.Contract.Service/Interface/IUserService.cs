@@ -1,4 +1,5 @@
 ﻿using HealthyCareAssistant.ModelViews.AuthModelViews;
+using HealthyCareAssistant.ModelViews.UserModelViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace HealthyCareAssistant.Contract.Service.Interface
     {
         Task<string> RegisterAsync(RegisterModelViews model);
         Task<string> LoginAsync(LoginModelViews model);
+        Task<bool> ForgotPasswordAsync(string email);
+        Task<bool> ResetPasswordAsync(ResetPasswordModel model);
+        Task<UserModelView?> GetUserByIdAsync(string userId);
     }
+
 }

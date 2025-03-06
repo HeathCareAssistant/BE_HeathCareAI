@@ -19,8 +19,16 @@ namespace HealthyCareAssistant.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.GetAllDrugsPaginatedAsync(page, pageSize);
-            return Ok(drugs);
+            var (drugs, totalElement, totalPage) = await _drugService.GetAllDrugsPaginatedAsync(page, pageSize);
+
+            return Ok(new
+            {
+                totalElement,
+                totalPage,
+                currentPage = page,
+                pageSize,
+                data = drugs
+            });
         }
 
         [HttpGet("{id}")]

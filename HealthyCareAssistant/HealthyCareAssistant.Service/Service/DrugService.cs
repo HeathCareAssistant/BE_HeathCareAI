@@ -21,21 +21,53 @@ namespace HealthyCareAssistant.Service.Service
             _drugRepo = _unitOfWork.GetRepository<Drug>();
         }
 
-        public async Task<IEnumerable<DrugModelView>> GetAllDrugsAsync()
+        public async Task<IEnumerable<DrugModelView>> GetAllDrugsPaginatedAsync(int page, int pageSize)
         {
-            return await _drugRepo.Entities
+            return _drugRepo.Entities
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .AsEnumerable()
                 .Select(d => new DrugModelView
                 {
                     DrugId = d.DrugId,
                     TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
                     HoatChat = d.HoatChat,
                     PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
                     CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
                     GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
                     SearchCount = d.SearchCount
                 })
-                .ToListAsync();
+                .ToList();
         }
+
 
         public async Task<Drug> GetDrugByIdAsync(string id)
         {

@@ -184,8 +184,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\UserModelViews\\UserCreateRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T13:07:39.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T13:07:39.597Z"
             },
             {
               "$type": "Document",
@@ -197,8 +196,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T13:05:45.227Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T13:05:45.227Z"
             },
             {
               "$type": "Document",
@@ -210,8 +208,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\Controllers\\UserController.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAA5wDYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T12:58:00.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T12:58:00.105Z"
             },
             {
               "$type": "Document",
@@ -223,8 +220,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\UserModelViews\\UserModelView.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T12:56:22.564Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T12:56:22.564Z"
             },
             {
               "$type": "Document",
@@ -258,7 +254,7 @@
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\UserService.cs",
               "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAcwJwAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwLMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T12:56:02.339Z",
               "EditorCaption": ""
@@ -273,8 +269,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\DependencyInjection.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAAACUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T12:56:02.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T12:56:02.341Z"
             },
             {
               "$type": "Document",

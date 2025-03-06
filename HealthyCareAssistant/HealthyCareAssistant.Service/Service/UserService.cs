@@ -107,11 +107,11 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<(IEnumerable<UserModelView> users, int totalElement, int totalPage)> GetAllUsersPaginatedAsync(int page, int pageSize)
         {
-            var totalElement = await _userRepo.Entities.CountAsync(); // Đếm tổng số phần tử
-            var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize); // Tính tổng số trang
+            var totalElement = await _userRepo.Entities.CountAsync(); 
+            var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
 
             var users = await _userRepo.Entities
-                .OrderBy(d => d.UserId) // Đảm bảo sắp xếp để phân trang đúng
+                .OrderBy(d => d.UserId) 
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .Select(d => new UserModelView

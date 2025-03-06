@@ -1,7 +1,10 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
+using HealthyCareAssistant.Core.Base;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
+using HealthyCareAssistant.ModelViews.DrugModelViews;
+using HealthyCareAssistant.ModelViews.UserModelViews;
 using HealthyCareAssistant.Service.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -39,7 +42,7 @@ namespace HealthyCareAssistant.Service.Service
             }
 
             // Lấy thông tin vai trò
-            var role = user.Role?.RoleName ?? "Customer"; // Mặc định là Customer nếu không tìm thấy Role
+            var role = user.Role?.RoleName ?? "User"; // Mặc định là Customer nếu không tìm thấy Role
 
             // Lấy danh sách quyền của người dùng (nếu có)
             var permissions = new List<string>(); // Nếu có logic permission, lấy từ DB
@@ -61,8 +64,7 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<string> RegisterAsync(RegisterModelViews model)
         {
-            // Nếu RoleID là null hoặc 0, gán mặc định là Customer (RoleID = 3)
-            int assignedRoleId = model.RoleId >= 0 ? model.RoleId : 3;
+            int assignedRoleId = model.RoleId >= 0 ? model.RoleId : 2;
 
             // Kiểm tra xem Role có tồn tại không
             var roles = await _unitOfWork.GetRepository<Role>().Entities.ToListAsync();
@@ -100,6 +102,116 @@ namespace HealthyCareAssistant.Service.Service
             await _unitOfWork.SaveAsync();
 
             return "User registered successfully.";
+        }
+
+
+        public async Task<(IEnumerable<UserModelView> users, int totalElement, int totalPage)> GetAllUsersPaginatedAsync(int page, int pageSize)
+        {
+            var totalElement = await _userRepo.Entities.CountAsync(); // Đếm tổng số phần tử
+            var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize); // Tính tổng số trang
+
+            var users = await _userRepo.Entities
+                .OrderBy(d => d.UserId) // Đảm bảo sắp xếp để phân trang đúng
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(d => new UserModelView
+                {
+                    UserId = d.UserId,
+                    Name = d.Name,
+                    Email = d.Email,
+                    Fcmtoken = d.Fcmtoken,
+                    PhoneNumber = d.PhoneNumber,
+                    CreatedAt = d.CreatedAt,
+                })
+                .ToListAsync();
+
+            return (users, totalElement, totalPage);
+        }
+
+
+
+        // 2️ Lấy User theo ID
+        public async Task<UserModelView> GetUserByIdAsync(int userId)
+        {
+            var user = await _userRepo.GetByIdAsync(userId);
+            if (user == null || user.RoleId != 2) return null;
+
+            return new UserModelView
+            {
+                UserId = user.UserId,
+                Name = user.Name,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Fcmtoken = user.Fcmtoken,
+                CreatedAt = user.CreatedAt
+            };
+        }
+
+        // 3️ Tạo User mới
+        public async Task<string> CreateUserAsync(UserCreateRequest request)
+        {
+            var existingUser = await _userRepo.Entities.AnyAsync(u => u.Email == request.Email);
+            if (existingUser) return "Email đã tồn tại.";
+
+            var newUser = new User
+            {
+                Name = request.Name,
+                Email = request.Email,
+                PasswordHash = HashHelper.ComputeSha256Hash(request.Password),
+                PhoneNumber = request.PhoneNumber,
+                Fcmtoken = request.Fcmtoken,
+                RoleId = 2, // Mặc định là User
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow
+            };
+
+            await _userRepo.InsertAsync(newUser);
+            await _unitOfWork.SaveAsync();
+            return "User tạo thành công.";
+        }
+
+        // 4️ Cập nhật User
+        public async Task<string> UpdateUserAsync(int userId, UserUpdateRequest request)
+        {
+            var user = await _userRepo.GetByIdAsync(userId);
+            if (user == null || user.RoleId != 2) return "Không tìm thấy user.";
+
+            user.Name = request.Name;
+            user.PhoneNumber = request.PhoneNumber;
+            user.Fcmtoken = request.Fcmtoken;
+            user.UpdatedAt = DateTime.UtcNow;
+
+            await _userRepo.UpdateAsync(user);
+            await _unitOfWork.SaveAsync();
+            return "User cập nhật thành công.";
+        }
+
+        // 5️ Xóa User
+        public async Task<string> DeleteUserAsync(int userId)
+        {
+            var user = await _userRepo.GetByIdAsync(userId);
+            if (user == null || user.RoleId != 2) return "Không tìm thấy user.";
+
+            await _userRepo.DeleteAsync(userId);
+            await _unitOfWork.SaveAsync();
+            return "User đã bị xóa.";
+        }
+
+        public async Task<IEnumerable<UserModelView>> SearchUsersAsync(string keyword)
+        {
+            return await _userRepo.Entities
+                .Where(u => u.RoleId == 2 &&
+                           (u.Name.Contains(keyword) || u.PhoneNumber.Contains(keyword)))
+                .Select(u => new UserModelView
+                {
+                    UserId = u.UserId,
+                    Name = u.Name,
+                    Email = u.Email,
+                    PhoneNumber = u.PhoneNumber,
+                    Fcmtoken = u.Fcmtoken,
+                    CreatedAt = u.CreatedAt
+                })
+                .ToListAsync();
         }
     }
 }

@@ -3,6 +3,7 @@ using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
 using HealthyCareAssistant.ModelViews.UserModelViews;
+using HealthyCareAssistant.Repo.Context;
 using HealthyCareAssistant.Service.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,7 @@ namespace HealthyCareAssistant.Service.Service
         private readonly IGenericRepository<User> _userRepo;
         private readonly IEmailService _emailService;
         private readonly ILogger<UserService> _logger;
+        private readonly HealthCareAssistantContext _context;
 
         public UserService(IUnitOfWork unitOfWork, IConfiguration configuration, IGenericRepository<User> userRepo, IEmailService emailService, ILogger<UserService> logger)
         {
@@ -35,7 +37,7 @@ namespace HealthyCareAssistant.Service.Service
 
             // Kiểm tra user có tồn tại không
             var user = _userRepo.Entities
-                .Include(u => u.Role)  
+                .Include(u => u.Role)
                 .FirstOrDefault(u => u.Email == model.Email);
             if (user == null || user.PasswordHash != HashHelper.ComputeSha256Hash(model.Password))
             {
@@ -51,14 +53,13 @@ namespace HealthyCareAssistant.Service.Service
 
             // Tạo token bằng TokenHelper
             var token = TokenHelper.GenerateJwtToken(
-                user,
-                role, 
-                permissions,
-                _configuration["JwtSettings:Secret"],
-                _configuration["JwtSettings:Issuer"],
-                _configuration["JwtSettings:Audience"],
-                Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"])
-            );
+                          user,
+                          _configuration["JwtSettings:Secret"],
+                          _configuration["JwtSettings:Issuer"],
+                          _configuration["JwtSettings:Audience"],
+                          Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"])
+             );
+
             user.RefreshToken = token;
             await _userRepo.UpdateAsync(user);
             await _unitOfWork.SaveAsync();
@@ -103,7 +104,7 @@ namespace HealthyCareAssistant.Service.Service
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
-        
+
             await userRepo.InsertAsync(user);
             await _unitOfWork.SaveAsync();
 
@@ -169,10 +170,15 @@ namespace HealthyCareAssistant.Service.Service
         }
 
 
+        public async Task<bool> ValidatePasswordAsync(User user, string inputPassword)
+        {
+            string hashedInput = HashHelper.ComputeSha256Hash(inputPassword);
+            return hashedInput == user.PasswordHash; 
+        }
         public async Task<UserModelView?> GetUserByIdAsync(string userId)
         {
             var user = await _userRepo.Entities
-                .Include(u => u.Role) 
+                .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.UserId.ToString() == userId);
 
             return user == null ? null : new UserModelView(user);

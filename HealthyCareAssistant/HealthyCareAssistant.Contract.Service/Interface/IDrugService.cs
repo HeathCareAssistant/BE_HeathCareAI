@@ -10,14 +10,14 @@ namespace HealthyCareAssistant.Contract.Service.Interface
 {
     public interface IDrugService
     {
-        Task<IEnumerable<DrugModelView>> GetAllDrugsPaginatedAsync(int page, int pageSize); 
+        Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> GetAllDrugsPaginatedAsync(int page, int pageSize);
         Task<Drug> GetDrugByIdAsync(string id);
         Task<string> CreateDrugAsync(DrugModelView drug);
         Task<bool> DeleteDrugAsync(string id);
         Task<IEnumerable<Drug>> SearchByNameAsync(string name);
         Task<IEnumerable<Drug>> SearchByIngredientAsync(string ingredient);
         Task<IEnumerable<Drug>> FilterByCompanyAsync(string companyName);
-        Task<IEnumerable<Drug>> FilterByCategoryAsync(string category);
+        Task<IEnumerable<Drug>> FilterByCategoryAsync(string category, int page, int pageSize);
         Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id);
         Task<IEnumerable<Drug>> GetRelatedByCompanyAsync(string id);
         Task<IEnumerable<Drug>> GetTopSearchedDrugsAsync();

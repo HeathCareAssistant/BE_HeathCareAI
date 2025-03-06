@@ -21,12 +21,15 @@ namespace HealthyCareAssistant.Service.Service
             _drugRepo = _unitOfWork.GetRepository<Drug>();
         }
 
-        public async Task<IEnumerable<DrugModelView>> GetAllDrugsPaginatedAsync(int page, int pageSize)
+        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> GetAllDrugsPaginatedAsync(int page, int pageSize)
         {
-            return _drugRepo.Entities
+            var totalElement = await _drugRepo.Entities.CountAsync(); // Đếm tổng số phần tử
+            var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize); // Tính tổng số trang
+
+            var drugs = await _drugRepo.Entities
+                .OrderBy(d => d.DrugId) // Đảm bảo sắp xếp để phân trang đúng
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .AsEnumerable()
                 .Select(d => new DrugModelView
                 {
                     DrugId = d.DrugId,
@@ -65,7 +68,9 @@ namespace HealthyCareAssistant.Service.Service
                     Images = d.Images,
                     SearchCount = d.SearchCount
                 })
-                .ToList();
+                .ToListAsync();
+
+            return (drugs, totalElement, totalPage);
         }
 
 
@@ -151,12 +156,15 @@ namespace HealthyCareAssistant.Service.Service
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Drug>> FilterByCategoryAsync(string category)
+        public async Task<IEnumerable<Drug>> FilterByCategoryAsync(string category, int page, int pageSize)
         {
             return await _drugRepo.Entities
                 .Where(d => d.PhanLoai != null && d.PhanLoai.ToLower().Contains(category.ToLower()))
+                .Skip((page - 1) * pageSize)  
+                .Take(pageSize)               
                 .ToListAsync();
         }
+
 
         public async Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id)
         {

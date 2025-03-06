@@ -6,40 +6,44 @@ using System.Text;
 
 namespace HealthyCareAssistant.Service.Config
 {
-    /// <summary>
-    /// Helper class to generate JWT tokens.
-    /// </summary>
     public static class TokenHelper
     {
-        /// <summary>
-        /// Generates a JWT token for a given user.
-        /// </summary>
-        /// <param name="user">The user for whom the token is generated.</param>
-        /// <param name="role">The user's role.</param>
-        /// <param name="permissions">List of permissions assigned to the user.</param>
-        /// <param name="key">The secret key used to sign the token.</param>
-        /// <param name="issuer">The issuer of the token.</param>
-        /// <param name="audience">The audience of the token.</param>
-        /// <param name="expiryMinutes">Expiration time in minutes.</param>
-        /// <returns>The generated JWT token.</returns>
-        public static string GenerateJwtToken(User user, string role, List<string> permissions, string key, string issuer, string audience, int expiryMinutes)
+        public static string GenerateJwtToken(User user, string? role, List<string>? permissions, string key, string issuer, string audience, int expiryMinutes)
         {
-            // Define the claims for the JWT token
+            if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(key))
+            {
+                throw new ArgumentException("Invalid user data or secret key.");
+            }
+
+            if (expiryMinutes <= 0)
+            {
+                throw new ArgumentException("Expiry time must be greater than 0.");
+            }
+
+            // Đảm bảo Role chỉ có giá trị hợp lệ
+            var normalizedRole = role?.Trim().ToLower() switch
+            {
+                "admin" => "Admin",
+                "user" => "User",
+                _ => "User" // Mặc định là "User" nếu giá trị không hợp lệ
+            };
+
+            // Danh sách quyền (permissions) không bắt buộc
+            var validPermissions = permissions ?? new List<string>();
+
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, role)
+                new Claim(ClaimTypes.Role, normalizedRole)
             };
 
-            // Add permissions as claims
-            claims.AddRange(permissions.Select(permission => new Claim("Permission", permission)));
+            // Thêm permissions nếu có
+            claims.AddRange(validPermissions.Select(permission => new Claim("Permission", permission)));
 
-            // Generate the security key from the secret key
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            // Create the JWT token
             var token = new JwtSecurityToken(
                 issuer: issuer,
                 audience: audience,
@@ -48,7 +52,10 @@ namespace HealthyCareAssistant.Service.Config
                 signingCredentials: credentials
             );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            string jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            Console.WriteLine($"[JWT]  Token Generated: {jwt}");
+
+            return jwt;
         }
     }
 }

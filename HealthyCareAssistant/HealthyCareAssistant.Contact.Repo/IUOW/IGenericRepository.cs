@@ -19,6 +19,7 @@ namespace HealthyCareAssistant.Contact.Repo.IUOW
         void InsertRange(IList<T> obj);
         void Update(T obj);
         void Delete(object id);
+        void DeleteRange(IEnumerable<T> entities);
         void Save();
 
         // async
@@ -28,6 +29,9 @@ namespace HealthyCareAssistant.Contact.Repo.IUOW
         Task InsertAsync(T obj);
         Task UpdateAsync(T obj);
         Task DeleteAsync(object id);
+        Task DeleteRangeAsync(IEnumerable<T> entities);
         Task SaveAsync();
+
+        Task InsertRangeAsync(IList<T> obj); 
     }
 }

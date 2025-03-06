@@ -105,5 +105,21 @@ namespace HealthyCareAssistant.Repo.UnitOfWork
         {
             return Task.FromResult(_dbSet.Update(obj));
         }
+
+        public async Task InsertRangeAsync(IList<T> obj) 
+        {
+            await _dbSet.AddRangeAsync(obj);
+        }
+
+        public void DeleteRange(IEnumerable<T> entities)
+        {
+            _dbSet.RemoveRange(entities);
+        }
+
+        public async Task DeleteRangeAsync(IEnumerable<T> entities)
+        {
+            _dbSet.RemoveRange(entities);
+            await _context.SaveChangesAsync();
+        }
     }
 }

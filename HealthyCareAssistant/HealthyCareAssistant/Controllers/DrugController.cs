@@ -71,9 +71,9 @@ namespace HealthyCareAssistant.Controllers
         }
 
         [HttpGet("filter/category")]
-        public async Task<IActionResult> FilterByCategory([FromQuery] string category)
+        public async Task<IActionResult> FilterByCategory([FromQuery] string category, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.FilterByCategoryAsync(category);
+            var drugs = await _drugService.FilterByCategoryAsync(category, page, pageSize);
             return Ok(drugs);
         }
 

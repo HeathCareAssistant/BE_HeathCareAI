@@ -151,12 +151,15 @@ namespace HealthyCareAssistant.Service.Service
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Drug>> FilterByCategoryAsync(string category)
+        public async Task<IEnumerable<Drug>> FilterByCategoryAsync(string category, int page, int pageSize)
         {
             return await _drugRepo.Entities
                 .Where(d => d.PhanLoai != null && d.PhanLoai.ToLower().Contains(category.ToLower()))
+                .Skip((page - 1) * pageSize)  
+                .Take(pageSize)               
                 .ToListAsync();
         }
+
 
         public async Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id)
         {

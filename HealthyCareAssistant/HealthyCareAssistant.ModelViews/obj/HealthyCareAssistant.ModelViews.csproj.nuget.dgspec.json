@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj": {}
+    "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj": {}
   },
   "projects": {
-    "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj": {
+    "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj",
+        "projectUniqueName": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj",
         "projectName": "HealthyCareAssistant.Contact.Repo",
-        "projectPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj",
-        "packagesPath": "C:\\Users\\Cicca.Mini\\.nuget\\packages\\",
-        "outputPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\obj\\",
+        "projectPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj",
+        "packagesPath": "C:\\Users\\84868\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cicca.Mini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\84868\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,16 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\Cicca.Mini\\Documents\\BellyBabe": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {
-                "projectPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj"
+              "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {
+                "projectPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj"
               }
             }
           }
@@ -49,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -114,24 +113,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {
+    "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
+        "projectUniqueName": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
         "projectName": "HealthyCareAssistant.Core",
-        "projectPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
-        "packagesPath": "C:\\Users\\Cicca.Mini\\.nuget\\packages\\",
-        "outputPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\obj\\",
+        "projectPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
+        "packagesPath": "C:\\Users\\84868\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cicca.Mini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\84868\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -140,8 +139,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\Cicca.Mini\\Documents\\BellyBabe": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -159,7 +156,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -202,24 +200,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj": {
+    "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj",
+        "projectUniqueName": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj",
         "projectName": "HealthyCareAssistant.ModelViews",
-        "projectPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj",
-        "packagesPath": "C:\\Users\\Cicca.Mini\\.nuget\\packages\\",
-        "outputPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\obj\\",
+        "projectPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj",
+        "packagesPath": "C:\\Users\\84868\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cicca.Mini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\84868\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -228,16 +226,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\Cicca.Mini\\Documents\\BellyBabe": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj": {
-                "projectPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj"
+              "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj": {
+                "projectPath": "C:\\Users\\84868\\Downloads\\BE\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contact.Repo\\HealthyCareAssistant.Contact.Repo.csproj"
               }
             }
           }
@@ -251,7 +247,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -312,7 +309,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

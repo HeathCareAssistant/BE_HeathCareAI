@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthyCareAssistant.Contact.Repo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59a32f869329f6e653ae018cf4c4bf377860d2d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+788511f5f5a39ecd1905e7a8277dc6bb1ae4984c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthyCareAssistant.Contact.Repo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthyCareAssistant.Contact.Repo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

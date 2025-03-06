@@ -154,7 +154,7 @@
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\DrugService.cs",
               "ToolTip": "C:\\Users\\84868\\Downloads\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\DrugService.cs",
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\DrugService.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKEAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAH4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-05T19:41:58.117Z",
               "EditorCaption": ""
@@ -169,8 +169,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\Controllers\\DrugController.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAAAFgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T19:45:09.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T19:45:09.619Z"
             },
             {
               "$type": "Document",
@@ -182,8 +181,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:31:37.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:31:37.874Z"
             },
             {
               "$type": "Document",
@@ -195,8 +193,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T17:38:02.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T17:38:02.584Z"
             },
             {
               "$type": "Document",
@@ -208,8 +205,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\DependencyInjection.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAAACUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T17:34:47.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T17:34:47.651Z"
             },
             {
               "$type": "Document",
@@ -221,8 +217,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\Entity\\Drug.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAuwFEAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:45:06.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:45:06.378Z"
             },
             {
               "$type": "Document",
@@ -234,8 +229,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Repo\\UnitOfWork\\GenericRepository.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAUwCEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:28:27.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:28:27.173Z"
             },
             {
               "$type": "Document",
@@ -247,8 +241,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IDrugService.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAtwBUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T19:40:52.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T19:40:52.972Z"
             },
             {
               "$type": "Document",
@@ -260,8 +253,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\IUOW\\IGenericRepository.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:32:43.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:32:43.887Z"
             },
             {
               "$type": "Document",
@@ -273,8 +265,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:32:34.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:32:34.643Z"
             },
             {
               "$type": "Document",
@@ -286,8 +277,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Repo\\UnitOfWork\\UnitOfWork.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAiwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:28:26.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:28:26.143Z"
             },
             {
               "$type": "Document",
@@ -299,8 +289,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\IUOW\\IUnitOfWork.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:32:57.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:32:57.957Z"
             },
             {
               "$type": "Document",
@@ -312,21 +301,19 @@
               "RelativeToolTip": "HealthyCareAssistant.Repo\\Context\\HealthCareAssistantContext.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T21:57:49.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T21:57:49.415Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "HealthyCareAssistant.Service",
+              "Title": "HealthyCareAssistant.Service.csproj",
               "DocumentMoniker": "C:\\Users\\84868\\Downloads\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj",
               "ToolTip": "C:\\Users\\84868\\Downloads\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj",
               "RelativeToolTip": "HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-05T18:25:18.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:25:18.781Z"
             },
             {
               "$type": "Document",
@@ -338,8 +325,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\Program.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAADcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T14:44:09.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T14:44:09.778Z"
             },
             {
               "$type": "Document",
@@ -351,8 +337,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\DependencyInjection.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T19:49:18.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T19:49:18.71Z"
             },
             {
               "$type": "Document",
@@ -364,8 +349,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Utils\\EnumHelper.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAABcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T22:00:24.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T22:00:24.912Z"
             },
             {
               "$type": "Document",
@@ -377,8 +361,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugModelView.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAAAEoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T20:08:26.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T20:08:26.934Z"
             },
             {
               "$type": "Document",
@@ -390,8 +373,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T20:09:30.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T20:09:30.8Z"
             },
             {
               "$type": "Document",
@@ -403,8 +385,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAL4UAAAAAAAAAAAmwM8UAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-03-05T19:51:24.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T19:51:24.579Z"
             },
             {
               "$type": "Document",
@@ -416,8 +397,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\efpt.config.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-05T00:39:00.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T00:39:00.79Z"
             },
             {
               "$type": "Document",
@@ -429,21 +409,19 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Base\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T18:47:24.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T18:47:24.565Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "HealthyCareAssistant.Contract.Service",
+              "Title": "HealthyCareAssistant.Contract.Service.csproj",
               "DocumentMoniker": "C:\\Users\\84868\\Downloads\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj",
               "ToolTip": "C:\\Users\\84868\\Downloads\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj",
               "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-05T18:25:19.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T18:25:19.954Z"
             },
             {
               "$type": "Document",
@@ -455,8 +433,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-05T00:27:23.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T00:27:23.777Z"
             },
             {
               "$type": "Document",
@@ -468,8 +445,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\Entity\\Reminder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T00:39:08.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T00:39:08.835Z"
             },
             {
               "$type": "Document",
@@ -481,8 +457,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Base\\BaseException.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T18:47:26.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T18:47:26.417Z"
             },
             {
               "$type": "Document",
@@ -494,8 +469,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Utils\\CustomName.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T18:47:21.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T18:47:21.755Z"
             },
             {
               "$type": "Document",
@@ -507,8 +481,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Utils\\CoreHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T18:47:18.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T18:47:18.948Z"
             },
             {
               "$type": "Document",
@@ -520,8 +493,7 @@
               "RelativeToolTip": "HealthyCareAssistant\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-13T17:49:59.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T17:49:59.941Z"
             },
             {
               "$type": "Document",
@@ -533,8 +505,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Base\\BasePaginatedList.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T18:47:28.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T18:47:28.908Z"
             },
             {
               "$type": "Document",
@@ -546,8 +517,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Core\\Utils\\TimeHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T18:47:12.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T18:47:12.201Z"
             },
             {
               "$type": "Document",
@@ -559,8 +529,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\Entity\\User.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAwwAcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T17:35:47.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T17:35:47.52Z"
             },
             {
               "$type": "Document",
@@ -583,8 +552,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Contact.Repo\\Entity\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T17:36:25.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T17:36:25.342Z"
             }
           ]
         }

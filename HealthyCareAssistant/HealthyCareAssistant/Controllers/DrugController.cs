@@ -17,10 +17,18 @@ namespace HealthyCareAssistant.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.GetAllDrugsAsync();
-            return Ok(drugs);
+            var (drugs, totalElement, totalPage) = await _drugService.GetAllDrugsPaginatedAsync(page, pageSize);
+
+            return Ok(new
+            {
+                totalElement,
+                totalPage,
+                currentPage = page,
+                pageSize,
+                data = drugs
+            });
         }
 
         [HttpGet("{id}")]
@@ -71,9 +79,9 @@ namespace HealthyCareAssistant.Controllers
         }
 
         [HttpGet("filter/category")]
-        public async Task<IActionResult> FilterByCategory([FromQuery] string category)
+        public async Task<IActionResult> FilterByCategory([FromQuery] string category, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.FilterByCategoryAsync(category);
+            var drugs = await _drugService.FilterByCategoryAsync(category, page, pageSize);
             return Ok(drugs);
         }
 

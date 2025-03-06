@@ -25,6 +25,10 @@ public partial class User
 
     public DateTime? UpdatedAt { get; set; }
 
+    public string RefreshToken { get; set; }
+
+    public string Otp { get; set; }
+
     public virtual ICollection<MedicineCabinet> MedicineCabinets { get; set; } = new List<MedicineCabinet>();
 
     public virtual ICollection<MessageHistory> MessageHistories { get; set; } = new List<MessageHistory>();

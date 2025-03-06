@@ -8,9 +8,9 @@ namespace HealthyCareAssistant.Service.Config
 {
     public static class TokenHelper
     {
-        public static string GenerateJwtToken(User user, string? role, List<string>? permissions, string key, string issuer, string audience, int expiryMinutes)
+        public static string GenerateJwtToken(User user, string key, string issuer, string audience, int expiryMinutes)
         {
-            if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(key))
+            if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Name) || string.IsNullOrEmpty(key))
             {
                 throw new ArgumentException("Invalid user data or secret key.");
             }
@@ -20,26 +20,23 @@ namespace HealthyCareAssistant.Service.Config
                 throw new ArgumentException("Expiry time must be greater than 0.");
             }
 
-            // Đảm bảo Role chỉ có giá trị hợp lệ
-            var normalizedRole = role?.Trim().ToLower() switch
-            {
-                "admin" => "Admin",
-                "user" => "User",
-                _ => "User" // Mặc định là "User" nếu giá trị không hợp lệ
-            };
-
-            // Danh sách quyền (permissions) không bắt buộc
-            var validPermissions = permissions ?? new List<string>();
+       
+            string normalizedRole = user.Role?.RoleName?.Trim();
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, normalizedRole)
+                new Claim("id", user.UserId.ToString()), // User ID
+                new Claim("name", user.Name), // Username
+                new Claim("email", user.Email) // Email
             };
 
-            // Thêm permissions nếu có
-            claims.AddRange(validPermissions.Select(permission => new Claim("Permission", permission)));
+ 
+            if (!string.IsNullOrEmpty(normalizedRole))
+            {
+                claims.Add(new Claim("role", normalizedRole)); 
+            }
+
+            claims.Add(new Claim("exp", DateTimeOffset.UtcNow.AddMinutes(expiryMinutes).ToUnixTimeSeconds().ToString())); // Expiration time
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -52,10 +49,8 @@ namespace HealthyCareAssistant.Service.Config
                 signingCredentials: credentials
             );
 
-            string jwt = new JwtSecurityTokenHandler().WriteToken(token);
-            Console.WriteLine($"[JWT]  Token Generated: {jwt}");
-
-            return jwt;
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 }

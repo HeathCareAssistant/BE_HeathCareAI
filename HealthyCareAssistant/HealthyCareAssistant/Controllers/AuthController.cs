@@ -1,6 +1,7 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
+using HealthyCareAssistant.Core.Store;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
 using HealthyCareAssistant.Service.Config;
 using Microsoft.AspNetCore.Authorization;
@@ -46,17 +47,26 @@ namespace HealthyCareAssistant.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(new { message = "Dữ liệu không hợp lệ" });
             }
 
             var token = await _userService.LoginAsync(model);
-            if (token == "Invalid email or password.")
+
+            // 🔹 Đảm bảo token hợp lệ (loại bỏ trường hợp token chứa thông báo lỗi)
+            if (string.IsNullOrEmpty(token) || token == "Email hoặc mật khẩu không đúng")
             {
-                return Unauthorized(new { message = token });
+                return Unauthorized(new { message = "Email hoặc mật khẩu không đúng" });
             }
 
-            return Ok(new { token });
+            return Ok(new
+            {
+                message = "Đăng nhập thành công",
+                token
+            });
         }
+
+
+
         //[HttpPost("logout")]
         //[Authorize]
         //public IActionResult Logout()
@@ -98,8 +108,6 @@ namespace HealthyCareAssistant.Controllers
                 var permissions = new List<string>();
                 var newToken = TokenHelper.GenerateJwtToken(
                     user,
-                    role,
-                    permissions,
                     _configuration["JwtSettings:Secret"],
                     _configuration["JwtSettings:Issuer"],
                     _configuration["JwtSettings:Audience"],

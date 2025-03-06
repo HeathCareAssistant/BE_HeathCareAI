@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "l+3LCcGzEMf+e97VN6OuZGB1yqSvWb9PfwkQCr3CQbA=",
+  "Hash": "xkUf5tfB56qrPkXnkbEJG1Cxpqcw7kskWT8DzWOMyFQ=",
   "Source": "HealthyCareAssistant",
   "BasePath": "_content/HealthyCareAssistant",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

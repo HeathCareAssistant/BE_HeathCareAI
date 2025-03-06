@@ -6,40 +6,41 @@ using System.Text;
 
 namespace HealthyCareAssistant.Service.Config
 {
-    /// <summary>
-    /// Helper class to generate JWT tokens.
-    /// </summary>
     public static class TokenHelper
     {
-        /// <summary>
-        /// Generates a JWT token for a given user.
-        /// </summary>
-        /// <param name="user">The user for whom the token is generated.</param>
-        /// <param name="role">The user's role.</param>
-        /// <param name="permissions">List of permissions assigned to the user.</param>
-        /// <param name="key">The secret key used to sign the token.</param>
-        /// <param name="issuer">The issuer of the token.</param>
-        /// <param name="audience">The audience of the token.</param>
-        /// <param name="expiryMinutes">Expiration time in minutes.</param>
-        /// <returns>The generated JWT token.</returns>
-        public static string GenerateJwtToken(User user, string role, List<string> permissions, string key, string issuer, string audience, int expiryMinutes)
+        public static string GenerateJwtToken(User user, string key, string issuer, string audience, int expiryMinutes)
         {
-            // Define the claims for the JWT token
+            if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Name) || string.IsNullOrEmpty(key))
+            {
+                throw new ArgumentException("Invalid user data or secret key.");
+            }
+
+            if (expiryMinutes <= 0)
+            {
+                throw new ArgumentException("Expiry time must be greater than 0.");
+            }
+
+       
+            string normalizedRole = user.Role?.RoleName?.Trim();
+
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, role)
+                new Claim("id", user.UserId.ToString()), // User ID
+                new Claim("name", user.Name), // Username
+                new Claim("email", user.Email) // Email
             };
 
-            // Add permissions as claims
-            claims.AddRange(permissions.Select(permission => new Claim("Permission", permission)));
+ 
+            if (!string.IsNullOrEmpty(normalizedRole))
+            {
+                claims.Add(new Claim("role", normalizedRole)); 
+            }
 
-            // Generate the security key from the secret key
+            claims.Add(new Claim("exp", DateTimeOffset.UtcNow.AddMinutes(expiryMinutes).ToUnixTimeSeconds().ToString())); // Expiration time
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            // Create the JWT token
             var token = new JwtSecurityToken(
                 issuer: issuer,
                 audience: audience,
@@ -50,5 +51,6 @@ namespace HealthyCareAssistant.Service.Config
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 }

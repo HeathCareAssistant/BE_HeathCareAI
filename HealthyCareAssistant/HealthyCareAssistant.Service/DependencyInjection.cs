@@ -1,5 +1,7 @@
 ﻿using HealthyCareAssistant.Contact.Repo.IUOW;
+using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.Repo.UnitOfWork;
+using HealthyCareAssistant.Service.Service;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;

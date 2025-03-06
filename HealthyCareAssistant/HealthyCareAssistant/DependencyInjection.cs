@@ -23,7 +23,10 @@ namespace HealthyCareAssistant.API
         {
             services.AddDatabase(configuration);
             services.AddJwtAuthentication(configuration);
+            services.AddSwaggerGen();
             services.AddServices();
+            services.AddLogging();
+       
         }
 
         public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
@@ -42,15 +45,18 @@ namespace HealthyCareAssistant.API
         }
 
 
+
         public static void AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             var secretKey = configuration["JwtSettings:Secret"];
 
             if (string.IsNullOrEmpty(secretKey))
             {
-                throw new ArgumentNullException("JwtSettings:Secret", "JWT Secret key không được để trống trong appsettings.json");
+                throw new ArgumentNullException("JwtSettings:Secret", "JWT Secret key cannot be empty in appsettings.json");
             }
-            var key = Encoding.ASCII.GetBytes(configuration["JwtSettings:Secret"]);
+
+            var key = Encoding.UTF8.GetBytes(secretKey);
+            Console.WriteLine($"[JWT] Loaded Secret Key: {secretKey}");
 
             services.AddAuthentication(options =>
             {
@@ -59,65 +65,102 @@ namespace HealthyCareAssistant.API
             })
             .AddJwtBearer(options =>
             {
-                options.Events = new JwtBearerEvents
-                {
-                    OnChallenge = context =>
-                    {
-                        context.HandleResponse();
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        context.Response.ContentType = "application/json";
-                        var result = BaseResponse<string>.UnauthorizeResponse("Bạn cần đăng nhập trước khi thực hiện thao tác này.");
-                        return context.Response.WriteAsync(JsonConvert.SerializeObject(result));
-                    },
-                    OnForbidden = context =>
-                    {
-                        context.Response.StatusCode = StatusCodes.Status403Forbidden;
-                        context.Response.ContentType = "application/json";
-                        var result = BaseResponse<string>.ForbiddenResponse("Bạn không có quyền truy cập tài nguyên này.");
-                        return context.Response.WriteAsync(JsonConvert.SerializeObject(result));
-                    }
-                };
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = true,
                     ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero,
                     ValidIssuer = configuration["JwtSettings:Issuer"],
                     ValidAudience = configuration["JwtSettings:Audience"]
                 };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+                        Console.WriteLine($"[JWT] Token Received: {token}");
+                        return Task.CompletedTask;
+                    },
+                    OnTokenValidated = context =>
+                    {
+                        Console.WriteLine("[JWT] Token validation successful.");
+                        return Task.CompletedTask;
+                    },
+                    OnAuthenticationFailed = context =>
+                    {
+                        Console.WriteLine($"[JWT] Authentication failed: {context.Exception.Message}");
+                        return Task.CompletedTask;
+                    },
+                    OnChallenge = context =>
+                    {
+                        Console.WriteLine("[JWT] Unauthorized request.");
+                        context.HandleResponse();
+                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                        context.Response.ContentType = "application/json";
+                        var result = BaseResponse<string>.UnauthorizeResponse("You must log in before performing this action.");
+                        return context.Response.WriteAsync(JsonConvert.SerializeObject(result));
+                    }
+                };
             });
         }
+
+
         public static void AddSwaggerGen(this IServiceCollection services)
         {
             services.AddSwaggerGen(option =>
             {
-                option.EnableAnnotations();
-                option.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme,
-                    securityScheme: new OpenApiSecurityScheme
+                // Chỉ đăng ký SwaggerDoc 1 lần
+                if (!option.SwaggerGeneratorOptions.SwaggerDocs.ContainsKey("v1"))
+                {
+                    option.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Title = "HealthyCareAssistant API",
+                        Version = "v1",
+                        Description = "API documentation for HealthyCareAssistant"
+                    });
+                }
+
+                // Kiểm tra trước khi thêm "Bearer" vào SecurityDefinition
+                if (!option.SchemaGeneratorOptions.SchemaFilters.Any(x => x.ToString() == "Bearer"))
+                {
+                    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                     {
                         Name = "Authorization",
-                        Description = "Enter Bearer Authorization: `Bearer Generated-JWT-Token`",
+                        Type = SecuritySchemeType.Http,
+                        Scheme = "Bearer",
+                        BearerFormat = "JWT",
                         In = ParameterLocation.Header,
-                        Type = SecuritySchemeType.ApiKey,
-                        Scheme = "Bearer"
+                        Description = "Enter 'Bearer' followed by a space and your JWT token."
                     });
-                option.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = JwtBearerDefaults.AuthenticationScheme
-                            }
-                        },new string[]{}
-                    }
+                }
 
-                });
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                new string[] {}
+            }
+        });
             });
         }
+
+
+
+
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -127,6 +170,7 @@ namespace HealthyCareAssistant.API
             services.AddScoped<IGenericRepository<MedicineCabinetDrug>, GenericRepository<MedicineCabinetDrug>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDrugService, DrugService>();
+            services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IMedicineCabinetService, MedicineCabinetService>();
         }
     }

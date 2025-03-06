@@ -8,6 +8,11 @@
     ".NETCoreApp,Version=v8.0": {
       "HealthyCareAssistant/1.0.0": {
         "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2",
           "HealthyCareAssistant.Contract.Service": "1.0.0",
           "HealthyCareAssistant.ModelViews": "1.0.0",
           "HealthyCareAssistant.Repo": "1.0.0",
@@ -62,6 +67,14 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.5.0": {
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.5.0.6119"
+          }
+        }
+      },
       "EntityFramework/6.1.0": {
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {
@@ -74,11 +87,81 @@
           }
         }
       },
+      "FluentEmail.Core/3.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentEmail.Core.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
+      "FluentEmail.Mailgun/3.0.2": {
+        "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentEmail.Mailgun.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
+      "FluentEmail.Razor/3.0.2": {
+        "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "RazorLight": "2.0.0-rc.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentEmail.Razor.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
+      "FluentEmail.SendGrid/3.0.2": {
+        "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "SendGrid": "9.22.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentEmail.SendGrid.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
+      "FluentEmail.Smtp/3.0.2": {
+        "dependencies": {
+          "FluentEmail.Core": "3.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentEmail.Smtp.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "MailKit/4.10.0": {
+        "dependencies": {
+          "MimeKit": "4.10.0",
+          "System.Formats.Asn1": "8.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "assemblyVersion": "4.10.0.0",
+            "fileVersion": "4.10.0.0"
           }
         }
       },
@@ -169,6 +252,26 @@
           "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
             "assemblyVersion": "8.0.13.0",
             "fileVersion": "8.0.1325.6610"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "5.0.0",
+          "Microsoft.CodeAnalysis.Razor": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.52605"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Razor.Language/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.52605"
           }
         }
       },
@@ -349,6 +452,19 @@
           },
           "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.Razor/5.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "5.0.0",
+          "Microsoft.CodeAnalysis.CSharp": "4.5.0",
+          "Microsoft.CodeAnalysis.Common": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.52605"
           }
         }
       },
@@ -596,6 +712,14 @@
           "Microsoft.Extensions.Primitives": "8.0.0"
         }
       },
+      "Microsoft.Extensions.FileProviders.Physical/5.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
+          "Microsoft.Extensions.FileSystemGlobbing": "5.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/5.0.0": {},
       "Microsoft.Extensions.Identity.Core/8.0.13": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "8.0.13",
@@ -789,6 +913,19 @@
           }
         }
       },
+      "MimeKit/4.10.0": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.5.0",
+          "System.Formats.Asn1": "8.0.2",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "assemblyVersion": "4.10.0.0",
+            "fileVersion": "4.10.0.0"
+          }
+        }
+      },
       "Mono.TextTemplating/2.2.1": {
         "dependencies": {
           "System.CodeDom": "4.4.0"
@@ -805,6 +942,45 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "RazorLight/2.0.0-rc.3": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "5.0.0",
+          "Microsoft.CodeAnalysis.Razor": "5.0.0",
+          "Microsoft.Extensions.Caching.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Caching.Memory": "8.0.1",
+          "Microsoft.Extensions.DependencyInjection": "9.0.0",
+          "Microsoft.Extensions.DependencyModel": "8.0.2",
+          "Microsoft.Extensions.FileProviders.Physical": "5.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0",
+          "System.Buffers": "4.6.0"
+        },
+        "runtime": {
+          "lib/net5.0/RazorLight.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "SendGrid/9.22.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "starkbank-ecdsa": "1.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.22.0.0",
+            "fileVersion": "9.22.0.0"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.2.0": {
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -985,7 +1161,14 @@
           }
         }
       },
-      "System.Formats.Asn1/8.0.2": {},
+      "System.Formats.Asn1/8.0.2": {
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1325.6609"
+          }
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/8.4.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.4.0",
@@ -1042,6 +1225,22 @@
       "System.Security.Cryptography.Cng/5.0.0": {
         "dependencies": {
           "System.Formats.Asn1": "8.0.2"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
         }
       },
       "System.Security.Cryptography.ProtectedData/6.0.0": {
@@ -1103,6 +1302,11 @@
       },
       "HealthyCareAssistant.Contact.Repo/1.0.0": {
         "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2",
           "HealthyCareAssistant.Core": "1.0.0",
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
@@ -1118,6 +1322,11 @@
       },
       "HealthyCareAssistant.Contract.Service/1.0.0": {
         "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2",
           "HealthyCareAssistant.Contact.Repo": "1.0.0",
           "HealthyCareAssistant.ModelViews": "1.0.0"
         },
@@ -1129,6 +1338,13 @@
         }
       },
       "HealthyCareAssistant.Core/1.0.0": {
+        "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2"
+        },
         "runtime": {
           "HealthyCareAssistant.Core.dll": {
             "assemblyVersion": "1.0.0",
@@ -1138,6 +1354,12 @@
       },
       "HealthyCareAssistant.ModelViews/1.0.0": {
         "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2",
+          "HealthyCareAssistant.Contact.Repo": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13",
           "Microsoft.Extensions.DependencyInjection": "9.0.0"
@@ -1151,6 +1373,11 @@
       },
       "HealthyCareAssistant.Repo/1.0.0": {
         "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2",
           "HealthyCareAssistant.Contact.Repo": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13"
@@ -1164,11 +1391,19 @@
       },
       "HealthyCareAssistant.Service/1.0.0": {
         "dependencies": {
+          "FluentEmail.Core": "3.0.2",
+          "FluentEmail.Mailgun": "3.0.2",
+          "FluentEmail.Razor": "3.0.2",
+          "FluentEmail.SendGrid": "3.0.2",
+          "FluentEmail.Smtp": "3.0.2",
           "HealthyCareAssistant.Contact.Repo": "1.0.0",
           "HealthyCareAssistant.Contract.Service": "1.0.0",
+          "HealthyCareAssistant.ModelViews": "1.0.0",
           "HealthyCareAssistant.Repo": "1.0.0",
+          "MailKit": "4.10.0",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
           "Microsoft.IdentityModel.Tokens": "8.4.0",
+          "MimeKit": "4.10.0",
           "System.IdentityModel.Tokens.Jwt": "8.4.0"
         },
         "runtime": {
@@ -1200,6 +1435,13 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
+    "BouncyCastle.Cryptography/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rc7vRCq/KD3GtIwSgRtjanGaBwTb9nLenFDZnEcauWlssuuEoxcbMfWA3QWWho6QDMSOSkWjs657McdHzEtEcw==",
+      "path": "bouncycastle.cryptography/2.5.0",
+      "hashPath": "bouncycastle.cryptography.2.5.0.nupkg.sha512"
+    },
     "EntityFramework/6.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1207,12 +1449,54 @@
       "path": "entityframework/6.1.0",
       "hashPath": "entityframework.6.1.0.nupkg.sha512"
     },
+    "FluentEmail.Core/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uQFFbJgMhhCFUti7pfMi429fMNi7fLGMj+7uDtD7POlQzLxlhXJ6tmt4Y1SI51sZsA36GO5b7+o29eY/dKiICQ==",
+      "path": "fluentemail.core/3.0.2",
+      "hashPath": "fluentemail.core.3.0.2.nupkg.sha512"
+    },
+    "FluentEmail.Mailgun/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9nC9jhlNWQgqhWFpi1h4KYDqP26adAMrGxulP/jVlDa1jy0lyk5Xanu+apXR3YwfVEkXW1QNzlSEjTu94KJ+Ew==",
+      "path": "fluentemail.mailgun/3.0.2",
+      "hashPath": "fluentemail.mailgun.3.0.2.nupkg.sha512"
+    },
+    "FluentEmail.Razor/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XdZS2n9jjrx2qzyBGvgstYFIm2laYo1j7YMUZI0rylZhpZHIic3taWqe78xF5dcsXpJvucmxRCshhF6hl02Dmw==",
+      "path": "fluentemail.razor/3.0.2",
+      "hashPath": "fluentemail.razor.3.0.2.nupkg.sha512"
+    },
+    "FluentEmail.SendGrid/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R2cbz3C2s/bxle1X5aHzz6/vpI1gflD7j78I78wFETUq7wrT4hIhTeOABK7rr7Lca3irnGdXCx2S5jgXiPiWcw==",
+      "path": "fluentemail.sendgrid/3.0.2",
+      "hashPath": "fluentemail.sendgrid.3.0.2.nupkg.sha512"
+    },
+    "FluentEmail.Smtp/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y5pZKS/mXSl7D5WJWecvfo1kpIMDc6U0VRU6wRbE9wEv2IqMH3cQXa/97Pwi+m31COepIqc6dMhGMtAJ2Qh7rw==",
+      "path": "fluentemail.smtp/3.0.2",
+      "hashPath": "fluentemail.smtp.3.0.2.nupkg.sha512"
+    },
     "Humanizer.Core/2.14.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "MailKit/4.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C6gwHQGHru2x/g1pzk0NXn5BIv0qoeKbSgb4BIFfWl4OjTZOEajSIR+O6i4WElsuJI8Z77LGr4rH5nVjypyvDQ==",
+      "path": "mailkit/4.10.0",
+      "hashPath": "mailkit.4.10.0.nupkg.sha512"
     },
     "Microsoft.AspNet.Identity.Core/2.2.4": {
       "type": "package",
@@ -1284,6 +1568,20 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/8.0.13",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.8.0.13.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+vVXw0oVVu5dnwseBxZFVeYZ0qPJTI03DTdghRKrcK+QhTM3Nu8orukKqdYObsI4mWZADE8wTILuYR5CowJr+w==",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/5.0.0",
+      "hashPath": "microsoft.aspnetcore.mvc.razor.extensions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Razor.Language/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6yOBBASGfXMx1fY6hyjvG+oM3eR8vovIehDdEZW7jAV4gKlY4xuAvTm7Iw1fEq7KPunh2VrJwo7oRK1XxUn1OQ==",
+      "path": "microsoft.aspnetcore.razor.language/5.0.0",
+      "hashPath": "microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1325,6 +1623,13 @@
       "sha512": "sha512-h74wTpmGOp4yS4hj+EvNzEiPgg/KVs2wmSfTZ81upJZOtPkJsVkgfsgtxxqmAeapjT/vLKfmYV0bS8n5MNVP+g==",
       "path": "microsoft.codeanalysis.csharp.workspaces/4.5.0",
       "hashPath": "microsoft.codeanalysis.csharp.workspaces.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Razor/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s4u/6z/MQ35y/egrXf4WgJlUZf5GGvuba9mZ700dH4XxLBrA9Fw9kFZ8uymoATry7hwz5owvFhBVo+2VnoiGRg==",
+      "path": "microsoft.codeanalysis.razor/5.0.0",
+      "hashPath": "microsoft.codeanalysis.razor.5.0.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Workspaces.Common/4.5.0": {
       "type": "package",
@@ -1451,6 +1756,20 @@
       "sha512": "sha512-ZbaMlhJlpisjuWbvXr4LdAst/1XxH3vZ6A0BsgTphZ2L4PGuxRLz7Jr/S7mkAAnOn78Vu0fKhEgNF5JO3zfjqQ==",
       "path": "microsoft.extensions.fileproviders.abstractions/8.0.0",
       "hashPath": "microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Physical/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1rkd8UO2qf21biwO7X0hL9uHP7vtfmdv/NLvKgCRHkdz1XnW8zVQJXyEYiN68WYpExgtVWn55QF0qBzgfh1mGg==",
+      "path": "microsoft.extensions.fileproviders.physical/5.0.0",
+      "hashPath": "microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ArliS8lGk8sWRtrWpqI8yUVYJpRruPjCDT+EIjrgkA/AAPRctlAkRISVZ334chAKktTLzD1+PK8F5IZpGedSqA==",
+      "path": "microsoft.extensions.filesystemglobbing/5.0.0",
+      "hashPath": "microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Identity.Core/8.0.13": {
       "type": "package",
@@ -1585,6 +1904,13 @@
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
     },
+    "MimeKit/4.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GQofI17cH55XSh109hJmHaYMtSFqTX/eUek3UcV7hTnYayAIXZ6eHlv345tfdc+bQ/BrEnYOSZVzx9I3wpvvpg==",
+      "path": "mimekit/4.10.0",
+      "hashPath": "mimekit.4.10.0.nupkg.sha512"
+    },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
       "serviceable": true,
@@ -1598,6 +1924,27 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "RazorLight/2.0.0-rc.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2tzNTdXCCMesPQhIdL0x5QS2BwDvaLWVQLNcAv153gnWzUzw8vYETIZBp/Hx591BHPg9itiT8lwVx94XfAnCNA==",
+      "path": "razorlight/2.0.0-rc.3",
+      "hashPath": "razorlight.2.0.0-rc.3.nupkg.sha512"
+    },
+    "SendGrid/9.22.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5vXkfOqPhi6W5/tEmRcTVJakT69SXiCGqVRERYF4ZAtJ4alylzlOqin6w8Xrog0Brf3RL+4BKXI+CwKbFLtteA==",
+      "path": "sendgrid/9.22.0",
+      "hashPath": "sendgrid.9.22.0.nupkg.sha512"
+    },
+    "starkbank-ecdsa/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hP53QPYOOEIR44EK9phz+DYliM6DEieDZxpb8GZzE+++qyrWqUscKcyHCC6L9yu/ehllYtqxtT4qrjWDsuQlUQ==",
+      "path": "starkbank-ecdsa/1.2.0",
+      "hashPath": "starkbank-ecdsa.1.2.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.6.2": {
       "type": "package",
@@ -1801,6 +2148,13 @@
       "sha512": "sha512-jIMXsKn94T9JY7PvPq/tMfqa6GAaHpElRDpmG+SuL+D3+sTw2M8VhnibKnN8Tq+4JqbPJ/f+BwtLeDMEnzAvRg==",
       "path": "system.security.cryptography.cng/5.0.0",
       "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
+      "path": "system.security.cryptography.pkcs/8.0.1",
+      "hashPath": "system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/6.0.0": {
       "type": "package",

@@ -287,8 +287,38 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetTopCompaniesByDrugs",
+    "RelativePath": "api/drugs/top-companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetTopNewRegisteredDrugs",
+    "RelativePath": "api/drugs/top-new-registered",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetTopSearchedDrugs",
     "RelativePath": "api/drugs/top-searched",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetTopWithdrawnDrugs",
+    "RelativePath": "api/drugs/top-withdrawn",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

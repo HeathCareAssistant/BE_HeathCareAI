@@ -214,16 +214,12 @@ namespace HealthyCareAssistant.Service.Service
             }
         }
 
-        public async Task<bool> UpdateDrugAsync(string id, DrugModelView updatedDrug)
+        public async Task<bool> UpdateDrugAsync(string id, UpdateDrugModelView updatedDrug)
         {
             var drug = await _drugRepo.GetByIdAsync(id);
             if (drug == null) return false;
 
             drug.TenThuoc = updatedDrug.TenThuoc;
-            drug.DotPheDuyet = updatedDrug.DotPheDuyet;
-            drug.SoQuyetDinh = updatedDrug.SoQuyetDinh;
-            drug.PheDuyet = updatedDrug.PheDuyet;
-            drug.HieuLuc = updatedDrug.HieuLuc;
             drug.HoatChat = updatedDrug.HoatChat;
             drug.PhanLoai = updatedDrug.PhanLoai;
             drug.NongDo = updatedDrug.NongDo;
@@ -243,19 +239,20 @@ namespace HealthyCareAssistant.Service.Service
             drug.HuongDanSuDung = updatedDrug.HuongDanSuDung;
             drug.HuongDanSuDungBn = updatedDrug.HuongDanSuDungBn;
             drug.NhomThuoc = updatedDrug.NhomThuoc;
-            drug.IsHide = updatedDrug.IsHide;
             drug.Rate = updatedDrug.Rate;
             drug.RutSdk = updatedDrug.RutSdk;
             drug.FileName = updatedDrug.FileName;
             drug.State = updatedDrug.State;
             drug.Images = updatedDrug.Images;
-            drug.SearchCount = updatedDrug.SearchCount;
+
+            // Cập nhật thời gian
             drug.UpdatedAt = DateTime.UtcNow;
 
             await _drugRepo.UpdateAsync(drug);
             await _unitOfWork.SaveAsync();
             return true;
         }
+
 
         public async Task<IEnumerable<DrugModelView>> GetTopNewRegisteredDrugsAsync()
         {

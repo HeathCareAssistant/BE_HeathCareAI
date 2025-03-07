@@ -107,11 +107,12 @@ namespace HealthyCareAssistant.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] DrugModelView model)
+        public async Task<IActionResult> Update(string id, [FromBody] UpdateDrugModelView model)
         {
             var result = await _drugService.UpdateDrugAsync(id, model);
             return result ? Ok(new { message = "Updated successfully" }) : NotFound();
         }
+
 
         [HttpGet("top-new-registered")]
         public async Task<IActionResult> GetTopNewRegisteredDrugs()

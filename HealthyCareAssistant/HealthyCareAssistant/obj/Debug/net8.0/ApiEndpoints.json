@@ -173,7 +173,7 @@
       },
       {
         "Name": "model",
-        "Type": "HealthyCareAssistant.ModelViews.DrugModelViews.DrugModelView",
+        "Type": "HealthyCareAssistant.ModelViews.DrugModelViews.UpdateDrugModelView",
         "IsRequired": true
       }
     ],

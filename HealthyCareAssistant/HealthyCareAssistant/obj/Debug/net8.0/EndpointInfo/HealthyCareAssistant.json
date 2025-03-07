@@ -293,17 +293,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DrugModelView"
+                "$ref": "#/components/schemas/UpdateDrugModelView"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DrugModelView"
+                "$ref": "#/components/schemas/UpdateDrugModelView"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DrugModelView"
+                "$ref": "#/components/schemas/UpdateDrugModelView"
               }
             }
           }
@@ -1183,6 +1183,115 @@
             "nullable": true
           },
           "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDrugModelView": {
+        "type": "object",
+        "properties": {
+          "tenThuoc": {
+            "type": "string",
+            "nullable": true
+          },
+          "hoatChat": {
+            "type": "string",
+            "nullable": true
+          },
+          "phanLoai": {
+            "type": "string",
+            "nullable": true
+          },
+          "nongDo": {
+            "type": "string",
+            "nullable": true
+          },
+          "taDuoc": {
+            "type": "string",
+            "nullable": true
+          },
+          "baoChe": {
+            "type": "string",
+            "nullable": true
+          },
+          "dongGoi": {
+            "type": "string",
+            "nullable": true
+          },
+          "tieuChuan": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuoiTho": {
+            "type": "string",
+            "nullable": true
+          },
+          "congTySx": {
+            "type": "string",
+            "nullable": true
+          },
+          "congTySxCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuocSx": {
+            "type": "string",
+            "nullable": true
+          },
+          "diaChiSx": {
+            "type": "string",
+            "nullable": true
+          },
+          "congTyDk": {
+            "type": "string",
+            "nullable": true
+          },
+          "nuocDk": {
+            "type": "string",
+            "nullable": true
+          },
+          "diaChiDk": {
+            "type": "string",
+            "nullable": true
+          },
+          "giaKeKhai": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "huongDanSuDung": {
+            "type": "string",
+            "nullable": true
+          },
+          "huongDanSuDungBn": {
+            "type": "string",
+            "nullable": true
+          },
+          "nhomThuoc": {
+            "type": "string",
+            "nullable": true
+          },
+          "rate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "rutSdk": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "images": {
             "type": "string",
             "nullable": true
           }

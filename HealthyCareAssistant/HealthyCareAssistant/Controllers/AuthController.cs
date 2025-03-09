@@ -1,10 +1,13 @@
-﻿using HealthyCareAssistant.Contact.Repo.Entity;
+﻿using FirebaseAdmin.Auth;
+using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.Core.Store;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
 using HealthyCareAssistant.Service.Config;
+using HealthyCareAssistant.Service.Service;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,7 +16,7 @@ using System.Text;
 
 namespace HealthyCareAssistant.Controllers
 {
-    [Route("api/Auth")]
+    [Route("api/auth")]
     [ApiController]
     public class authController : ControllerBase
     {
@@ -21,13 +24,14 @@ namespace HealthyCareAssistant.Controllers
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IGenericRepository<User> _userRepo;
-
-        public authController(IUserService userService, IConfiguration configuration, IUnitOfWork unitOfWork, IGenericRepository<User> userRepo)
+        private readonly AuthService _authService;
+        public authController(IUserService userService, IConfiguration configuration, IUnitOfWork unitOfWork, IGenericRepository<User> userRepo, AuthService authService)
         {
             _userService = userService;
             _configuration = configuration;
             _unitOfWork = unitOfWork;
             _userRepo = userRepo;
+            _authService = authService;
         }
 
         [HttpPost("register")]
@@ -65,8 +69,32 @@ namespace HealthyCareAssistant.Controllers
             });
         }
 
+        [HttpPost("google-login")]
+        public async Task<IActionResult> GoogleLogin([FromBody] TokenRqGoogleLogin model)
+        {
+            var token = await _userService.LoginWithGoogleAsync(model.IdToken);
 
+            if (string.IsNullOrEmpty(token))
+            {
+                return Unauthorized(new { message = "Token không hợp lệ" });
+            }
 
+            return Ok(new { message = "Đăng nhập thành công", token });
+        }
+
+        [HttpPost("generate-token")]
+        public async Task<IActionResult> GenerateToken([FromBody] LoginRequest request)
+        {
+            try
+            {
+                var idToken = await _authService.SignInWithEmailAndPasswordAsync(request.Email, request.Password);
+                return Ok(new { idToken });
+            }
+            catch (Exception ex)
+            {
+                return Unauthorized(new { message = "Lỗi đăng nhập Firebase", error = ex.Message });
+            }
+        }
         //[HttpPost("logout")]
         //[Authorize]
         //public IActionResult Logout()

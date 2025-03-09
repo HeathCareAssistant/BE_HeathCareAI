@@ -413,6 +413,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "request",
         "Type": "HealthyCareAssistant.ModelViews.MedicineCabinetModelViews.CreateCabinetWithDrugsRequest",
         "IsRequired": true
@@ -450,6 +455,112 @@
     "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
     "Method": "GetUserCabinets",
     "RelativePath": "api/medicine-cabinet/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "GetReminderDetail",
+    "RelativePath": "api/reminders/{reminderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "DeleteReminder",
+    "RelativePath": "api/reminders/{reminderId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "UpdateReminder",
+    "RelativePath": "api/reminders/{reminderId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.ModelViews.ReminderModelViews.UpdateReminderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "ToggleReminderStatus",
+    "RelativePath": "api/reminders/{reminderId}/toggle-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "CreateReminder",
+    "RelativePath": "api/reminders/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.ModelViews.ReminderModelViews.CreateReminderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "GetAllRemindersByUser",
+    "RelativePath": "api/reminders/user/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

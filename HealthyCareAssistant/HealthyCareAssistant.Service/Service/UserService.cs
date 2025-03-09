@@ -119,26 +119,30 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<(IEnumerable<UserModelView> users, int totalElement, int totalPage)> GetAllUsersPaginatedAsync(int page, int pageSize)
         {
-            var totalElement = await _userRepo.Entities.CountAsync(); 
+            var totalElement = await _userRepo.Entities.CountAsync();
             var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
 
             var users = await _userRepo.Entities
-                .OrderBy(d => d.UserId) 
+                .Include(u => u.Role) // 🔥 Include bảng Role để lấy RoleName
+                .OrderBy(u => u.UserId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .Select(d => new UserModelView
+                .Select(u => new UserModelView
                 {
-                    UserId = d.UserId,
-                    Name = d.Name,
-                    Email = d.Email,
-                    Fcmtoken = d.Fcmtoken,
-                    PhoneNumber = d.PhoneNumber,
-                    CreatedAt = d.CreatedAt,
+                    UserId = u.UserId,
+                    Name = u.Name,
+                    Email = u.Email,
+                    Fcmtoken = u.Fcmtoken,
+                    PhoneNumber = u.PhoneNumber,
+                    Role = u.Role != null ? u.Role.RoleName : null,
+                    CreatedAt = u.CreatedAt,
+                    UpdatedAt = u.UpdatedAt
                 })
                 .ToListAsync();
 
             return (users, totalElement, totalPage);
         }
+
 
 
 

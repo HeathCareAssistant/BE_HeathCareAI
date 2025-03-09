@@ -10,11 +10,6 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\EntityFramework.SqlServer.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\EntityFramework.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\FluentEmail.Core.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\FluentEmail.Mailgun.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\FluentEmail.Razor.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\FluentEmail.SendGrid.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\FluentEmail.Smtp.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Humanizer.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\MailKit.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
@@ -23,14 +18,11 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
@@ -61,9 +53,6 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\MimeKit.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Mono.TextTemplating.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Newtonsoft.Json.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\RazorLight.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\SendGrid.dll
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\StarkbankEcdsa.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll

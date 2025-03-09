@@ -1,12 +1,7 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
-using HealthyCareAssistant.Core.Base;
 using HealthyCareAssistant.ModelViews.AuthModelViews;
-using HealthyCareAssistant.ModelViews.DrugModelViews;
-using HealthyCareAssistant.ModelViews.UserModelViews;
-using HealthyCareAssistant.Repo.Context;
-
 using HealthyCareAssistant.ModelViews.UserModelViews;
 using HealthyCareAssistant.Repo.Context;
 using HealthyCareAssistant.Service.Config;
@@ -14,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
+using MailKit;
+using HealthyCareAssistant.ModelViews.MailModelViews;
 
 namespace HealthyCareAssistant.Service.Service
 {
@@ -22,17 +19,20 @@ namespace HealthyCareAssistant.Service.Service
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
         private readonly IGenericRepository<User> _userRepo;
-        private readonly IEmailService _emailService;
         private readonly ILogger<UserService> _logger;
         private readonly HealthCareAssistantContext _context;
+        private readonly Contract.Service.Interface.IMailService _mailService;
+        private readonly IOTPService _otpService;
 
-        public UserService(IUnitOfWork unitOfWork, IConfiguration configuration, IGenericRepository<User> userRepo, IEmailService emailService, ILogger<UserService> logger)
+        public UserService(IUnitOfWork unitOfWork, IConfiguration configuration, IGenericRepository<User> userRepo, ILogger<UserService> logger, Contract.Service.Interface.IMailService mailService, IOTPService otpService)
         {
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork), "UnitOfWork không được null.");
             _configuration = configuration;
             _userRepo = userRepo ?? throw new ArgumentNullException(nameof(userRepo), "User repository không được null.");
-            _emailService = emailService;
+
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger không được null.");
+            _mailService = mailService;
+            _otpService = otpService;
 
         }
 
@@ -231,60 +231,57 @@ namespace HealthyCareAssistant.Service.Service
         }
         public async Task<bool> ForgotPasswordAsync(string email)
         {
+            Console.WriteLine($"[ForgotPassword] Checking email: {email}");
+
             var user = await _userRepo.Entities.FirstOrDefaultAsync(u => u.Email == email);
             if (user == null)
             {
+                Console.WriteLine($"[ForgotPassword] Email {email} not found in database.");
                 return false;
             }
 
-            // 🔹 Generate OTP
-            var otp = GenerateOtp();
-            user.Otp = otp;
-            await _userRepo.UpdateAsync(user);
-            await _unitOfWork.SaveAsync();
+            string otp = _otpService.GenerateOtp();
+            await _otpService.StoreOtpAsync(email, otp);
 
-            // 🔹 Send OTP via email using FluentEmail
-            var emailMetadata = new EmailMetadata(
-                email,
-                "Password Reset OTP",
-                $"Your OTP code is: <b>{otp}</b>. This code will expire in 10 minutes."
-            );
+            // Kiểm tra nếu `user.Name` bị null
+            string userName = string.IsNullOrWhiteSpace(user.Name) ? "User" : user.Name;
 
-            return await _emailService.SendEmailAsync(emailMetadata);
+            var mailData = new EmailData
+            {
+                EmailToId = email,
+                EmailToName = userName,
+                EmailSubject = "Mã OTP đặt lại mật khẩu",
+                EmailBody = $"Mã OTP của bạn là: <b>{otp}</b>. Mã này có hiệu lực trong 5 phút."
+            };
+
+            Console.WriteLine($"[ForgotPassword] Preparing to send email to: {mailData.EmailToId} with name: {mailData.EmailToName}");
+
+            return await _mailService.SendEmailAsync(mailData);
         }
 
 
         public async Task<bool> ResetPasswordAsync(ResetPasswordModel model)
         {
             var user = await _userRepo.Entities.FirstOrDefaultAsync(u => u.Email == model.Email);
-            if (user == null || user.Otp != model.Otp)
+            if (user == null)
             {
-                Console.WriteLine("[ResetPassword] OTP is invalid or user not found.");
+                Console.WriteLine("[ResetPassword] User not found.");
+                return false;
+            }
+
+            bool isOtpValid = await _otpService.ValidateOtpAsync(model.Email, model.Otp);
+            if (!isOtpValid)
+            {
+                Console.WriteLine("[ResetPassword] OTP is invalid.");
                 return false;
             }
 
             user.PasswordHash = HashHelper.ComputeSha256Hash(model.NewPassword);
-            user.Otp = null; // Xóa OTP sau khi đặt lại mật khẩu
             await _userRepo.UpdateAsync(user);
             await _unitOfWork.SaveAsync();
 
+            Console.WriteLine("[ResetPassword] Password reset successful.");
             return true;
-        }
-
-
-
-        public string GenerateOtp()
-        {
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                var byteArray = new byte[4];
-                rng.GetBytes(byteArray);
-                var otp = BitConverter.ToUInt32(byteArray, 0) % 1000000; // Giới hạn OTP trong 6 chữ số
-                var otpString = otp.ToString("D6"); // Định dạng luôn là 6 chữ số
-
-                Console.WriteLine($"[OTP] Generated OTP: {otpString}");
-                return otpString;
-            }
         }
 
 

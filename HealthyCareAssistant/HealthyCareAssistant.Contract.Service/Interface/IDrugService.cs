@@ -22,6 +22,9 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<IEnumerable<Drug>> GetRelatedByCompanyAsync(string id);
         Task<IEnumerable<Drug>> GetTopSearchedDrugsAsync();
         Task IncrementSearchCountAsync(string id);
-        Task<bool> UpdateDrugAsync(string id, DrugModelView drug);
+        Task<bool> UpdateDrugAsync(string id, UpdateDrugModelView updatedDrug);
+        Task<IEnumerable<DrugModelView>> GetTopNewRegisteredDrugsAsync();
+        Task<IEnumerable<DrugModelView>> GetTopWithdrawnDrugsAsync();
+        Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync();
     }
 }

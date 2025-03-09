@@ -23,9 +23,9 @@ namespace HealthyCareAssistant.Controllers
 
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateCabinet([FromBody] CreateCabinetWithDrugsRequest request)
+        public async Task<IActionResult> CreateCabinet(int userId, [FromBody] CreateCabinetWithDrugsRequest request)
         {
-            return Ok(await _cabinetService.CreateCabinetWithDrugsAsync(request));
+            return Ok(await _cabinetService.CreateCabinetWithDrugsAsync(userId, request));
         }
 
         [HttpGet("user/{userId}")]

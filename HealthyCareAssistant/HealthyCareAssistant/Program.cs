@@ -1,11 +1,9 @@
 ﻿using HealthyCareAssistant.API;
 using HealthyCareAssistant.Middleware;
 using System.Net;
-using FluentEmail.Core;
-using FluentEmail.Smtp;
-using FluentEmail.Razor;
 using System.Net.Mail;
 using Microsoft.Extensions.DependencyInjection;
+using HealthyCareAssistant.ModelViews.MailModelViews;
 namespace HealthyCareAssistant
 {
     public class Program
@@ -20,6 +18,7 @@ namespace HealthyCareAssistant
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
+            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("EmailSettings"));
             builder.Services.AddControllers();
 
             // Đăng ký các dịch vụ cần thiết
@@ -27,27 +26,24 @@ namespace HealthyCareAssistant
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddFluentEmail("a.bellybabe@gmail.com")
-                    .AddSmtpSender("smtp.mailserver.com", 587, "a.bellybabe@gmail.com", "Nhom1passed");
+           
             //builder.Services.AddSwaggerGen();
 
             // Cấu hình CORS cho phép tất cả các nguồn gốc
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowLocalhost",
+                options.AddPolicy("AllowAll",
                     policy =>
                     {
-                        policy.WithOrigins("http://localhost:5173") 
+                        policy.AllowAnyOrigin()
                               .AllowAnyMethod()
-                              .AllowAnyHeader()
-                              .AllowCredentials(); 
+                              .AllowAnyHeader();
                     });
             });
 
-            
 
             var app = builder.Build();
-            app.UseCors("AllowLocalhost");
+            app.UseCors("AllowAll");
             app.Use(async (context, next) =>
             {
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();

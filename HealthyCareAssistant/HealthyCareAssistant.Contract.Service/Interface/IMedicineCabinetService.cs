@@ -10,7 +10,7 @@ namespace HealthyCareAssistant.Contract.Service.Interface
     public interface IMedicineCabinetService
     {
         Task<string> CreateCabinetAsync(int userId, string cabinetName, string description);
-        Task<string> CreateCabinetWithDrugsAsync(CreateCabinetWithDrugsRequest request);
+        Task<string> CreateCabinetWithDrugsAsync(int userId, CreateCabinetWithDrugsRequest request);
         Task<IEnumerable<MedicineCabinetView>> GetUserCabinetsAsync(int userId);
         Task<string> UpdateCabinetAsync(int cabinetId, string cabinetName, string description);
         Task<string> UpdateCabinetDrugsAsync(int cabinetId, List<string> finalDrugIds);

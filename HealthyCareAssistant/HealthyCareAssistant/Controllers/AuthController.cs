@@ -13,7 +13,7 @@ using System.Text;
 
 namespace HealthyCareAssistant.Controllers
 {
-    [Route("api/auth")]
+    [Route("api/Auth")]
     [ApiController]
     public class authController : ControllerBase
     {
@@ -128,24 +128,19 @@ namespace HealthyCareAssistant.Controllers
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordModel model)
         {
             var result = await _userService.ForgotPasswordAsync(model.Email);
-            if (!result)
-            {
-                return NotFound(new { message = "Email không tồn tại trong hệ thống" });
-            }
-            return Ok(new { message = "OTP đã được gửi qua email" });
+            if (!result) return NotFound(new { message = "Email không tồn tại trong hệ thống" });
+
+            return Ok(new { message = "Mã OTP đã được gửi qua email" });
         }
 
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
         {
             var result = await _userService.ResetPasswordAsync(model);
-            if (!result)
-            {
-                return BadRequest(new { message = "OTP không hợp lệ hoặc mật khẩu không khớp" });
-            }
+            if (!result) return BadRequest(new { message = "OTP không hợp lệ hoặc mật khẩu không khớp" });
+
             return Ok(new { message = "Mật khẩu đã được đặt lại thành công" });
         }
-
 
 
         [HttpGet("me")]

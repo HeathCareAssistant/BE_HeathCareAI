@@ -107,10 +107,32 @@ namespace HealthyCareAssistant.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] DrugModelView model)
+        public async Task<IActionResult> Update(string id, [FromBody] UpdateDrugModelView model)
         {
             var result = await _drugService.UpdateDrugAsync(id, model);
             return result ? Ok(new { message = "Updated successfully" }) : NotFound();
+        }
+
+
+        [HttpGet("top-new-registered")]
+        public async Task<IActionResult> GetTopNewRegisteredDrugs()
+        {
+            var drugs = await _drugService.GetTopNewRegisteredDrugsAsync();
+            return Ok(drugs);
+        }
+
+        [HttpGet("top-withdrawn")]
+        public async Task<IActionResult> GetTopWithdrawnDrugs()
+        {
+            var drugs = await _drugService.GetTopWithdrawnDrugsAsync();
+            return Ok(drugs);
+        }
+
+        [HttpGet("top-companies")]
+        public async Task<IActionResult> GetTopCompaniesByDrugs()
+        {
+            var companies = await _drugService.GetTopCompaniesByDrugsAsync();
+            return Ok(companies);
         }
     }
 }

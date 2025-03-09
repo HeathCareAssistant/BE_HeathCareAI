@@ -214,16 +214,12 @@ namespace HealthyCareAssistant.Service.Service
             }
         }
 
-        public async Task<bool> UpdateDrugAsync(string id, DrugModelView updatedDrug)
+        public async Task<bool> UpdateDrugAsync(string id, UpdateDrugModelView updatedDrug)
         {
             var drug = await _drugRepo.GetByIdAsync(id);
             if (drug == null) return false;
 
             drug.TenThuoc = updatedDrug.TenThuoc;
-            drug.DotPheDuyet = updatedDrug.DotPheDuyet;
-            drug.SoQuyetDinh = updatedDrug.SoQuyetDinh;
-            drug.PheDuyet = updatedDrug.PheDuyet;
-            drug.HieuLuc = updatedDrug.HieuLuc;
             drug.HoatChat = updatedDrug.HoatChat;
             drug.PhanLoai = updatedDrug.PhanLoai;
             drug.NongDo = updatedDrug.NongDo;
@@ -243,18 +239,128 @@ namespace HealthyCareAssistant.Service.Service
             drug.HuongDanSuDung = updatedDrug.HuongDanSuDung;
             drug.HuongDanSuDungBn = updatedDrug.HuongDanSuDungBn;
             drug.NhomThuoc = updatedDrug.NhomThuoc;
-            drug.IsHide = updatedDrug.IsHide;
             drug.Rate = updatedDrug.Rate;
             drug.RutSdk = updatedDrug.RutSdk;
             drug.FileName = updatedDrug.FileName;
             drug.State = updatedDrug.State;
             drug.Images = updatedDrug.Images;
-            drug.SearchCount = updatedDrug.SearchCount;
+
+            // Cập nhật thời gian
             drug.UpdatedAt = DateTime.UtcNow;
 
             await _drugRepo.UpdateAsync(drug);
             await _unitOfWork.SaveAsync();
             return true;
+        }
+
+
+        public async Task<IEnumerable<DrugModelView>> GetTopNewRegisteredDrugsAsync()
+        {
+            return await _drugRepo.Entities
+                .Where(d => d.State == 202)
+                .OrderByDescending(d => d.PheDuyet ?? DateOnly.MinValue) // Ưu tiên theo ngày phê duyệt
+                .ThenByDescending(d => d.CreatedAt) // Nếu ngày phê duyệt giống nhau thì sắp theo CreatedAt
+                .Take(10)
+                .Select(d => new DrugModelView
+                {
+                    DrugId = d.DrugId,
+                    TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
+                    HoatChat = d.HoatChat,
+                    PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
+                    CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
+                    GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
+                    SearchCount = d.SearchCount
+                })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<DrugModelView>> GetTopWithdrawnDrugsAsync()
+        {
+            return await _drugRepo.Entities
+                .Where(d => d.RutSdk == true)
+                .OrderByDescending(d => d.UpdatedAt)
+                .Take(10)
+                .Select(d => new DrugModelView
+                {
+                    DrugId = d.DrugId,
+                    TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
+                    HoatChat = d.HoatChat,
+                    PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
+                    CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
+                    GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
+                    SearchCount = d.SearchCount
+                })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync()
+        {
+            return await _drugRepo.Entities
+                .GroupBy(d => d.CongTySx)
+                .Select(g => new
+                {
+                    CompanyName = g.Key,
+                    TotalDrugs = g.Count()
+                })
+                .OrderByDescending(g => g.TotalDrugs)
+                .Take(10)
+                .ToListAsync();
         }
     }
 }

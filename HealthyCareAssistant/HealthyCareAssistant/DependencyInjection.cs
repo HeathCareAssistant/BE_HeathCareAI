@@ -164,14 +164,24 @@ namespace HealthyCareAssistant.API
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Repositories
             services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
             services.AddScoped<IGenericRepository<Drug>, GenericRepository<Drug>>();
             services.AddScoped<IGenericRepository<MedicineCabinet>, GenericRepository<MedicineCabinet>>();
             services.AddScoped<IGenericRepository<MedicineCabinetDrug>, GenericRepository<MedicineCabinetDrug>>();
+            services.AddScoped<IGenericRepository<Reminder>, GenericRepository<Reminder>>();
+            services.AddScoped<IGenericRepository<ReminderDrug>, GenericRepository<ReminderDrug>>();
+
+            // Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDrugService, DrugService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IMedicineCabinetService, MedicineCabinetService>();
+            services.AddScoped<IReminderService, ReminderService>();
+
+            // Firebase Cloud Messaging (FCM) Service
+            //services.AddScoped<IFcmService, FcmService>();
         }
     }
 }

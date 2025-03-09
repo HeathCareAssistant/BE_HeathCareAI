@@ -43,11 +43,11 @@ namespace HealthyCareAssistant.Service.Service
         }
 
         // 2️⃣ Tạo tủ thuốc có thuốc
-        public async Task<string> CreateCabinetWithDrugsAsync(CreateCabinetWithDrugsRequest request)
+        public async Task<string> CreateCabinetWithDrugsAsync(int userId, CreateCabinetWithDrugsRequest request)
         {
             var cabinet = new MedicineCabinet
             {
-                UserId = request.UserId,
+                UserId = userId,
                 CabinetName = request.CabinetName,
                 Description = request.Description,
                 CreatedAt = DateTime.UtcNow,

@@ -369,3 +369,7 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\Google.Apis.Core.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\System.Management.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+<<<<<<< HEAD
+=======
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\firebase_adminsdk.json
+>>>>>>> 9b85613 (add login google)

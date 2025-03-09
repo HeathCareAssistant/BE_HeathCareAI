@@ -34,20 +34,18 @@ namespace HealthyCareAssistant
             // Cấu hình CORS cho phép tất cả các nguồn gốc
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowLocalhost",
+                options.AddPolicy("AllowAll",
                     policy =>
                     {
-                        policy.WithOrigins("http://localhost:5173") 
+                        policy.AllowAnyOrigin()
                               .AllowAnyMethod()
-                              .AllowAnyHeader()
-                              .AllowCredentials(); 
+                              .AllowAnyHeader();
                     });
             });
 
-            
 
             var app = builder.Build();
-            app.UseCors("AllowLocalhost");
+            app.UseCors("AllowAll");
             app.Use(async (context, next) =>
             {
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();

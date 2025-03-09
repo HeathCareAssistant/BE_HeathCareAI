@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentEmail.Core" Version="3.0.2" />
-    <PackageReference Include="FluentEmail.Mailgun" Version="3.0.2" />
-    <PackageReference Include="FluentEmail.Razor" Version="3.0.2" />
-    <PackageReference Include="FluentEmail.SendGrid" Version="3.0.2" />
-    <PackageReference Include="FluentEmail.Smtp" Version="3.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\HealthyCareAssistant.Contact.Repo\HealthyCareAssistant.Contact.Repo.csproj" />
     <ProjectReference Include="..\HealthyCareAssistant.ModelViews\HealthyCareAssistant.ModelViews.csproj" />
   </ItemGroup>

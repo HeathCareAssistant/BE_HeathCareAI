@@ -176,9 +176,11 @@ namespace HealthyCareAssistant.API
             // Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDrugService, DrugService>();
-            services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IMedicineCabinetService, MedicineCabinetService>();
             services.AddScoped<IReminderService, ReminderService>();
+            services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IOTPService, OTPService>();
+            services.AddMemoryCache();
 
             // Firebase Cloud Messaging (FCM) Service
             //services.AddScoped<IFcmService, FcmService>();

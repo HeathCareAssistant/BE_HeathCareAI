@@ -26,6 +26,7 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<bool> ResetPasswordAsync(ResetPasswordModel model);
         Task<UserModelView?> GetUserByIdAsync(string userId);
         Task<bool> ValidatePasswordAsync(User user, string password);
+        Task<string?> LoginWithGoogleAsync(string idToken);
     }
 
 }

@@ -2,7 +2,7 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.authController",
     "Method": "ForgotPassword",
-    "RelativePath": "api/Auth/forgot-password",
+    "RelativePath": "api/auth/forgot-password",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -17,8 +17,40 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.authController",
+    "Method": "GenerateToken",
+    "RelativePath": "api/auth/generate-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.authController",
+    "Method": "GoogleLogin",
+    "RelativePath": "api/auth/google-login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "HealthyCareAssistant.ModelViews.AuthModelViews.TokenRqGoogleLogin",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.authController",
     "Method": "Login",
-    "RelativePath": "api/Auth/login",
+    "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -34,7 +66,7 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.authController",
     "Method": "GetCurrentUser",
-    "RelativePath": "api/Auth/me",
+    "RelativePath": "api/auth/me",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +76,7 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.authController",
     "Method": "RefreshToken",
-    "RelativePath": "api/Auth/refresh-token",
+    "RelativePath": "api/auth/refresh-token",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -60,7 +92,7 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.authController",
     "Method": "Register",
-    "RelativePath": "api/Auth/register",
+    "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -76,7 +108,7 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.authController",
     "Method": "ResetPassword",
-    "RelativePath": "api/Auth/reset-password",
+    "RelativePath": "api/auth/reset-password",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

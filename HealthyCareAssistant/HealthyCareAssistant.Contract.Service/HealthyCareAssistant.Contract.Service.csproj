@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HealthyCareAssistant.Contact.Repo\HealthyCareAssistant.Contact.Repo.csproj" />
     <ProjectReference Include="..\HealthyCareAssistant.ModelViews\HealthyCareAssistant.ModelViews.csproj" />
   </ItemGroup>

@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Repo.UnitOfWork;
 using Microsoft.OpenApi.Models;
+using HealthyCareAssistant.Service.Service.firebase;
 
 namespace HealthyCareAssistant.API
 {
@@ -181,7 +182,8 @@ namespace HealthyCareAssistant.API
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<IOTPService, OTPService>();
             services.AddMemoryCache();
-
+            services.AddSingleton<FirebaseAuthService>();
+            services.AddScoped<AuthService>();
             // Firebase Cloud Messaging (FCM) Service
             //services.AddScoped<IFcmService, FcmService>();
         }

@@ -11,6 +11,8 @@ using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 using MailKit;
 using HealthyCareAssistant.ModelViews.MailModelViews;
+using HealthyCareAssistant.Service.Service.firebase;
+using FirebaseAdmin.Auth;
 
 namespace HealthyCareAssistant.Service.Service
 {
@@ -23,13 +25,20 @@ namespace HealthyCareAssistant.Service.Service
         private readonly HealthCareAssistantContext _context;
         private readonly Contract.Service.Interface.IMailService _mailService;
         private readonly IOTPService _otpService;
+        private readonly FirebaseAuthService _firebaseAuthService;
 
-        public UserService(IUnitOfWork unitOfWork, IConfiguration configuration, IGenericRepository<User> userRepo, ILogger<UserService> logger, Contract.Service.Interface.IMailService mailService, IOTPService otpService)
+        public UserService(IUnitOfWork unitOfWork, 
+            IConfiguration configuration, 
+            IGenericRepository<User> userRepo, 
+            ILogger<UserService> logger, 
+            Contract.Service.Interface.IMailService mailService, 
+            IOTPService otpService,
+            FirebaseAuthService firebaseAuthService)
         {
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork), "UnitOfWork không được null.");
             _configuration = configuration;
             _userRepo = userRepo ?? throw new ArgumentNullException(nameof(userRepo), "User repository không được null.");
-
+            _firebaseAuthService = firebaseAuthService ?? throw new ArgumentNullException(nameof(firebaseAuthService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger không được null.");
             _mailService = mailService;
             _otpService = otpService;
@@ -70,6 +79,57 @@ namespace HealthyCareAssistant.Service.Service
             await _unitOfWork.SaveAsync();
 
             return token;
+        }
+
+        public async Task<string?> LoginWithGoogleAsync(string idToken)
+        {
+            if (string.IsNullOrEmpty(idToken))
+            {
+                throw new ArgumentException("Token không được để trống.");
+            }
+
+            try
+            {
+                // Xác thực token với Firebase
+                var decodedToken = await _firebaseAuthService.VerifyIdTokenAsync(idToken);
+                var email = decodedToken.Claims.ContainsKey("email") ? decodedToken.Claims["email"].ToString() : "No Email";
+
+                // Lấy thông tin user từ Firebase theo email
+                var userRecord = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(email);
+                var displayName = userRecord.DisplayName ?? email; // Nếu không có displayName, dùng email
+
+                // Kiểm tra user trong database
+                var user = _userRepo.Entities.FirstOrDefault(u => u.Email == email);
+                if (user == null)
+                {
+                    // Nếu chưa có user trong hệ thống, tạo mới
+                    user = new User
+                    {
+                        Name = displayName,  // Sử dụng displayName từ Firebase
+                        Email = email,
+                        RoleId = 2, // Mặc định là User
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow
+                    };
+
+                    await _userRepo.InsertAsync(user);
+                    await _unitOfWork.SaveAsync();
+                }
+
+                // Tạo JWT token
+                return TokenHelper.GenerateJwtToken(
+                    user,
+                    _configuration["JwtSettings:Secret"],
+                    _configuration["JwtSettings:Issuer"],
+                    _configuration["JwtSettings:Audience"],
+                    Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"])
+                );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Lỗi xác thực token từ Firebase: {0}", ex.Message);
+                return null;
+            }
         }
 
 
@@ -123,7 +183,7 @@ namespace HealthyCareAssistant.Service.Service
             var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
 
             var users = await _userRepo.Entities
-                .Include(u => u.Role) // 🔥 Include bảng Role để lấy RoleName
+                .Include(u => u.Role) // Include bảng Role để lấy RoleName
                 .OrderBy(u => u.UserId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)

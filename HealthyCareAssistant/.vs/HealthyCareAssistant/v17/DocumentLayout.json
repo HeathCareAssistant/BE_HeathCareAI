@@ -3,12 +3,80 @@
   "WorkspaceRootPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\controllers\\drugcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\controllers\\drugcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\drugmodelviews\\drugpdfuploadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\drugmodelviews\\drugpdfuploadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\drugmodelviews\\drugimageuploadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\drugmodelviews\\drugimageuploadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\controllers\\medicinecabinetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\controllers\\medicinecabinetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\service\\firebase\\firebasestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|solutionrelative:healthycareassistant.service\\service\\firebase\\firebasestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\extention\\swaggerfileoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\extention\\swaggerfileoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.contract.service\\interface\\ifirebasestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|solutionrelative:healthycareassistant.contract.service\\interface\\ifirebasestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.contract.service\\interface\\idrugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|solutionrelative:healthycareassistant.contract.service\\interface\\idrugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\firebasesetting\\firebasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\firebasesetting\\firebasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\authmodelviews\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\authmodelviews\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\authmodelviews\\tokenrqgooglelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\authmodelviews\\tokenrqgooglelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\service\\firebase\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|solutionrelative:healthycareassistant.service\\service\\firebase\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\service\\drugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|solutionrelative:healthycareassistant.service\\service\\drugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.contract.service\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|solutionrelative:healthycareassistant.contract.service\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,40 +99,12 @@
       "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\authmodelviews\\forgotpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\authmodelviews\\tokenrqgooglelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\authmodelviews\\tokenrqgooglelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.modelviews\\authmodelviews\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\authmodelviews\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\service\\firebase\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|solutionrelative:healthycareassistant.service\\service\\firebase\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|solutionrelative:healthycareassistant.service\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.contract.service\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B721A918-43BC-4DA4-BA0A-394358B48B56}|HealthyCareAssistant.Contract.Service\\HealthyCareAssistant.Contract.Service.csproj|solutionrelative:healthycareassistant.contract.service\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BA652BB-06FD-4731-ADEC-EF4B7092500E}|HealthyCareAssistant.Service\\HealthyCareAssistant.Service.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant.service\\config\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,119 +150,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginModelViews.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
-              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DrugPdfUploadModel.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugPdfUploadModel.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugPdfUploadModel.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugPdfUploadModel.cs",
+              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugPdfUploadModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:31:32.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ForgotPasswordModel.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
-              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:31:30.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FirebaseAuthService.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
-              "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAwDUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:53:32.682Z",
+              "WhenOpened": "2025-03-10T22:28:55.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "LoginRqGoogle.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
-              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "FirebaseStorageService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseStorageService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseStorageService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseStorageService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseStorageService.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAgwOwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T23:01:50.746Z",
+              "WhenOpened": "2025-03-10T17:48:34.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SwaggerFileOperationFilter.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Extention\\SwaggerFileOperationFilter.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\Extention\\SwaggerFileOperationFilter.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Extention\\SwaggerFileOperationFilter.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\Extention\\SwaggerFileOperationFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T20:07:59.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\AuthController.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "HealthyCareAssistant\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAowMkAAAAgAAAAAAAAAA==",
+              "Title": "DrugController.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\DrugController.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\DrugController.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\DrugController.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\Controllers\\DrugController.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAQwMsAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:49:09.634Z",
+              "WhenOpened": "2025-03-10T17:38:59.323Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\UserService.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
-              "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAQwEEAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IFirebaseStorageService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IFirebaseStorageService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\Interface\\IFirebaseStorageService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IFirebaseStorageService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IFirebaseStorageService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:49:38.152Z",
+              "WhenOpened": "2025-03-10T17:50:30.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TokenHelper.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
-              "RelativeToolTip": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwB0AAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:50:56.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\UserController.cs",
               "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
               "RelativeToolTip": "HealthyCareAssistant\\Controllers\\UserController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-09T21:59:49.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
-              "RelativeDocumentMoniker": "HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
-              "RelativeToolTip": "HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MedicineCabinetController.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\MedicineCabinetController.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\MedicineCabinetController.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\MedicineCabinetController.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\Controllers\\MedicineCabinetController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:00:48.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DrugImageUploadModel.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugImageUploadModel.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugImageUploadModel.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugImageUploadModel.cs",
+              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\DrugModelViews\\DrugImageUploadModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T20:29:35.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDrugService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IDrugService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\Interface\\IDrugService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IDrugService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IDrugService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:38:48.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\appsettings.json",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\appsettings.json",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\appsettings.json",
+              "RelativeToolTip": "HealthyCareAssistant\\appsettings.json",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-10T10:28:23.283Z",
+              "WhenOpened": "2025-03-09T20:29:39.906Z",
               "EditorCaption": ""
             },
             {
@@ -233,38 +286,14 @@
               "RelativeDocumentMoniker": "HealthyCareAssistant\\Program.cs",
               "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs",
               "RelativeToolTip": "HealthyCareAssistant\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAtwD8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-09T20:32:38.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\appsettings.json",
-              "RelativeDocumentMoniker": "HealthyCareAssistant\\appsettings.json",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\appsettings.json",
-              "RelativeToolTip": "HealthyCareAssistant\\appsettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-09T20:29:39.906Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant\\DependencyInjection.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\DependencyInjection.cs",
-              "RelativeToolTip": "HealthyCareAssistant\\DependencyInjection.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAIwL4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T20:32:54.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "TokenRequest.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
@@ -277,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "TokenRqGoogleLogin.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
@@ -290,7 +319,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\DependencyInjection.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\DependencyInjection.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\DependencyInjection.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAA5wLYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T20:32:54.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FirebaseSettings.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\FirebaseSetting\\FirebaseSettings.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\FirebaseSetting\\FirebaseSettings.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\FirebaseSetting\\FirebaseSettings.cs",
+              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\FirebaseSetting\\FirebaseSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:51:47.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FirebaseAuthService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T21:53:32.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DrugService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\DrugService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\DrugService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\DrugService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\DrugService.cs",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAgwG4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:06:43.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ForgotPasswordModel.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
+              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\ForgotPasswordModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T10:31:30.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoginRqGoogle.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
+              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T23:01:50.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\AuthController.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAALcAAAAAAAAAAAAowMkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T21:49:09.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\UserService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAQwEEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T21:49:38.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TokenHelper.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwB0AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T21:50:56.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
+              "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T21:59:55.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LoginModelViews.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
+              "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginModelViews.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T10:31:32.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
+              "RelativeToolTip": "HealthyCareAssistant\\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T10:28:23.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "AuthService.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\AuthService.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\AuthService.cs",
@@ -298,23 +483,12 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T23:14:04.803Z"
+              "WhenOpened": "2025-03-09T23:14:04.803Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
-              "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
-              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
-              "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:59:55.114Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 30,
               "Title": "firebase_adminsdk.json",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\firebase_adminsdk.json",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\firebase_adminsdk.json",
@@ -325,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "HashHelper.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\HashHelper.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Config\\HashHelper.cs",
@@ -333,11 +507,12 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Config\\HashHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:50:54.422Z"
+              "WhenOpened": "2025-03-09T21:50:54.422Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "OtpRequest.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\OtpRequest.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\OtpRequest.cs",
@@ -345,11 +520,12 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\OtpRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:50:17.892Z"
+              "WhenOpened": "2025-03-09T21:50:17.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\DependencyInjection.cs",
@@ -357,11 +533,12 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:49:42.076Z"
+              "WhenOpened": "2025-03-09T21:49:42.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "MailSerivce.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\MailSerivce.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\MailSerivce.cs",
@@ -369,7 +546,8 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\MailSerivce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T20:28:36.61Z"
+              "WhenOpened": "2025-03-09T20:28:36.61Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,6 +1,7 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.DrugModelViews;
+using HealthyCareAssistant.Service.Service.firebase;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthyCareAssistant.Controllers
@@ -10,10 +11,12 @@ namespace HealthyCareAssistant.Controllers
     public class DrugController : ControllerBase
     {
         private readonly IDrugService _drugService;
-
-        public DrugController(IDrugService drugService)
+        private readonly IFirebaseStorageService _firebaseStorageService;
+        public DrugController(IDrugService drugService, IFirebaseStorageService firebaseStorageService)
         {
             _drugService = drugService;
+            _firebaseStorageService = firebaseStorageService;
+
         }
 
         [HttpGet]
@@ -134,5 +137,73 @@ namespace HealthyCareAssistant.Controllers
             var companies = await _drugService.GetTopCompaniesByDrugsAsync();
             return Ok(companies);
         }
+        [HttpPost("{drugId}/image/upload")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadDrugImage(string drugId, [FromForm] DrugImageUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid file" });
+
+            var result = await _firebaseStorageService.UploadDrugImageAsync(drugId, model.File);
+            return Ok(new { imageUrl = result });
+        }
+
+
+        [HttpGet("{drugId}/image/{fileName}")]
+        public async Task<IActionResult> GetDrugImageUrl(string drugId, string fileName)
+        {
+            var result = await _firebaseStorageService.GetDrugImageUrlAsync(drugId, fileName);
+            if (string.IsNullOrEmpty(result))
+                return NotFound(new { message = "Image not found" });
+
+            return Ok(new { imageUrl = result });
+        }
+
+        [HttpDelete("{drugId}/image/{fileName}")]
+        public async Task<IActionResult> DeleteDrugImage(string drugId, string fileName)
+        {
+            var result = await _firebaseStorageService.DeleteDrugImageAsync(drugId, fileName);
+            return result ? Ok(new { message = "Deleted successfully" }) : NotFound(new { message = "Image not found" });
+        }
+
+        [HttpPost("{drugId}/image/uploads")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadMultipleDrugImages(string drugId, [FromForm] List<IFormFile> files)
+        {
+            if (files == null || files.Count == 0)
+                return BadRequest(new { message = "No files received" });
+
+            await _firebaseStorageService.UploadMultipleFilesAsync(drugId, files);
+            return Ok(new { message = $"{files.Count} files uploaded successfully" });
+        }
+
+        [HttpPost("{drugId}/pdf/upload")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadDrugPdf(string drugId, [FromForm] DrugPdfUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid PDF file" });
+
+            var result = await _firebaseStorageService.UploadDrugPdfAsync(drugId, model.File);
+            return Ok(new { pdfUrl = result });
+        }
+
+        [HttpGet("{drugId}/pdf/{fileName}")]
+        public async Task<IActionResult> GetDrugPdfUrl(string drugId, string fileName)
+        {
+            var result = await _firebaseStorageService.GetDrugPdfUrlAsync(drugId, fileName);
+            if (string.IsNullOrEmpty(result))
+                return NotFound(new { message = "PDF not found" });
+
+            return Ok(new { pdfUrl = result });
+        }
+
+        [HttpDelete("{drugId}/pdf/{fileName}")]
+        public async Task<IActionResult> DeleteDrugPdf(string drugId, string fileName)
+        {
+            var result = await _firebaseStorageService.DeleteDrugPdfAsync(drugId, fileName);
+            return result ? Ok(new { message = "Deleted successfully" }) : NotFound(new { message = "PDF not found" });
+        }
     }
 }
+

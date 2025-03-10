@@ -160,6 +160,153 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetDrugImageUrl",
+    "RelativePath": "api/drugs/{drugId}/image/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "DeleteDrugImage",
+    "RelativePath": "api/drugs/{drugId}/image/{fileName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UploadDrugImage",
+    "RelativePath": "api/drugs/{drugId}/image/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UploadMultipleDrugImages",
+    "RelativePath": "api/drugs/{drugId}/image/uploads",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetDrugPdfUrl",
+    "RelativePath": "api/drugs/{drugId}/pdf/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "DeleteDrugPdf",
+    "RelativePath": "api/drugs/{drugId}/pdf/{fileName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UploadDrugPdf",
+    "RelativePath": "api/drugs/{drugId}/pdf/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetById",
     "RelativePath": "api/drugs/{id}",
     "HttpMethod": "GET",

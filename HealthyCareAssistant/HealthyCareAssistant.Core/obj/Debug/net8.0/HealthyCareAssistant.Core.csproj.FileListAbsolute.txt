@@ -25,6 +25,7 @@ C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\bin\Debug\net8.0\HealthyCareAssistant.Core.deps.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\bin\Debug\net8.0\HealthyCareAssistant.Core.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\bin\Debug\net8.0\HealthyCareAssistant.Core.pdb
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.csproj.AssemblyReference.cache
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.GeneratedMSBuildEditorConfig.editorconfig
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.AssemblyInfoInputs.cache
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.AssemblyInfo.cs

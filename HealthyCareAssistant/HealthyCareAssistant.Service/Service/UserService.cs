@@ -63,7 +63,7 @@ namespace HealthyCareAssistant.Service.Service
 
             var roleName = user.Role?.RoleName ?? "User";
             // Lấy danh sách quyền của người dùng (nếu có)
-            var permissions = new List<string>(); // Nếu có logic permission, lấy từ DB
+            var permissions = new List<string>(); 
 
             // Tạo token bằng TokenHelper
             var token = TokenHelper.GenerateJwtToken(

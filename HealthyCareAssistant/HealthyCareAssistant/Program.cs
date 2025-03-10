@@ -3,6 +3,7 @@ using HealthyCareAssistant.Middleware;
 using System.Net;
 using System.Net.Mail;
 using Microsoft.Extensions.DependencyInjection;
+using DotNetEnv;
 using HealthyCareAssistant.ModelViews.MailModelViews;
 namespace HealthyCareAssistant
 {

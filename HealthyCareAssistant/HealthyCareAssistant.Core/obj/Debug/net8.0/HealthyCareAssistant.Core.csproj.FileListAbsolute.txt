@@ -5,7 +5,6 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.AssemblyInfoInputs.cache
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.AssemblyInfo.cs
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.csproj.CoreCompileInputs.cache
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.sourcelink.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\refint\HealthyCareAssistant.Core.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.pdb

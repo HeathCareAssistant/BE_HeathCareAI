@@ -46,10 +46,6 @@
       "RelativeMoniker": "D:0:0:{8271E351-070A-4CB6-AB04-702795C65F09}|HealthyCareAssistant.ModelViews\\HealthyCareAssistant.ModelViews.csproj|solutionrelative:healthycareassistant.modelviews\\authmodelviews\\loginrqgoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\firebase_adminsdk.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\firebase_adminsdk.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|f:\\tempschool\\7\\swd392\\be_heathcareai\\healthycareassistant\\healthycareassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F28F056-ECC6-46BB-B8ED-F7082C28AF50}|HealthyCareAssistant\\HealthyCareAssistant.csproj|solutionrelative:healthycareassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -158,10 +154,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 10,
 =======
               "DocumentIndex": 11,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 10,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "UserController.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\UserController.cs",
@@ -174,10 +174,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 11,
 =======
               "DocumentIndex": 12,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 11,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "TokenRqGoogleLogin.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
@@ -198,11 +202,15 @@
               "ViewState": "AgIAAAwAAAAAAAAAAAAAwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WhenOpened": "2025-03-09T21:53:32.682Z"
 =======
               "WhenOpened": "2025-03-09T21:53:32.682Z",
               "EditorCaption": ""
 >>>>>>> 9b85613 (add login google)
+=======
+              "WhenOpened": "2025-03-09T21:53:32.682Z"
+>>>>>>> 656c085 (login google, fix cer)
             },
             {
               "$type": "Document",
@@ -213,10 +221,14 @@
               "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "ViewState": "AgIAAE8AAAAAAAAAAAAYwH4AAAANAAAAAAAAAA==",
 =======
               "ViewState": "AgIAAGkAAAAAAAAAAAAkwGAAAAATAAAAAAAAAA==",
 >>>>>>> 9b85613 (add login google)
+=======
+              "ViewState": "AgIAAE8AAAAAAAAAAAAYwH4AAAANAAAAAAAAAA==",
+>>>>>>> 656c085 (login google, fix cer)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-09T21:49:38.152Z",
               "EditorCaption": ""
@@ -232,11 +244,15 @@
               "ViewState": "AgIAALYAAAAAAAAAAAApwEgAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WhenOpened": "2025-03-09T21:49:09.634Z"
 =======
               "WhenOpened": "2025-03-09T21:49:09.634Z",
               "EditorCaption": ""
 >>>>>>> 9b85613 (add login google)
+=======
+              "WhenOpened": "2025-03-09T21:49:09.634Z"
+>>>>>>> 656c085 (login google, fix cer)
             },
             {
               "$type": "Document",
@@ -261,11 +277,15 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WhenOpened": "2025-03-09T20:29:39.906Z"
 =======
               "WhenOpened": "2025-03-09T20:29:39.906Z",
               "EditorCaption": ""
 >>>>>>> 9b85613 (add login google)
+=======
+              "WhenOpened": "2025-03-09T20:29:39.906Z"
+>>>>>>> 656c085 (login google, fix cer)
             },
             {
               "$type": "Document",
@@ -278,11 +298,15 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WhenOpened": "2025-03-09T23:14:04.803Z"
 =======
               "WhenOpened": "2025-03-09T23:14:04.803Z",
               "EditorCaption": ""
 >>>>>>> 9b85613 (add login google)
+=======
+              "WhenOpened": "2025-03-09T23:14:04.803Z"
+>>>>>>> 656c085 (login google, fix cer)
             },
             {
               "$type": "Document",
@@ -294,6 +318,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAkwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "WhenOpened": "2025-03-09T21:50:56.023Z"
             },
@@ -308,6 +333,13 @@
               "$type": "Document",
               "DocumentIndex": 10,
 >>>>>>> 9b85613 (add login google)
+=======
+              "WhenOpened": "2025-03-09T21:50:56.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "IUserService.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
@@ -320,10 +352,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 17,
 =======
               "DocumentIndex": 8,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 17,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "firebase_adminsdk.json",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\firebase_adminsdk.json",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\firebase_adminsdk.json",
@@ -344,6 +380,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "WhenOpened": "2025-03-09T23:01:50.746Z"
             },
             {
@@ -357,6 +394,13 @@
               "$type": "Document",
               "DocumentIndex": 9,
 >>>>>>> 9b85613 (add login google)
+=======
+              "WhenOpened": "2025-03-09T23:01:50.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\Program.cs",
@@ -369,10 +413,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 12,
 =======
               "DocumentIndex": 13,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 12,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "TokenRequest.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
@@ -385,10 +433,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 13,
 =======
               "DocumentIndex": 14,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 13,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "HashHelper.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\HashHelper.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Config\\HashHelper.cs",
@@ -401,10 +453,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 14,
 =======
               "DocumentIndex": 15,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 14,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "OtpRequest.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\OtpRequest.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\OtpRequest.cs",
@@ -417,10 +473,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 15,
 =======
               "DocumentIndex": 16,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 15,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\DependencyInjection.cs",
@@ -433,10 +493,14 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 16,
 =======
               "DocumentIndex": 17,
 >>>>>>> 9b85613 (add login google)
+=======
+              "DocumentIndex": 16,
+>>>>>>> 656c085 (login google, fix cer)
               "Title": "MailSerivce.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\MailSerivce.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\MailSerivce.cs",

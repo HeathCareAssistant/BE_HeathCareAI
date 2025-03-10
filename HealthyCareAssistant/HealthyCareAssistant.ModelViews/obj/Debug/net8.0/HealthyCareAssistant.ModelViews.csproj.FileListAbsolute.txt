@@ -11,7 +11,6 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfoInputs.cache
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfo.cs
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.CoreCompileInputs.cache
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.sourcelink.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyC.9794AED3.Up2Date
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\refint\HealthyCareAssistant.ModelViews.dll

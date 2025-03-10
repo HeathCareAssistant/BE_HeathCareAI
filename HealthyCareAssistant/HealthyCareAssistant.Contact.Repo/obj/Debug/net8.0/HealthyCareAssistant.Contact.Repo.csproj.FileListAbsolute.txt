@@ -9,7 +9,6 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.AssemblyInfoInputs.cache
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.AssemblyInfo.cs
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.csproj.CoreCompileInputs.cache
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.sourcelink.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyC.17E7D8B8.Up2Date
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.dll
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\refint\HealthyCareAssistant.Contact.Repo.dll

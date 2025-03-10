@@ -45,3 +45,4 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Service\obj\Debug\net8.0\refint\HealthyCareAssistant.Service.dll
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Service\obj\Debug\net8.0\HealthyCareAssistant.Service.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Service\obj\Debug\net8.0\ref\HealthyCareAssistant.Service.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Service\obj\Debug\net8.0\HealthyCareAssistant.Service.sourcelink.json

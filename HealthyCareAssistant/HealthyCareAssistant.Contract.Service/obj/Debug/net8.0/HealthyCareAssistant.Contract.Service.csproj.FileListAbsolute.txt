@@ -37,3 +37,4 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\refint\HealthyCareAssistant.Contract.Service.dll
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\ref\HealthyCareAssistant.Contract.Service.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.sourcelink.json

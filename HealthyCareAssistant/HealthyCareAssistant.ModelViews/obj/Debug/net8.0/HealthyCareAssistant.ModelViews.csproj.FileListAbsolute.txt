@@ -37,3 +37,4 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.sourcelink.json

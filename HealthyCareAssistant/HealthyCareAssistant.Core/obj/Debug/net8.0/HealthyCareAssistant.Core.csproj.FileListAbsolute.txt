@@ -22,3 +22,4 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\refint\HealthyCareAssistant.Core.dll
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\ref\HealthyCareAssistant.Core.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.sourcelink.json

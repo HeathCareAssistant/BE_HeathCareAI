@@ -33,3 +33,4 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.genruntimeconfig.cache
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\ref\HealthyCareAssistant.Contact.Repo.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.sourcelink.json

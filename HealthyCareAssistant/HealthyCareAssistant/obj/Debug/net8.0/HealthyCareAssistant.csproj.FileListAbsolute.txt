@@ -371,8 +371,12 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\firebase_adminsdk.json
 >>>>>>> 9b85613 (add login google)
 =======
 >>>>>>> 656c085 (login google, fix cer)
+=======
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\obj\Debug\net8.0\HealthyCareAssistant.sourcelink.json
+>>>>>>> 6388226 (fix conflict)

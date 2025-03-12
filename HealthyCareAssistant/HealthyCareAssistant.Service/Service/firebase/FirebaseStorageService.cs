@@ -231,6 +231,83 @@ namespace HealthyCareAssistant.Service.Service.firebase
                 return false;
             }
         }
+        /// <summary>
+        /// Tải ảnh user lên Firebase Storage
+        /// </summary>
+        public async Task<string> UploadUserImageAsync(string userId, IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                throw new ArgumentException("The file is empty");
+
+            Console.WriteLine($"[DEBUG] Uploading image for USERID: {userId}, File: {file.FileName}");
+
+            try
+            {
+                var account = await AuthenticateFirebaseAsync();
+                var storage = new FirebaseStorage(
+                    _firebaseSettings.Bucket,
+                    new FirebaseStorageOptions
+                    {
+                        AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
+                        ThrowOnCancel = true
+                    });
+
+                string fileName = $"user-image/{userId}/{file.FileName}";
+
+                using (var stream = file.OpenReadStream())
+                {
+                    var uploadTask = storage.Child(fileName).PutAsync(stream);
+                    string uploadedUrl = await uploadTask;
+
+                    Console.WriteLine($"[DEBUG] Upload successful: {uploadedUrl}");
+                    return uploadedUrl;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] Upload failed: {ex.Message}");
+                throw;
+            }
+        }
+        /// <summary>
+        /// Lấy URL truy cập image user từ Firebase
+        /// </summary>
+        public async Task<string> GetUserImgUrlAsync(string userId, string fileName)
+        {
+            string filePath = $"user-image/{userId}/{fileName}";
+            string imgUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o/{Uri.EscapeDataString(filePath)}?alt=media";
+
+            Console.WriteLine($"[DEBUG] Fetching USER URL: {imgUrl}");
+            return imgUrl;
+        }
+        /// <summary>
+        /// Xóa img user từ Firebase Storage
+        /// </summary>
+        public async Task<bool> DeleteUserImgAsync(string userid, string fileName)
+        {
+            try
+            {
+                Console.WriteLine($"[DEBUG] Deleting IMAGE: user-image/{userid}/{fileName}");
+
+                var storage = new FirebaseStorage(
+                    _firebaseSettings.Bucket,
+                    new FirebaseStorageOptions
+                    {
+                        ThrowOnCancel = true
+                    });
+
+                await storage.Child($"user-image/{userid}/{fileName}").DeleteAsync();
+
+                Console.WriteLine("[DEBUG] IMAGE USER Deletion successful.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] IMAGE USER Deletion failed: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }
 

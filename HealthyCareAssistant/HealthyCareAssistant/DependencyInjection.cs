@@ -174,6 +174,8 @@ namespace HealthyCareAssistant.API
             services.AddScoped<IGenericRepository<Reminder>, GenericRepository<Reminder>>();
             services.AddScoped<IGenericRepository<ReminderDrug>, GenericRepository<ReminderDrug>>();
 
+
+
             // Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDrugService, DrugService>();
@@ -185,6 +187,8 @@ namespace HealthyCareAssistant.API
             services.AddSingleton<FirebaseAuthService>();
             services.AddScoped<AuthService>();
             services.AddSingleton<IFirebaseStorageService, FirebaseStorageService>();
+            services.AddScoped<IChatbotService, Service.Service.ChatbotService>();
+            services.AddHttpClient();
             // Firebase Cloud Messaging (FCM) Service
             //services.AddScoped<IFcmService, FcmService>();
         }

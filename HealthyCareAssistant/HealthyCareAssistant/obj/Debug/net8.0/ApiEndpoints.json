@@ -122,6 +122,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "HealthyCareAssistant.Controllers.ChatbotController",
+    "Method": "GetMessages",
+    "RelativePath": "api/chatbot/messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conversationId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "chatId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ChatbotController",
+    "Method": "SendMessage",
+    "RelativePath": "api/chatbot/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.Controllers.ChatRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetAll",
     "RelativePath": "api/drugs",

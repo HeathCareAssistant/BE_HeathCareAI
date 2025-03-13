@@ -81,22 +81,27 @@ namespace HealthyCareAssistant.Controllers
             return Ok(new { imgUrl = result });
         }
 
-        [HttpGet("{userid}/image/{fileName}")]
-        public async Task<IActionResult> GetUserImgUrlAsync(string userid, string fileName)
+        [HttpGet("{userId}/image")]
+        public async Task<IActionResult> GetUserImageUrl(string userId)
         {
-            var result = await _firebaseStorageService.GetUserImgUrlAsync(userid, fileName);
-            if (string.IsNullOrEmpty(result))
-                return NotFound(new { message = "IMG not found" });
+            var result = await _firebaseStorageService.GetUserImageUrlAsync(userId);
+            if (result.StartsWith("UserID"))
+                return NotFound(new { message = result });
 
-            return Ok(new { imgUrl = result });
+            return Ok(new { imageUrl = result });
         }
 
-        [HttpDelete("{userid}/image/{fileName}")]
-        public async Task<IActionResult> DeleteUserImgAsync(string userid, string fileName)
+
+        [HttpDelete("{userId}/image")]
+        public async Task<IActionResult> DeleteUserImage(string userId)
         {
-            var result = await _firebaseStorageService.DeleteUserImgAsync(userid, fileName);
-            return result ? Ok(new { message = "Deleted successfully" }) : NotFound(new { message = "IMG not found" });
+            var result = await _firebaseStorageService.DeleteUserImageAsync(userId);
+            if (result.StartsWith("UserID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { message = result });
         }
+
     }
 
 

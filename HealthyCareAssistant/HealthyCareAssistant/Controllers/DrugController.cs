@@ -149,22 +149,26 @@ namespace HealthyCareAssistant.Controllers
         }
 
 
-        [HttpGet("{drugId}/image/{fileName}")]
-        public async Task<IActionResult> GetDrugImageUrl(string drugId, string fileName)
+        [HttpGet("{drugId}/image")]
+        public async Task<IActionResult> GetDrugImageUrl(string drugId)
         {
-            var result = await _firebaseStorageService.GetDrugImageUrlAsync(drugId, fileName);
-            if (string.IsNullOrEmpty(result))
-                return NotFound(new { message = "Image not found" });
+            var result = await _firebaseStorageService.GetDrugImageUrlAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result });
 
             return Ok(new { imageUrl = result });
         }
 
-        [HttpDelete("{drugId}/image/{fileName}")]
-        public async Task<IActionResult> DeleteDrugImage(string drugId, string fileName)
+        [HttpDelete("{drugId}/image")]
+        public async Task<IActionResult> DeleteDrugImage(string drugId)
         {
-            var result = await _firebaseStorageService.DeleteDrugImageAsync(drugId, fileName);
-            return result ? Ok(new { message = "Deleted successfully" }) : NotFound(new { message = "Image not found" });
+            var result = await _firebaseStorageService.DeleteDrugImageAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result }); // Trả về lỗi nếu không có ảnh
+
+            return Ok(new { message = result });
         }
+
 
         [HttpPost("{drugId}/image/uploads")]
         [Consumes("multipart/form-data")]
@@ -188,22 +192,25 @@ namespace HealthyCareAssistant.Controllers
             return Ok(new { pdfUrl = result });
         }
 
-        [HttpGet("{drugId}/pdf/{fileName}")]
-        public async Task<IActionResult> GetDrugPdfUrl(string drugId, string fileName)
+        [HttpGet("{drugId}/pdf")]
+        public async Task<IActionResult> GetDrugPdfUrl(string drugId)
         {
-            var result = await _firebaseStorageService.GetDrugPdfUrlAsync(drugId, fileName);
-            if (string.IsNullOrEmpty(result))
-                return NotFound(new { message = "PDF not found" });
+            var result = await _firebaseStorageService.GetDrugPdfUrlAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result });
 
             return Ok(new { pdfUrl = result });
         }
-
-        [HttpDelete("{drugId}/pdf/{fileName}")]
-        public async Task<IActionResult> DeleteDrugPdf(string drugId, string fileName)
+        [HttpDelete("{drugId}/pdf")]
+        public async Task<IActionResult> DeleteDrugPdf(string drugId)
         {
-            var result = await _firebaseStorageService.DeleteDrugPdfAsync(drugId, fileName);
-            return result ? Ok(new { message = "Deleted successfully" }) : NotFound(new { message = "PDF not found" });
+            var result = await _firebaseStorageService.DeleteDrugPdfAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { message = result });
         }
+
     }
 }
 

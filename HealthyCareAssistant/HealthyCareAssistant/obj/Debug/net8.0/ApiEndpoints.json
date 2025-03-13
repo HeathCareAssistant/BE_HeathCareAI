@@ -161,18 +161,13 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetDrugImageUrl",
-    "RelativePath": "api/drugs/{drugId}/image/{fileName}",
+    "RelativePath": "api/drugs/{drugId}/image",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "drugId",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "fileName",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -182,18 +177,13 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "DeleteDrugImage",
-    "RelativePath": "api/drugs/{drugId}/image/{fileName}",
+    "RelativePath": "api/drugs/{drugId}/image",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "drugId",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "fileName",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -245,18 +235,13 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetDrugPdfUrl",
-    "RelativePath": "api/drugs/{drugId}/pdf/{fileName}",
+    "RelativePath": "api/drugs/{drugId}/pdf",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "drugId",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "fileName",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -266,18 +251,13 @@
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "DeleteDrugPdf",
-    "RelativePath": "api/drugs/{drugId}/pdf/{fileName}",
+    "RelativePath": "api/drugs/{drugId}/pdf",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "drugId",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "fileName",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -844,19 +824,14 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.UserController",
-    "Method": "GetUserImgUrlAsync",
-    "RelativePath": "api/users/{userid}/image/{fileName}",
+    "Method": "GetUserImageUrl",
+    "RelativePath": "api/users/{userId}/image",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userid",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "fileName",
+        "Name": "userId",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -865,19 +840,14 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.UserController",
-    "Method": "DeleteUserImgAsync",
-    "RelativePath": "api/users/{userid}/image/{fileName}",
+    "Method": "DeleteUserImage",
+    "RelativePath": "api/users/{userId}/image",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userid",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "fileName",
+        "Name": "userId",
         "Type": "System.String",
         "IsRequired": true
       }

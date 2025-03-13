@@ -48,3 +48,16 @@ D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistan
 D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\refint\HealthyCareAssistant.Core.dll
 D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.pdb
 D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\ref\HealthyCareAssistant.Core.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\bin\Debug\net8.0\HealthyCareAssistant.Core.deps.json
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\bin\Debug\net8.0\HealthyCareAssistant.Core.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\bin\Debug\net8.0\HealthyCareAssistant.Core.pdb
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.csproj.AssemblyReference.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.AssemblyInfoInputs.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.AssemblyInfo.cs
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.csproj.CoreCompileInputs.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.sourcelink.json
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\refint\HealthyCareAssistant.Core.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\HealthyCareAssistant.Core.pdb
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Core\obj\Debug\net8.0\ref\HealthyCareAssistant.Core.dll

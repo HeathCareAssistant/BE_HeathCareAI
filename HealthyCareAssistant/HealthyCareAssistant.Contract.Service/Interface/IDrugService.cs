@@ -17,7 +17,7 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<IEnumerable<Drug>> SearchByNameAsync(string name);
         Task<IEnumerable<Drug>> SearchByIngredientAsync(string ingredient);
         Task<IEnumerable<Drug>> FilterByCompanyAsync(string companyName);
-        Task<IEnumerable<Drug>> FilterByCategoryAsync(string category, int page, int pageSize);
+        Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> FilterByCategoryAsync(string category, int page, int pageSize);
         Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id);
         Task<IEnumerable<Drug>> GetRelatedByCompanyAsync(string id);
         Task<IEnumerable<Drug>> GetTopSearchedDrugsAsync();
@@ -26,5 +26,7 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<IEnumerable<DrugModelView>> GetTopNewRegisteredDrugsAsync();
         Task<IEnumerable<DrugModelView>> GetTopWithdrawnDrugsAsync();
         Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync();
+        Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> FilterByDrugGroupAsync(string group, int page, int pageSize);
+
     }
 }

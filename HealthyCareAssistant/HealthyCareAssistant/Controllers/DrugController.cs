@@ -84,8 +84,16 @@ namespace HealthyCareAssistant.Controllers
         [HttpGet("filter/category")]
         public async Task<IActionResult> FilterByCategory([FromQuery] string category, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.FilterByCategoryAsync(category, page, pageSize);
-            return Ok(drugs);
+            var (drugs, totalElement, totalPage) = await _drugService.FilterByCategoryAsync(category, page, pageSize);
+
+            return Ok(new
+            {
+                totalElement,
+                totalPage,
+                currentPage = page,
+                pageSize,
+                data = drugs
+            });
         }
 
         [HttpGet("related/ingredient/{id}")]
@@ -209,6 +217,21 @@ namespace HealthyCareAssistant.Controllers
                 return NotFound(new { message = result });
 
             return Ok(new { message = result });
+        }
+
+        [HttpGet("filter/group")]
+        public async Task<IActionResult> FilterByDrugGroup([FromQuery] string group, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
+        {
+            var (drugs, totalElement, totalPage) = await _drugService.FilterByDrugGroupAsync(group, page, pageSize);
+
+            return Ok(new
+            {
+                totalElement,
+                totalPage,
+                currentPage = page,
+                pageSize,
+                data = drugs
+            });
         }
 
     }

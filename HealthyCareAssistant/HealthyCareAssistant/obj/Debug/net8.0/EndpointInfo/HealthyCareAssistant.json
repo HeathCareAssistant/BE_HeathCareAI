@@ -235,6 +235,65 @@
         }
       }
     },
+    "/api/chatbot/send": {
+      "post": {
+        "tags": [
+          "Chatbot"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/chatbot/messages": {
+      "get": {
+        "tags": [
+          "Chatbot"
+        ],
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chatId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/drugs": {
       "get": {
         "tags": [
@@ -612,7 +671,7 @@
         }
       }
     },
-    "/api/drugs/{drugId}/image/{fileName}": {
+    "/api/drugs/{drugId}/image": {
       "get": {
         "tags": [
           "Drug"
@@ -620,14 +679,6 @@
         "parameters": [
           {
             "name": "drugId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "fileName",
             "in": "path",
             "required": true,
             "schema": {
@@ -648,14 +699,6 @@
         "parameters": [
           {
             "name": "drugId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "fileName",
             "in": "path",
             "required": true,
             "schema": {
@@ -757,7 +800,7 @@
         }
       }
     },
-    "/api/drugs/{drugId}/pdf/{fileName}": {
+    "/api/drugs/{drugId}/pdf": {
       "get": {
         "tags": [
           "Drug"
@@ -765,14 +808,6 @@
         "parameters": [
           {
             "name": "drugId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "fileName",
             "in": "path",
             "required": true,
             "schema": {
@@ -798,13 +833,44 @@
             "schema": {
               "type": "string"
             }
-          },
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/filter/group": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
           {
-            "name": "fileName",
-            "in": "path",
-            "required": true,
+            "name": "group",
+            "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20
             }
           }
         ],
@@ -1426,22 +1492,14 @@
         }
       }
     },
-    "/api/users/{userid}/image/{fileName}": {
+    "/api/users/{userId}/image": {
       "get": {
         "tags": [
           "User"
         ],
         "parameters": [
           {
-            "name": "userid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "fileName",
+            "name": "userId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1461,15 +1519,7 @@
         ],
         "parameters": [
           {
-            "name": "userid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "fileName",
+            "name": "userId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1495,6 +1545,20 @@
             "nullable": true
           },
           "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChatRequestModel": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
             "type": "string",
             "nullable": true
           }

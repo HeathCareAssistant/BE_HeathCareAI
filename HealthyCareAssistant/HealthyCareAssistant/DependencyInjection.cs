@@ -186,7 +186,7 @@ namespace HealthyCareAssistant.API
             services.AddMemoryCache();
             services.AddSingleton<FirebaseAuthService>();
             services.AddScoped<AuthService>();
-            services.AddSingleton<IFirebaseStorageService, FirebaseStorageService>();
+            services.AddScoped<IFirebaseStorageService, FirebaseStorageService>();
             services.AddScoped<IChatbotService, Service.Service.ChatbotService>();
             services.AddHttpClient();
             // Firebase Cloud Messaging (FCM) Service

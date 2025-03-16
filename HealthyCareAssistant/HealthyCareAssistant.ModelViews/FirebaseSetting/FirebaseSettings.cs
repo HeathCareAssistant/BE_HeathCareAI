@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HealthyCareAssistant.ModelViews.FirebaseSetting
 {
-    public class FirebaseSettings
+    public class IFirebaseSetting
     {
         public string ApiKey { get; set; }
         public string AuthEmail { get; set; }

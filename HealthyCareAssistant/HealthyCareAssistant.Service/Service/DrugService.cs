@@ -2,6 +2,8 @@
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.DrugModelViews;
+using HealthyCareAssistant.ModelViews.FirebaseSetting;
+using HealthyCareAssistant.Service.Service.firebase;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace HealthyCareAssistant.Service.Service
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IGenericRepository<Drug> _drugRepo;
-
+        private readonly IFirebaseSetting _firebaseSettings;
         public DrugService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -66,7 +68,7 @@ namespace HealthyCareAssistant.Service.Service
                     State = d.State,
                     CreatedAt = d.CreatedAt,
                     UpdatedAt = d.UpdatedAt,
-                    Images = d.Images,
+                    Images =d.Images,
                     SearchCount = d.SearchCount
                 })
                 .ToListAsync();
@@ -191,7 +193,7 @@ namespace HealthyCareAssistant.Service.Service
         {
             return await _drugRepo.Entities
                 .OrderByDescending(d => d.SearchCount)
-                .Take(5)
+                .Take(20)
                 .ToListAsync();
         }
 

@@ -229,6 +229,27 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UpdateDrugImage",
+    "RelativePath": "api/drugs/{drugId}/image/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "UploadDrugImage",
     "RelativePath": "api/drugs/{drugId}/image/upload",
     "HttpMethod": "POST",
@@ -250,9 +271,9 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "UploadMultipleDrugImages",
-    "RelativePath": "api/drugs/{drugId}/image/uploads",
-    "HttpMethod": "POST",
+    "Method": "GetAllDrugImages",
+    "RelativePath": "api/drugs/{drugId}/images",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -260,11 +281,6 @@
         "Name": "drugId",
         "Type": "System.String",
         "IsRequired": true
-      },
-      {
-        "Name": "files",
-        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -297,6 +313,27 @@
         "Name": "drugId",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UpdateDrugPdf",
+    "RelativePath": "api/drugs/{drugId}/pdf/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

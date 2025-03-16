@@ -1,99 +1,111 @@
 ﻿using Firebase.Auth;
 using Firebase.Storage;
+using HealthyCareAssistant.Contact.Repo.Entity;
+using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.FirebaseSetting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+
+// ✅ Tránh xung đột tên `User`
+using AppUser = HealthyCareAssistant.Contact.Repo.Entity.User;
 
 namespace HealthyCareAssistant.Service.Service.firebase
 {
     public class FirebaseStorageService : IFirebaseStorageService
     {
-        private readonly FirebaseSettings _firebaseSettings;
+        private readonly IFirebaseSetting _firebaseSettings;
+        private readonly IUnitOfWork _unitOfWork;
+       
 
-        public FirebaseStorageService(IOptions<FirebaseSettings> options)
+        public FirebaseStorageService(IOptions<IFirebaseSetting> options, IUnitOfWork unitOfWork)
         {
             _firebaseSettings = options.Value;
+            _unitOfWork = unitOfWork;
         }
 
-        /// <summary>
-        /// Xác thực Firebase và lấy token
-        /// </summary>
         private async Task<FirebaseAuthLink> AuthenticateFirebaseAsync()
         {
-            Console.WriteLine($"[DEBUG] Firebase API Key: {_firebaseSettings.ApiKey}");
-            Console.WriteLine($"[DEBUG] Firebase Auth Email: {_firebaseSettings.AuthEmail}");
-
             if (string.IsNullOrWhiteSpace(_firebaseSettings.ApiKey) ||
                 string.IsNullOrWhiteSpace(_firebaseSettings.AuthEmail) ||
                 string.IsNullOrWhiteSpace(_firebaseSettings.AuthPassword))
             {
-                throw new InvalidOperationException("Firebase authentication credentials are missing or invalid.");
+                throw new InvalidOperationException("Firebase authentication credentials are missing.");
             }
 
-            try
-            {
-                var auth = new FirebaseAuthProvider(new FirebaseConfig(_firebaseSettings.ApiKey));
-                var authResult = await auth.SignInWithEmailAndPasswordAsync(_firebaseSettings.AuthEmail, _firebaseSettings.AuthPassword);
-
-                Console.WriteLine("[DEBUG] Successfully authenticated with Firebase.");
-                return authResult;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[ERROR] Firebase Authentication Failed: {ex.Message}");
-                throw;
-            }
+            var auth = new FirebaseAuthProvider(new FirebaseConfig(_firebaseSettings.ApiKey));
+            return await auth.SignInWithEmailAndPasswordAsync(_firebaseSettings.AuthEmail, _firebaseSettings.AuthPassword);
         }
 
-
-        /// <summary>
-        /// Tải ảnh thuốc lên Firebase Storage
-        /// </summary>
+        // ===================== UPLOAD DRUG IMAGE =====================
         public async Task<string> UploadDrugImageAsync(string drugId, IFormFile file)
         {
             if (file == null || file.Length == 0)
                 throw new ArgumentException("The file is empty");
 
-            Console.WriteLine($"[DEBUG] Uploading image for DrugID: {drugId}, File: {file.FileName}");
+            var uploadedUrl = await UploadToFirebase($"drug-image/{drugId}/{file.FileName}", file);
+            await UpdateDrugImageInDb(drugId, uploadedUrl);
+            return uploadedUrl;
+        }
 
-            try
+        public async Task<List<string>> UploadMultipleDrugImagesAsync(string drugId, List<IFormFile> files)
+        {
+            if (files == null || files.Count == 0)
+                throw new ArgumentException("No files provided");
+
+            List<string> uploadedUrls = new List<string>();
+
+            foreach (var file in files)
             {
-                var account = await AuthenticateFirebaseAsync();
-                var storage = new FirebaseStorage(
-                    _firebaseSettings.Bucket,
-                    new FirebaseStorageOptions
-                    {
-                        AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
-                        ThrowOnCancel = true
-                    });
-
-                string fileName = $"drug-image/{drugId}/{file.FileName}";
-
-                using (var stream = file.OpenReadStream())
-                {
-                    var uploadTask = storage.Child(fileName).PutAsync(stream);
-                    string uploadedUrl = await uploadTask;
-
-                    Console.WriteLine($"[DEBUG] Upload successful: {uploadedUrl}");
-                    return uploadedUrl;
-                }
+                if (file.Length == 0) continue;
+                string uploadedUrl = await UploadToFirebase($"drug-image/{drugId}/{file.FileName}", file);
+                uploadedUrls.Add(uploadedUrl);
             }
-            catch (Exception ex)
+
+            await UpdateDrugImageInDb(drugId, string.Join(";", uploadedUrls));
+            return uploadedUrls;
+        }
+
+        private async Task UpdateDrugImageInDb(string drugId, string imageUrl)
+        {
+            var drugRepo = _unitOfWork.GetRepository<Drug>();
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            if (drug != null)
             {
-                Console.WriteLine($"[ERROR] Upload failed: {ex.Message}");
-                throw;
+                drug.Images = imageUrl;
+                await drugRepo.UpdateAsync(drug);
+                await _unitOfWork.SaveAsync();
             }
         }
 
-        /// <summary>
-        /// Lấy URL truy cập ảnh thuốc từ Firebase Storage
-        /// </summary>
         public async Task<string> GetDrugImageUrlAsync(string drugId)
+        {
+            var drugRepo = _unitOfWork.GetRepository<Drug>();
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            return drug?.Images ?? $"DrugID {drugId} không có ảnh.";
+        }
+
+        public async Task<string> DeleteDrugImageAsync(string drugId)
+        {
+            var drugRepo = _unitOfWork.GetRepository<Drug>();
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            if (drug == null || string.IsNullOrWhiteSpace(drug.Images))
+                return $"DrugID {drugId} không có ảnh để xóa.";
+
+            await DeleteFromFirebase(drug.Images);
+            drug.Images = null;
+            await drugRepo.UpdateAsync(drug);
+            await _unitOfWork.SaveAsync();
+
+            return $"Ảnh của DrugID {drugId} đã được xóa thành công.";
+        }
+        public async Task<List<string>> GetAllDrugImagesAsync(string drugId)
         {
             string apiUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o?prefix=drug-image/{drugId}/";
 
@@ -102,334 +114,205 @@ namespace HealthyCareAssistant.Service.Service.firebase
                 HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
                 if (!response.IsSuccessStatusCode)
                 {
-                    return $"DrugID {drugId} không có ảnh.";
+                    return new List<string>(); // Không có ảnh
                 }
 
                 string json = await response.Content.ReadAsStringAsync();
+                var fileList = new List<string>();
+
                 using (JsonDocument doc = JsonDocument.Parse(json))
                 {
                     var root = doc.RootElement;
                     if (root.TryGetProperty("items", out JsonElement items) && items.GetArrayLength() > 0)
                     {
-                        string filePath = items[0].GetProperty("name").GetString();
-                        string imageUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o/{Uri.EscapeDataString(filePath)}?alt=media";
-                        return imageUrl;
-                    }
-                }
-            }
-
-            return $"DrugID {drugId} không có ảnh.";
-        }
-
-
-        /// <summary>
-        /// Xóa ảnh thuốc trong Firebase Storage
-        /// </summary>
-        public async Task<string> DeleteDrugImageAsync(string drugId)
-        {
-            try
-            {
-                string apiUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o?prefix=drug-image/{drugId}/";
-
-                using (var httpClient = new HttpClient())
-                {
-                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        return $"DrugID {drugId} không có ảnh để xóa.";
-                    }
-
-                    string json = await response.Content.ReadAsStringAsync();
-                    using (JsonDocument doc = JsonDocument.Parse(json))
-                    {
-                        var root = doc.RootElement;
-                        if (root.TryGetProperty("items", out JsonElement items) && items.GetArrayLength() > 0)
+                        foreach (var item in items.EnumerateArray())
                         {
-                            string filePath = items[0].GetProperty("name").GetString();
-
-                            var account = await AuthenticateFirebaseAsync();
-                            var storage = new FirebaseStorage(
-                                _firebaseSettings.Bucket,
-                                new FirebaseStorageOptions
-                                {
-                                    AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
-                                    ThrowOnCancel = true
-                                });
-
-                            await storage.Child(filePath).DeleteAsync();
-                            return $"Ảnh của DrugID {drugId} đã được xóa thành công.";
+                            string filePath = item.GetProperty("name").GetString();
+                            string imageUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o/{Uri.EscapeDataString(filePath)}?alt=media";
+                            fileList.Add(imageUrl);
                         }
                     }
                 }
-
-                return $"DrugID {drugId} không có ảnh để xóa.";
-            }
-            catch (Exception ex)
-            {
-                return $"Xóa ảnh thất bại: {ex.Message}";
+                return fileList;
             }
         }
-
-
-        public async Task UploadMultipleFilesAsync(string drugId, List<IFormFile> files)
+        public async Task<string> UpdateDrugImageAsync(string drugId, IFormFile file)
         {
-            var account = await AuthenticateFirebaseAsync();
-            var storage = new FirebaseStorage(
-                _firebaseSettings.Bucket,
-                new FirebaseStorageOptions
-                {
-                    AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
-                    ThrowOnCancel = true
-                });
+            if (file == null || file.Length == 0)
+                throw new ArgumentException("The file is empty");
 
-            foreach (var file in files)
-            {
-                if (file.Length == 0) continue;
+            var drugRepo = _unitOfWork.GetRepository<Drug>(); // 🔹 Lấy repository từ UnitOfWork
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            if (drug == null)
+                return $"DrugID {drugId} không tồn tại.";
 
-                string fileName = $"drug-image/{drugId}/{file.FileName}";
+            // Xóa ảnh cũ nếu có
+            if (!string.IsNullOrWhiteSpace(drug.Images))
+                await DeleteFromFirebase(drug.Images);
 
-                using (var stream = file.OpenReadStream())
-                {
-                    var uploadTask = storage.Child(fileName).PutAsync(stream);
-                    await uploadTask; // Đợi upload hoàn tất
-                }
-            }
+            // Upload ảnh mới
+            var uploadedUrl = await UploadToFirebase($"drug-image/{drugId}/{file.FileName}", file);
 
-            Console.WriteLine($"Uploaded {files.Count} files for DrugID: {drugId}");
+            // Cập nhật DB
+            drug.Images = uploadedUrl;
+            await drugRepo.UpdateAsync(drug);
+            await _unitOfWork.SaveAsync();
+
+            return uploadedUrl;
         }
-        /// <summary>
-        /// Upload PDF lên Firebase Storage
-        /// </summary>
+
+
+        // ===================== UPLOAD DRUG PDF =====================
         public async Task<string> UploadDrugPdfAsync(string drugId, IFormFile file)
         {
             if (file == null || file.Length == 0)
                 throw new ArgumentException("The file is empty");
 
-            Console.WriteLine($"[DEBUG] Uploading PDF for DrugID: {drugId}, File: {file.FileName}");
-
-            try
-            {
-                var storage = new FirebaseStorage(
-                    _firebaseSettings.Bucket,
-                    new FirebaseStorageOptions
-                    {
-                        ThrowOnCancel = true
-                    });
-
-                string fileName = $"drug-pdf/{drugId}/{file.FileName}";
-
-                using (var stream = file.OpenReadStream())
-                {
-                    var uploadTask = storage.Child(fileName).PutAsync(stream);
-                    string uploadedUrl = await uploadTask;
-                    Console.WriteLine($"[DEBUG] PDF Upload successful: {uploadedUrl}");
-                    return uploadedUrl;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[ERROR] PDF Upload failed: {ex.Message}");
-                throw;
-            }
+            var uploadedUrl = await UploadToFirebase($"drug-pdf/{drugId}/{file.FileName}", file);
+            await UpdateDrugPdfInDb(drugId, uploadedUrl);
+            return uploadedUrl;
         }
 
-        /// <summary>
-        /// Lấy URL truy cập PDF từ Firebase
-        /// </summary>
+        private async Task UpdateDrugPdfInDb(string drugId, string pdfUrl)
+        {
+            var drugRepo = _unitOfWork.GetRepository<Drug>();
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            if (drug != null)
+            {
+                drug.FileName = pdfUrl;
+                await drugRepo.UpdateAsync(drug);
+                await _unitOfWork.SaveAsync();
+            }
+        }
+        public async Task<string> UpdateDrugPdfAsync(string drugId, IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                throw new ArgumentException("The file is empty");
+
+            var drugRepo = _unitOfWork.GetRepository<Drug>(); // Lấy repository từ UnitOfWork
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            if (drug == null)
+                return $"DrugID {drugId} không tồn tại.";
+
+            // Xóa PDF cũ nếu có
+            if (!string.IsNullOrWhiteSpace(drug.FileName))
+                await DeleteFromFirebase(drug.FileName);
+
+            // Upload PDF mới
+            var uploadedUrl = await UploadToFirebase($"drug-pdf/{drugId}/{file.FileName}", file);
+
+            // Cập nhật DB
+            drug.FileName = uploadedUrl;
+            await drugRepo.UpdateAsync(drug);
+            await _unitOfWork.SaveAsync();
+
+            return uploadedUrl;
+        }
+
         public async Task<string> GetDrugPdfUrlAsync(string drugId)
         {
-            string apiUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o?prefix=drug-pdf/{drugId}/";
-
-            using (var httpClient = new HttpClient())
-            {
-                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-                if (!response.IsSuccessStatusCode)
-                {
-                    return $"DrugID {drugId} không có PDF.";
-                }
-
-                string json = await response.Content.ReadAsStringAsync();
-                using (JsonDocument doc = JsonDocument.Parse(json))
-                {
-                    var root = doc.RootElement;
-                    if (root.TryGetProperty("items", out JsonElement items) && items.GetArrayLength() > 0)
-                    {
-                        string filePath = items[0].GetProperty("name").GetString();
-                        string pdfUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o/{Uri.EscapeDataString(filePath)}?alt=media";
-                        return pdfUrl;
-                    }
-                }
-            }
-
-            return $"DrugID {drugId} không có PDF.";
+            var drugRepo = _unitOfWork.GetRepository<Drug>();
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            return drug?.FileName ?? $"DrugID {drugId} không có PDF.";
         }
 
-
-        /// <summary>
-        /// Xóa PDF từ Firebase Storage
-        /// </summary>
         public async Task<string> DeleteDrugPdfAsync(string drugId)
         {
-            try
-            {
-                string apiUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o?prefix=drug-pdf/{drugId}/";
-
-                using (var httpClient = new HttpClient())
-                {
-                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        return $"DrugID {drugId} không có PDF để xóa.";
-                    }
-
-                    string json = await response.Content.ReadAsStringAsync();
-                    using (JsonDocument doc = JsonDocument.Parse(json))
-                    {
-                        var root = doc.RootElement;
-                        if (root.TryGetProperty("items", out JsonElement items) && items.GetArrayLength() > 0)
-                        {
-                            string filePath = items[0].GetProperty("name").GetString();
-
-                            var account = await AuthenticateFirebaseAsync();
-                            var storage = new FirebaseStorage(
-                                _firebaseSettings.Bucket,
-                                new FirebaseStorageOptions
-                                {
-                                    AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
-                                    ThrowOnCancel = true
-                                });
-
-                            await storage.Child(filePath).DeleteAsync();
-                            return $"PDF của DrugID {drugId} đã được xóa thành công.";
-                        }
-                    }
-                }
-
+            var drugRepo = _unitOfWork.GetRepository<Drug>();
+            var drug = await drugRepo.GetByIdAsync(drugId);
+            if (drug == null || string.IsNullOrWhiteSpace(drug.FileName))
                 return $"DrugID {drugId} không có PDF để xóa.";
-            }
-            catch (Exception ex)
-            {
-                return $"Xóa PDF thất bại: {ex.Message}";
-            }
+
+            await DeleteFromFirebase(drug.FileName);
+            drug.FileName = null;
+            await drugRepo.UpdateAsync(drug);
+            await _unitOfWork.SaveAsync();
+
+            return $"PDF của DrugID {drugId} đã được xóa thành công.";
         }
 
-        /// <summary>
-        /// Tải ảnh user lên Firebase Storage
-        /// </summary>
+        // ===================== UPLOAD USER IMAGE =====================
         public async Task<string> UploadUserImageAsync(string userId, IFormFile file)
         {
             if (file == null || file.Length == 0)
                 throw new ArgumentException("The file is empty");
 
-            Console.WriteLine($"[DEBUG] Uploading image for USERID: {userId}, File: {file.FileName}");
+            var uploadedUrl = await UploadToFirebase($"user-image/{userId}/{file.FileName}", file);
+            await UpdateUserImageInDb(userId, uploadedUrl);
+            return uploadedUrl;
+        }
+        public async Task<string> DeleteUserImageAsync(string userId)
+        {
+            var userRepo = _unitOfWork.GetRepository<AppUser>();
+            var user = await userRepo.GetByIdAsync(userId);
+            if (user == null || string.IsNullOrWhiteSpace(user.Image))
+                return $"UserID {userId} không có ảnh để xóa.";
 
+            await DeleteFromFirebase(user.Image);
+            user.Image = null;
+            await userRepo.UpdateAsync(user);
+            await _unitOfWork.SaveAsync();
+
+            return $"Ảnh của UserID {userId} đã được xóa thành công.";
+        }
+        private async Task DeleteFromFirebase(string fileUrl)
+        {
             try
             {
                 var account = await AuthenticateFirebaseAsync();
-                var storage = new FirebaseStorage(
-                    _firebaseSettings.Bucket,
-                    new FirebaseStorageOptions
-                    {
-                        AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
-                        ThrowOnCancel = true
-                    });
-
-                string fileName = $"user-image/{userId}/{file.FileName}";
-
-                using (var stream = file.OpenReadStream())
+                var storage = new FirebaseStorage(_firebaseSettings.Bucket, new FirebaseStorageOptions
                 {
-                    var uploadTask = storage.Child(fileName).PutAsync(stream);
-                    string uploadedUrl = await uploadTask;
+                    AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
+                    ThrowOnCancel = true
+                });
 
-                    Console.WriteLine($"[DEBUG] Upload successful: {uploadedUrl}");
-                    return uploadedUrl;
-                }
+                // Trích xuất đường dẫn file từ URL Firebase
+                string filePath = fileUrl.Split("/o/")[1].Split("?alt=")[0];
+
+                // Xóa file trên Firebase
+                await storage.Child(Uri.UnescapeDataString(filePath)).DeleteAsync();
+
+                Console.WriteLine($"[DEBUG] File deleted from Firebase: {fileUrl}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[ERROR] Upload failed: {ex.Message}");
+                Console.WriteLine($"[ERROR] Failed to delete file from Firebase: {ex.Message}");
                 throw;
             }
         }
-        /// <summary>
-        /// Lấy URL truy cập image user từ Firebase
-        /// </summary>
+
+        private async Task UpdateUserImageInDb(string userId, string imageUrl)
+        {
+            var userRepo = _unitOfWork.GetRepository<AppUser>();
+            var user = await userRepo.GetByIdAsync(userId);
+            if (user != null)
+            {
+                user.Image = imageUrl;
+                await userRepo.UpdateAsync(user);
+                await _unitOfWork.SaveAsync();
+            }
+        }
+
         public async Task<string> GetUserImageUrlAsync(string userId)
         {
-            string apiUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o?prefix=user-image/{userId}/";
-
-            using (var httpClient = new HttpClient())
-            {
-                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-                if (!response.IsSuccessStatusCode)
-                {
-                    return $"UserID {userId} không có ảnh.";
-                }
-
-                string json = await response.Content.ReadAsStringAsync();
-                using (JsonDocument doc = JsonDocument.Parse(json))
-                {
-                    var root = doc.RootElement;
-                    if (root.TryGetProperty("items", out JsonElement items) && items.GetArrayLength() > 0)
-                    {
-                        string filePath = items[0].GetProperty("name").GetString();
-                        string imageUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o/{Uri.EscapeDataString(filePath)}?alt=media";
-                        return imageUrl;
-                    }
-                }
-            }
-
-            return $"UserID {userId} không có ảnh.";
+            var userRepo = _unitOfWork.GetRepository<AppUser>();
+            var user = await userRepo.GetByIdAsync(userId);
+            return user?.Image ?? $"UserID {userId} không có ảnh.";
         }
 
-        /// <summary>
-        /// Xóa img user từ Firebase Storage
-        /// </summary>
-        public async Task<string> DeleteUserImageAsync(string userId)
+        private async Task<string> UploadToFirebase(string filePath, IFormFile file)
         {
-            try
+            var account = await AuthenticateFirebaseAsync();
+            var storage = new FirebaseStorage(_firebaseSettings.Bucket, new FirebaseStorageOptions
             {
-                string apiUrl = $"https://firebasestorage.googleapis.com/v0/b/{_firebaseSettings.Bucket}/o?prefix=user-image/{userId}/";
+                AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
+                ThrowOnCancel = true
+            });
 
-                using (var httpClient = new HttpClient())
-                {
-                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        return $"UserID {userId} không có ảnh để xóa.";
-                    }
-
-                    string json = await response.Content.ReadAsStringAsync();
-                    using (JsonDocument doc = JsonDocument.Parse(json))
-                    {
-                        var root = doc.RootElement;
-                        if (root.TryGetProperty("items", out JsonElement items) && items.GetArrayLength() > 0)
-                        {
-                            string filePath = items[0].GetProperty("name").GetString();
-
-                            var account = await AuthenticateFirebaseAsync();
-                            var storage = new FirebaseStorage(
-                                _firebaseSettings.Bucket,
-                                new FirebaseStorageOptions
-                                {
-                                    AuthTokenAsyncFactory = () => Task.FromResult(account.FirebaseToken),
-                                    ThrowOnCancel = true
-                                });
-
-                            await storage.Child(filePath).DeleteAsync();
-                            return $"Ảnh của UserID {userId} đã được xóa thành công.";
-                        }
-                    }
-                }
-
-                return $"UserID {userId} không có ảnh để xóa.";
-            }
-            catch (Exception ex)
+            using (var stream = file.OpenReadStream())
             {
-                return $"Xóa ảnh thất bại: {ex.Message}";
+                return await storage.Child(filePath).PutAsync(stream);
             }
         }
-
     }
 }
-

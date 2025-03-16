@@ -22,7 +22,7 @@ namespace HealthyCareAssistant
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("EmailSettings"));
-            builder.Services.Configure<FirebaseSettings>(builder.Configuration.GetSection("Firebase"));
+            builder.Services.Configure<IFirebaseSetting>(builder.Configuration.GetSection("Firebase"));
             builder.Services.Configure<CozeSettings>(builder.Configuration.GetSection("CozeSettings"));
   
             builder.Services.AddControllers();

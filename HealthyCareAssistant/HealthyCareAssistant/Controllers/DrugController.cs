@@ -155,6 +155,16 @@ namespace HealthyCareAssistant.Controllers
             var result = await _firebaseStorageService.UploadDrugImageAsync(drugId, model.File);
             return Ok(new { imageUrl = result });
         }
+        [HttpPut("{drugId}/image/update")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UpdateDrugImage(string drugId, [FromForm] DrugImageUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid file" });
+
+            var result = await _firebaseStorageService.UpdateDrugImageAsync(drugId, model.File);
+            return Ok(new { imageUrl = result });
+        }
 
 
         [HttpGet("{drugId}/image")]
@@ -166,7 +176,12 @@ namespace HealthyCareAssistant.Controllers
 
             return Ok(new { imageUrl = result });
         }
-
+        [HttpGet("{drugId}/images")]
+        public async Task<IActionResult> GetAllDrugImages(string drugId)
+        {
+            var result = await _firebaseStorageService.GetAllDrugImagesAsync(drugId);
+            return Ok(new { images = result });
+        }
         [HttpDelete("{drugId}/image")]
         public async Task<IActionResult> DeleteDrugImage(string drugId)
         {
@@ -177,17 +192,18 @@ namespace HealthyCareAssistant.Controllers
             return Ok(new { message = result });
         }
 
-
-        [HttpPost("{drugId}/image/uploads")]
+        [HttpPut("{drugId}/pdf/update")]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> UploadMultipleDrugImages(string drugId, [FromForm] List<IFormFile> files)
+        public async Task<IActionResult> UpdateDrugPdf(string drugId, [FromForm] DrugPdfUploadModel model)
         {
-            if (files == null || files.Count == 0)
-                return BadRequest(new { message = "No files received" });
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid PDF file" });
 
-            await _firebaseStorageService.UploadMultipleFilesAsync(drugId, files);
-            return Ok(new { message = $"{files.Count} files uploaded successfully" });
+            var result = await _firebaseStorageService.UpdateDrugPdfAsync(drugId, model.File);
+            return Ok(new { pdfUrl = result });
         }
+
+
 
         [HttpPost("{drugId}/pdf/upload")]
         [Consumes("multipart/form-data")]
@@ -233,6 +249,7 @@ namespace HealthyCareAssistant.Controllers
                 data = drugs
             });
         }
+
 
     }
 }

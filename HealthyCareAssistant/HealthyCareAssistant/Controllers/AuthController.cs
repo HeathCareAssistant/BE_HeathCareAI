@@ -178,7 +178,7 @@ namespace HealthyCareAssistant.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             var userRoleName = User.FindFirstValue(ClaimTypes.Role) ?? "Unknown";
-           
+            var userPhoneNumber = User.FindFirstValue("phone_number") ?? "N/A";
 
             Console.WriteLine($"[JWT] Authenticated User - ID: {userId}, Email: {userEmail}, Role: {userRoleName}");
 
@@ -199,6 +199,7 @@ namespace HealthyCareAssistant.Controllers
             {
                 user.Name,
                 user.Email,
+                user.PhoneNumber,
                 Role = userRoleName,
             };
 

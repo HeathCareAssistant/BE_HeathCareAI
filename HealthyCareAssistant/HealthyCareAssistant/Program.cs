@@ -3,7 +3,10 @@ using HealthyCareAssistant.Middleware;
 using System.Net;
 using System.Net.Mail;
 using Microsoft.Extensions.DependencyInjection;
+using DotNetEnv;
 using HealthyCareAssistant.ModelViews.MailModelViews;
+using HealthyCareAssistant.ModelViews.FirebaseSetting;
+using HealthyCareAssistant.Service.Config;
 namespace HealthyCareAssistant
 {
     public class Program
@@ -19,6 +22,9 @@ namespace HealthyCareAssistant
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("EmailSettings"));
+            builder.Services.Configure<IFirebaseSetting>(builder.Configuration.GetSection("Firebase"));
+            builder.Services.Configure<CozeSettings>(builder.Configuration.GetSection("CozeSettings"));
+  
             builder.Services.AddControllers();
 
             // Đăng ký các dịch vụ cần thiết

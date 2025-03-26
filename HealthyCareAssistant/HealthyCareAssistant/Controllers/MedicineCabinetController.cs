@@ -15,14 +15,14 @@ namespace HealthyCareAssistant.Controllers
             _cabinetService = cabinetService;
         }
 
-        [HttpPost("create-empty")]
+        [HttpPost("Empty")]
         public async Task<IActionResult> CreateEmptyCabinet(int userId, string cabinetName, string description)
         {
             return Ok(await _cabinetService.CreateCabinetAsync(userId, cabinetName, description));
         }
 
 
-        [HttpPost("create")]
+        [HttpPost()]
         public async Task<IActionResult> CreateCabinet(int userId, [FromBody] CreateCabinetWithDrugsRequest request)
         {
             return Ok(await _cabinetService.CreateCabinetWithDrugsAsync(userId, request));

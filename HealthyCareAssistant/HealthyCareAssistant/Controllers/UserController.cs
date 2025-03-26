@@ -1,7 +1,9 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contract.Service.Interface;
+using HealthyCareAssistant.ModelViews.DrugModelViews;
 using HealthyCareAssistant.ModelViews.UserModelViews;
 using HealthyCareAssistant.Service.Service;
+using HealthyCareAssistant.Service.Service.firebase;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthyCareAssistant.Controllers
@@ -11,10 +13,11 @@ namespace HealthyCareAssistant.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-
-        public UserController(IUserService userService)
+        private readonly IFirebaseStorageService _firebaseStorageService;
+        public UserController(IUserService userService, IFirebaseStorageService firebaseStorageService)
         {
             _userService = userService;
+            _firebaseStorageService = firebaseStorageService;
         }
 
         // 1️ Lấy danh sách User (RoleId = 2)
@@ -67,6 +70,38 @@ namespace HealthyCareAssistant.Controllers
         {
             return Ok(await _userService.SearchUsersAsync(keyword));
         }
+        [HttpPost("{userid}/image/upload")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadUserImageAsync(string userid, [FromForm] UserUpLoadImageModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid IMG file" });
+
+            var result = await _firebaseStorageService.UploadUserImageAsync(userid, model.File);
+            return Ok(new { imgUrl = result });
+        }
+
+        [HttpGet("{userId}/image")]
+        public async Task<IActionResult> GetUserImageUrl(string userId)
+        {
+            var result = await _firebaseStorageService.GetUserImageUrlAsync(userId);
+            if (result.StartsWith("UserID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { imageUrl = result });
+        }
+
+
+        [HttpDelete("{userId}/image")]
+        public async Task<IActionResult> DeleteUserImage(string userId)
+        {
+            var result = await _firebaseStorageService.DeleteUserImageAsync(userId);
+            if (result.StartsWith("UserID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { message = result });
+        }
+
     }
 
 

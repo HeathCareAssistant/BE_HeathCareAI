@@ -122,6 +122,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "HealthyCareAssistant.Controllers.ChatbotController",
+    "Method": "GetMessages",
+    "RelativePath": "api/chatbot/messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conversationId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "chatId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ChatbotController",
+    "Method": "SendMessage",
+    "RelativePath": "api/chatbot/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.Controllers.ChatRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetAll",
     "RelativePath": "api/drugs",
@@ -154,6 +191,170 @@
         "Name": "model",
         "Type": "HealthyCareAssistant.ModelViews.DrugModelViews.DrugModelView",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetDrugImageUrl",
+    "RelativePath": "api/drugs/{drugId}/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "DeleteDrugImage",
+    "RelativePath": "api/drugs/{drugId}/image",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UpdateDrugImage",
+    "RelativePath": "api/drugs/{drugId}/image/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UploadDrugImage",
+    "RelativePath": "api/drugs/{drugId}/image/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetAllDrugImages",
+    "RelativePath": "api/drugs/{drugId}/images",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetDrugPdfUrl",
+    "RelativePath": "api/drugs/{drugId}/pdf",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "DeleteDrugPdf",
+    "RelativePath": "api/drugs/{drugId}/pdf",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UpdateDrugPdf",
+    "RelativePath": "api/drugs/{drugId}/pdf/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "UploadDrugPdf",
+    "RelativePath": "api/drugs/{drugId}/pdf/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "drugId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -213,14 +414,60 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "Method": "GetAllCompanies",
+    "RelativePath": "api/drugs/companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "FilterByCategory",
     "RelativePath": "api/drugs/filter/category",
+=======
+    "Method": "GetRelated",
+    "RelativePath": "api/drugs/related",
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+    "Method": "GetRelated",
+    "RelativePath": "api/drugs/related",
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "category",
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "FilterOrSearch",
+    "RelativePath": "api/drugs/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -239,78 +486,14 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "FilterByCompany",
-    "RelativePath": "api/drugs/filter/company",
+    "Method": "GetTop",
+    "RelativePath": "api/drugs/top",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "companyName",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetRelatedByCompany",
-    "RelativePath": "api/drugs/related/company",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetRelatedByIngredient",
-    "RelativePath": "api/drugs/related/ingredient/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "SearchByIngredient",
-    "RelativePath": "api/drugs/search/ingredient",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ingredient",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "SearchByName",
-    "RelativePath": "api/drugs/search/name",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "name",
+        "Name": "type",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -328,36 +511,30 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetTopNewRegisteredDrugs",
-    "RelativePath": "api/drugs/top-new-registered",
-    "HttpMethod": "GET",
+<<<<<<< HEAD
+    "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
+    "Method": "CreateCabinet",
+    "RelativePath": "api/medicine-cabinet",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.ModelViews.MedicineCabinetModelViews.CreateCabinetWithDrugsRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetTopSearchedDrugs",
-    "RelativePath": "api/drugs/top-searched",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetTopWithdrawnDrugs",
-    "RelativePath": "api/drugs/top-withdrawn",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
     "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
     "Method": "UpdateCabinet",
     "RelativePath": "api/medicine-cabinet/{cabinetId}",
@@ -438,29 +615,8 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
-    "Method": "CreateCabinet",
-    "RelativePath": "api/medicine-cabinet/create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "request",
-        "Type": "HealthyCareAssistant.ModelViews.MedicineCabinetModelViews.CreateCabinetWithDrugsRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
     "Method": "CreateEmptyCabinet",
-    "RelativePath": "api/medicine-cabinet/create-empty",
+    "RelativePath": "api/medicine-cabinet/Empty",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -691,6 +847,59 @@
         "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.UserController",
+    "Method": "GetUserImageUrl",
+    "RelativePath": "api/users/{userId}/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.UserController",
+    "Method": "DeleteUserImage",
+    "RelativePath": "api/users/{userId}/image",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.UserController",
+    "Method": "UploadUserImageAsync",
+    "RelativePath": "api/users/{userid}/image/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

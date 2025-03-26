@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+<<<<<<< HEAD
     <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+=======
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+    <PackageReference Include="AspNetCore.Firebase.Authentication" Version="2.0.1" />
+    <PackageReference Include="Firebase.Auth" Version="1.0.0" />
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
+<<<<<<< HEAD
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
   </ItemGroup>
 
   <ItemGroup>

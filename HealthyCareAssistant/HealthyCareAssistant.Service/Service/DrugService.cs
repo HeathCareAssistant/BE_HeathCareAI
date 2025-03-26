@@ -2,6 +2,8 @@
 using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.DrugModelViews;
+using HealthyCareAssistant.ModelViews.FirebaseSetting;
+using HealthyCareAssistant.Service.Service.firebase;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,12 +16,13 @@ namespace HealthyCareAssistant.Service.Service
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IGenericRepository<Drug> _drugRepo;
-
+        private readonly IFirebaseSetting _firebaseSettings;
         public DrugService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
             _drugRepo = _unitOfWork.GetRepository<Drug>();
         }
+
 
         public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> GetAllDrugsPaginatedAsync(int page, int pageSize)
         {
@@ -65,7 +68,7 @@ namespace HealthyCareAssistant.Service.Service
                     State = d.State,
                     CreatedAt = d.CreatedAt,
                     UpdatedAt = d.UpdatedAt,
-                    Images = d.Images,
+                    Images =d.Images,
                     SearchCount = d.SearchCount
                 })
                 .ToListAsync();
@@ -135,62 +138,139 @@ namespace HealthyCareAssistant.Service.Service
             return true;
         }
 
-        public async Task<IEnumerable<Drug>> SearchByNameAsync(string name)
+        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> SearchDrugsAsync(string type, string value, int page, int pageSize)
         {
-            return await _drugRepo.Entities
-                .Where(d => d.TenThuoc != null && d.TenThuoc.ToLower().Contains(name.ToLower()))
-                .ToListAsync();
-        }
+            var query = _drugRepo.Entities.AsQueryable();
 
-        public async Task<IEnumerable<Drug>> SearchByIngredientAsync(string ingredient)
-        {
-            return await _drugRepo.Entities
-                .Where(d => d.HoatChat != null && d.HoatChat.ToLower().Contains(ingredient.ToLower()))
-                .ToListAsync();
-        }
-
-        public async Task<IEnumerable<Drug>> FilterByCompanyAsync(string companyName)
-        {
-            return await _drugRepo.Entities
-                .Where(d => d.CongTySx != null && d.CongTySx.ToLower().Contains(companyName.ToLower()))
-                .ToListAsync();
-        }
-
-        public async Task<IEnumerable<Drug>> FilterByCategoryAsync(string category, int page, int pageSize)
-        {
-            return await _drugRepo.Entities
-                .Where(d => d.PhanLoai != null && d.PhanLoai.ToLower().Contains(category.ToLower()))
-                .Skip((page - 1) * pageSize)  
-                .Take(pageSize)               
-                .ToListAsync();
-        }
-
-
-        public async Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id)
-        {
-
-            var currentDrug = await _drugRepo.GetByIdAsync(id);
-            if (currentDrug == null || string.IsNullOrEmpty(currentDrug.HoatChat))
+            if (!string.IsNullOrEmpty(value))
             {
-                return new List<Drug>();
+                value = value.ToLower();
+
+                if (type == "name")
+                    query = query.Where(d => d.TenThuoc != null && d.TenThuoc.ToLower().Contains(value));
+                else if (type == "ingredient")
+                    query = query.Where(d => d.HoatChat != null && d.HoatChat.ToLower().Contains(value));
+                else if (type == "company")
+                    query = query.Where(d => d.CongTySx != null && d.CongTySx.ToLower().Contains(value));
+                else if (type == "category")
+                    query = query.Where(d => d.PhanLoai != null && d.PhanLoai.ToLower().Contains(value));
+                else if (type == "group")
+                    query = query.Where(d => d.NhomThuoc != null && d.NhomThuoc.ToLower().Contains(value));
             }
 
+            int totalElement = await query.CountAsync();
+            int totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
 
-            return await _drugRepo.Entities
-                .Where(d => d.DrugId != id && d.HoatChat != null && d.HoatChat.ToLower().Contains(currentDrug.HoatChat.ToLower()))
+            var drugs = await query.OrderBy(d => d.DrugId)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(d => new DrugModelView
+                {
+                    DrugId = d.DrugId,
+                    TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
+                    HoatChat = d.HoatChat,
+                    PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
+                    CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
+                    GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
+                    SearchCount = d.SearchCount
+                })
                 .ToListAsync();
+
+            return (drugs, totalElement, totalPage);
         }
 
-        public async Task<IEnumerable<Drug>> GetRelatedByCompanyAsync(string id)
+        public async Task<IEnumerable<DrugModelView>> GetTopDrugsByTypeAsync(string type)
         {
-            var currentDrug = await _drugRepo.GetByIdAsync(id);
-            if (currentDrug == null || string.IsNullOrEmpty(currentDrug.CongTySx))
+            var query = _drugRepo.Entities.AsQueryable();
+
+            if (type == "new")
+                query = query.Where(d => d.State == 202).OrderByDescending(d => d.PheDuyet ?? DateOnly.MinValue).ThenByDescending(d => d.CreatedAt);
+            else if (type == "withdrawn")
+                query = query.Where(d => d.RutSdk == true).OrderByDescending(d => d.UpdatedAt);
+            else if (type == "top-searched")
+                query = query.OrderByDescending(d => d.SearchCount);
+
+            return await query.Take(20).Select(d => new DrugModelView
             {
-                return new List<Drug>();
-            }
+                DrugId = d.DrugId,
+                TenThuoc = d.TenThuoc,
+                DotPheDuyet = d.DotPheDuyet,
+                SoQuyetDinh = d.SoQuyetDinh,
+                PheDuyet = d.PheDuyet,
+                HieuLuc = d.HieuLuc,
+                SoDangKy = d.SoDangKy,
+                HoatChat = d.HoatChat,
+                PhanLoai = d.PhanLoai,
+                NongDo = d.NongDo,
+                TaDuoc = d.TaDuoc,
+                BaoChe = d.BaoChe,
+                DongGoi = d.DongGoi,
+                TieuChuan = d.TieuChuan,
+                TuoiTho = d.TuoiTho,
+                CongTySx = d.CongTySx,
+                CongTySxCode = d.CongTySxCode,
+                NuocSx = d.NuocSx,
+                DiaChiSx = d.DiaChiSx,
+                CongTyDk = d.CongTyDk,
+                NuocDk = d.NuocDk,
+                DiaChiDk = d.DiaChiDk,
+                GiaKeKhai = d.GiaKeKhai,
+                HuongDanSuDung = d.HuongDanSuDung,
+                HuongDanSuDungBn = d.HuongDanSuDungBn,
+                NhomThuoc = d.NhomThuoc,
+                IsHide = d.IsHide,
+                Rate = d.Rate,
+                RutSdk = d.RutSdk,
+                FileName = d.FileName,
+                State = d.State,
+                CreatedAt = d.CreatedAt,
+                UpdatedAt = d.UpdatedAt,
+                Images = d.Images,
+                SearchCount = d.SearchCount
+            }).ToListAsync();
+        }
+
+
+
+        public async Task<IEnumerable<Drug>> GetRelatedDrugsAsync(string id, string type)
+        {
+            var drug = await _drugRepo.GetByIdAsync(id);
+            if (drug == null) return new List<Drug>();
+
+            string compareValue = type == "ingredient" ? drug.HoatChat : drug.CongTySx;
 
             return await _drugRepo.Entities
-                .Where(d => d.DrugId != id && d.CongTySx != null && d.CongTySx.ToLower().Contains(currentDrug.CongTySx.ToLower()))
+                .Where(d => d.DrugId != id && (type == "ingredient"
+                    ? d.HoatChat.ToLower().Contains(compareValue.ToLower())
+                    : d.CongTySx.ToLower().Contains(compareValue.ToLower())))
                 .ToListAsync();
         }
 
@@ -199,7 +279,7 @@ namespace HealthyCareAssistant.Service.Service
         {
             return await _drugRepo.Entities
                 .OrderByDescending(d => d.SearchCount)
-                .Take(5)
+                .Take(20)
                 .ToListAsync();
         }
 
@@ -252,103 +332,6 @@ namespace HealthyCareAssistant.Service.Service
             await _unitOfWork.SaveAsync();
             return true;
         }
-
-
-        public async Task<IEnumerable<DrugModelView>> GetTopNewRegisteredDrugsAsync()
-        {
-            return await _drugRepo.Entities
-                .Where(d => d.State == 202)
-                .OrderByDescending(d => d.PheDuyet ?? DateOnly.MinValue) // Ưu tiên theo ngày phê duyệt
-                .ThenByDescending(d => d.CreatedAt) // Nếu ngày phê duyệt giống nhau thì sắp theo CreatedAt
-                .Take(10)
-                .Select(d => new DrugModelView
-                {
-                    DrugId = d.DrugId,
-                    TenThuoc = d.TenThuoc,
-                    DotPheDuyet = d.DotPheDuyet,
-                    SoQuyetDinh = d.SoQuyetDinh,
-                    PheDuyet = d.PheDuyet,
-                    HieuLuc = d.HieuLuc,
-                    SoDangKy = d.SoDangKy,
-                    HoatChat = d.HoatChat,
-                    PhanLoai = d.PhanLoai,
-                    NongDo = d.NongDo,
-                    TaDuoc = d.TaDuoc,
-                    BaoChe = d.BaoChe,
-                    DongGoi = d.DongGoi,
-                    TieuChuan = d.TieuChuan,
-                    TuoiTho = d.TuoiTho,
-                    CongTySx = d.CongTySx,
-                    CongTySxCode = d.CongTySxCode,
-                    NuocSx = d.NuocSx,
-                    DiaChiSx = d.DiaChiSx,
-                    CongTyDk = d.CongTyDk,
-                    NuocDk = d.NuocDk,
-                    DiaChiDk = d.DiaChiDk,
-                    GiaKeKhai = d.GiaKeKhai,
-                    HuongDanSuDung = d.HuongDanSuDung,
-                    HuongDanSuDungBn = d.HuongDanSuDungBn,
-                    NhomThuoc = d.NhomThuoc,
-                    IsHide = d.IsHide,
-                    Rate = d.Rate,
-                    RutSdk = d.RutSdk,
-                    FileName = d.FileName,
-                    State = d.State,
-                    CreatedAt = d.CreatedAt,
-                    UpdatedAt = d.UpdatedAt,
-                    Images = d.Images,
-                    SearchCount = d.SearchCount
-                })
-                .ToListAsync();
-        }
-
-        public async Task<IEnumerable<DrugModelView>> GetTopWithdrawnDrugsAsync()
-        {
-            return await _drugRepo.Entities
-                .Where(d => d.RutSdk == true)
-                .OrderByDescending(d => d.UpdatedAt)
-                .Take(10)
-                .Select(d => new DrugModelView
-                {
-                    DrugId = d.DrugId,
-                    TenThuoc = d.TenThuoc,
-                    DotPheDuyet = d.DotPheDuyet,
-                    SoQuyetDinh = d.SoQuyetDinh,
-                    PheDuyet = d.PheDuyet,
-                    HieuLuc = d.HieuLuc,
-                    SoDangKy = d.SoDangKy,
-                    HoatChat = d.HoatChat,
-                    PhanLoai = d.PhanLoai,
-                    NongDo = d.NongDo,
-                    TaDuoc = d.TaDuoc,
-                    BaoChe = d.BaoChe,
-                    DongGoi = d.DongGoi,
-                    TieuChuan = d.TieuChuan,
-                    TuoiTho = d.TuoiTho,
-                    CongTySx = d.CongTySx,
-                    CongTySxCode = d.CongTySxCode,
-                    NuocSx = d.NuocSx,
-                    DiaChiSx = d.DiaChiSx,
-                    CongTyDk = d.CongTyDk,
-                    NuocDk = d.NuocDk,
-                    DiaChiDk = d.DiaChiDk,
-                    GiaKeKhai = d.GiaKeKhai,
-                    HuongDanSuDung = d.HuongDanSuDung,
-                    HuongDanSuDungBn = d.HuongDanSuDungBn,
-                    NhomThuoc = d.NhomThuoc,
-                    IsHide = d.IsHide,
-                    Rate = d.Rate,
-                    RutSdk = d.RutSdk,
-                    FileName = d.FileName,
-                    State = d.State,
-                    CreatedAt = d.CreatedAt,
-                    UpdatedAt = d.UpdatedAt,
-                    Images = d.Images,
-                    SearchCount = d.SearchCount
-                })
-                .ToListAsync();
-        }
-
         public async Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync()
         {
             return await _drugRepo.Entities
@@ -362,5 +345,137 @@ namespace HealthyCareAssistant.Service.Service
                 .Take(10)
                 .ToListAsync();
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+
+        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> FilterByDrugGroupAsync(string group, int page, int pageSize)
+        {
+            var query = _drugRepo.Entities
+        .Where(d => d.NhomThuoc != null && d.NhomThuoc.ToLower().Contains(group.ToLower()));
+
+            int totalElement = await query.CountAsync(); // Tổng số phần tử
+            int totalPage = (int)Math.Ceiling(totalElement / (double)pageSize); // Tổng số trang
+
+            var drugs = await query
+                .OrderBy(d => d.DrugId) // Sắp xếp để phân trang đúng
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(d => new DrugModelView
+                {
+                    DrugId = d.DrugId,
+                    TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
+                    HoatChat = d.HoatChat,
+                    PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
+                    CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
+                    GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
+                    SearchCount = d.SearchCount
+                })
+                .ToListAsync();
+
+            return (drugs, totalElement, totalPage);
+        }
+
+        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> FilterByCategoryAsync(string category, int page, int pageSize)
+        {
+            var query = _drugRepo.Entities
+        .Where(d => d.PhanLoai != null && d.PhanLoai.ToLower().Contains(category.ToLower()));
+
+            int totalElement = await query.CountAsync(); // Tổng số phần tử
+            int totalPage = (int)Math.Ceiling(totalElement / (double)pageSize); // Tổng số trang
+
+            var drugs = await query
+                .OrderBy(d => d.DrugId) // Sắp xếp để phân trang đúng
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(d => new DrugModelView
+                {
+                    DrugId = d.DrugId,
+                    TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
+                    HoatChat = d.HoatChat,
+                    PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
+                    CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
+                    GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
+                    SearchCount = d.SearchCount
+                })
+                .ToListAsync();
+
+            return (drugs, totalElement, totalPage);
+        }
+        public async Task<IEnumerable<string>> GetAllCompaniesAsync()
+        {
+            return await _drugRepo.Entities
+                .Where(d => !string.IsNullOrEmpty(d.CongTySx))
+                .Select(d => d.CongTySx)
+                .Distinct()
+                .OrderBy(name => name)
+                .ToListAsync();
+        }
+
+>>>>>>> Stashed changes
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
     }
+
 }

@@ -1,6 +1,7 @@
 ﻿using HealthyCareAssistant.Contact.Repo.Entity;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.DrugModelViews;
+using HealthyCareAssistant.Service.Service.firebase;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthyCareAssistant.Controllers
@@ -10,10 +11,12 @@ namespace HealthyCareAssistant.Controllers
     public class DrugController : ControllerBase
     {
         private readonly IDrugService _drugService;
-
-        public DrugController(IDrugService drugService)
+        private readonly IFirebaseStorageService _firebaseStorageService;
+        public DrugController(IDrugService drugService, IFirebaseStorageService firebaseStorageService)
         {
             _drugService = drugService;
+            _firebaseStorageService = firebaseStorageService;
+
         }
 
         [HttpGet]
@@ -57,54 +60,35 @@ namespace HealthyCareAssistant.Controllers
             return result ? Ok(new { message = "Deleted successfully" }) : NotFound();
         }
 
-        [HttpGet("search/name")]
-        public async Task<IActionResult> SearchByName([FromQuery] string name)
+        [HttpGet("search")]
+        public async Task<IActionResult> FilterOrSearch([FromQuery] string type, [FromQuery] string value, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.SearchByNameAsync(name);
-            return Ok(drugs);
+            var (drugs, totalElement, totalPage) = await _drugService.SearchDrugsAsync(type, value, page, pageSize);
+            return Ok(new
+            {
+                totalElement,
+                totalPage,
+                currentPage = page,
+                pageSize,
+                data = drugs
+            });
         }
 
-        [HttpGet("search/ingredient")]
-        public async Task<IActionResult> SearchByIngredient([FromQuery] string ingredient)
+
+        [HttpGet("related")]
+        public async Task<IActionResult> GetRelated([FromQuery] string id, [FromQuery] string type)
         {
-            var drugs = await _drugService.SearchByIngredientAsync(ingredient);
-            return Ok(drugs);
+            var result = await _drugService.GetRelatedDrugsAsync(id, type);
+            return Ok(result);
         }
 
-        [HttpGet("filter/company")]
-        public async Task<IActionResult> FilterByCompany([FromQuery] string companyName)
+        [HttpGet("top")]
+        public async Task<IActionResult> GetTop([FromQuery] string type)
         {
-            var drugs = await _drugService.FilterByCompanyAsync(companyName);
-            return Ok(drugs);
+            var result = await _drugService.GetTopDrugsByTypeAsync(type);
+            return Ok(result);
         }
 
-        [HttpGet("filter/category")]
-        public async Task<IActionResult> FilterByCategory([FromQuery] string category, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
-        {
-            var drugs = await _drugService.FilterByCategoryAsync(category, page, pageSize);
-            return Ok(drugs);
-        }
-
-        [HttpGet("related/ingredient/{id}")]
-        public async Task<IActionResult> GetRelatedByIngredient(string id)
-        {
-            var drugs = await _drugService.GetRelatedByIngredientAsync(id);
-            return Ok(drugs);
-        }
-
-        [HttpGet("related/company")]
-        public async Task<IActionResult> GetRelatedByCompany([FromQuery] string id)
-        {
-            var drugs = await _drugService.GetRelatedByCompanyAsync(id);
-            return Ok(drugs);
-        }
-
-        [HttpGet("top-searched")]
-        public async Task<IActionResult> GetTopSearchedDrugs()
-        {
-            var drugs = await _drugService.GetTopSearchedDrugsAsync();
-            return Ok(drugs);
-        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] UpdateDrugModelView model)
@@ -113,26 +97,145 @@ namespace HealthyCareAssistant.Controllers
             return result ? Ok(new { message = "Updated successfully" }) : NotFound();
         }
 
-
-        [HttpGet("top-new-registered")]
-        public async Task<IActionResult> GetTopNewRegisteredDrugs()
-        {
-            var drugs = await _drugService.GetTopNewRegisteredDrugsAsync();
-            return Ok(drugs);
-        }
-
-        [HttpGet("top-withdrawn")]
-        public async Task<IActionResult> GetTopWithdrawnDrugs()
-        {
-            var drugs = await _drugService.GetTopWithdrawnDrugsAsync();
-            return Ok(drugs);
-        }
-
         [HttpGet("top-companies")]
         public async Task<IActionResult> GetTopCompaniesByDrugs()
         {
             var companies = await _drugService.GetTopCompaniesByDrugsAsync();
             return Ok(companies);
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+
+        [HttpGet("companies")]
+        public async Task<IActionResult> GetAllCompanies()
+        {
+            var companies = await _drugService.GetAllCompaniesAsync();
+            return Ok(new { total = companies.Count(), data = companies });
+        }
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+
+        [HttpPost("{drugId}/image/upload")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadDrugImage(string drugId, [FromForm] DrugImageUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid file" });
+
+            var result = await _firebaseStorageService.UploadDrugImageAsync(drugId, model.File);
+            return Ok(new { imageUrl = result });
+        }
+        [HttpPut("{drugId}/image/update")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UpdateDrugImage(string drugId, [FromForm] DrugImageUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid file" });
+
+            var result = await _firebaseStorageService.UpdateDrugImageAsync(drugId, model.File);
+            return Ok(new { imageUrl = result });
+        }
+
+
+        [HttpGet("{drugId}/image")]
+        public async Task<IActionResult> GetDrugImageUrl(string drugId)
+        {
+            var result = await _firebaseStorageService.GetDrugImageUrlAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { imageUrl = result });
+        }
+        [HttpGet("{drugId}/images")]
+        public async Task<IActionResult> GetAllDrugImages(string drugId)
+        {
+            var result = await _firebaseStorageService.GetAllDrugImagesAsync(drugId);
+            return Ok(new { images = result });
+        }
+        [HttpDelete("{drugId}/image")]
+        public async Task<IActionResult> DeleteDrugImage(string drugId)
+        {
+            var result = await _firebaseStorageService.DeleteDrugImageAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result }); // Trả về lỗi nếu không có ảnh
+
+            return Ok(new { message = result });
+        }
+
+        [HttpPut("{drugId}/pdf/update")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UpdateDrugPdf(string drugId, [FromForm] DrugPdfUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid PDF file" });
+
+            var result = await _firebaseStorageService.UpdateDrugPdfAsync(drugId, model.File);
+            return Ok(new { pdfUrl = result });
+        }
+
+
+
+        [HttpPost("{drugId}/pdf/upload")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadDrugPdf(string drugId, [FromForm] DrugPdfUploadModel model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest(new { message = "Invalid PDF file" });
+
+            var result = await _firebaseStorageService.UploadDrugPdfAsync(drugId, model.File);
+            return Ok(new { pdfUrl = result });
+        }
+
+        [HttpGet("{drugId}/pdf")]
+        public async Task<IActionResult> GetDrugPdfUrl(string drugId)
+        {
+            var result = await _firebaseStorageService.GetDrugPdfUrlAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { pdfUrl = result });
+        }
+        [HttpDelete("{drugId}/pdf")]
+        public async Task<IActionResult> DeleteDrugPdf(string drugId)
+        {
+            var result = await _firebaseStorageService.DeleteDrugPdfAsync(drugId);
+            if (result.StartsWith("DrugID"))
+                return NotFound(new { message = result });
+
+            return Ok(new { message = result });
+        }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+        [HttpGet("filter/group")]
+        public async Task<IActionResult> FilterByDrugGroup([FromQuery] string group, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
+        {
+            var (drugs, totalElement, totalPage) = await _drugService.FilterByDrugGroupAsync(group, page, pageSize);
+
+            return Ok(new
+            {
+                totalElement,
+                totalPage,
+                currentPage = page,
+                pageSize,
+                data = drugs
+            });
+        }
+
+
+>>>>>>> Stashed changes
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
     }
 }
+

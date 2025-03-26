@@ -14,17 +14,26 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<Drug> GetDrugByIdAsync(string id);
         Task<string> CreateDrugAsync(DrugModelView drug);
         Task<bool> DeleteDrugAsync(string id);
-        Task<IEnumerable<Drug>> SearchByNameAsync(string name);
-        Task<IEnumerable<Drug>> SearchByIngredientAsync(string ingredient);
-        Task<IEnumerable<Drug>> FilterByCompanyAsync(string companyName);
-        Task<IEnumerable<Drug>> FilterByCategoryAsync(string category, int page, int pageSize);
-        Task<IEnumerable<Drug>> GetRelatedByIngredientAsync(string id);
-        Task<IEnumerable<Drug>> GetRelatedByCompanyAsync(string id);
-        Task<IEnumerable<Drug>> GetTopSearchedDrugsAsync();
+        Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> SearchDrugsAsync(string type, string value, int page, int pageSize);
+        Task<IEnumerable<Drug>> GetRelatedDrugsAsync(string id, string type);  // ingredient | company
         Task IncrementSearchCountAsync(string id);
         Task<bool> UpdateDrugAsync(string id, UpdateDrugModelView updatedDrug);
-        Task<IEnumerable<DrugModelView>> GetTopNewRegisteredDrugsAsync();
-        Task<IEnumerable<DrugModelView>> GetTopWithdrawnDrugsAsync();
+        Task<IEnumerable<DrugModelView>> GetTopDrugsByTypeAsync(string type); // new | withdrawn | searched
         Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync();
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+        Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> FilterByDrugGroupAsync(string group, int page, int pageSize);
+        Task<IEnumerable<string>> GetAllCompaniesAsync();
+
+
+>>>>>>> Stashed changes
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
     }
 }

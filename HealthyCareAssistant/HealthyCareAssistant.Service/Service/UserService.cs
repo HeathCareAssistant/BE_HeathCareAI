@@ -27,52 +27,71 @@ namespace HealthyCareAssistant.Service.Service
         private readonly IOTPService _otpService;
         private readonly FirebaseAuthService _firebaseAuthService;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+        public UserService(IUnitOfWork unitOfWork,
+            IConfiguration configuration,
+            IGenericRepository<User> userRepo,
+            ILogger<UserService> logger,
+            Contract.Service.Interface.IMailService mailService,
+=======
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
         public UserService(IUnitOfWork unitOfWork, 
             IConfiguration configuration, 
             IGenericRepository<User> userRepo, 
             ILogger<UserService> logger, 
             Contract.Service.Interface.IMailService mailService, 
+<<<<<<< HEAD
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
             IOTPService otpService,
             FirebaseAuthService firebaseAuthService)
         {
-            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork), "UnitOfWork không được null.");
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _configuration = configuration;
+<<<<<<< HEAD
+            _userRepo = userRepo ?? throw new ArgumentNullException(nameof(userRepo));
+            _firebaseAuthService = firebaseAuthService ?? throw new ArgumentNullException(nameof(firebaseAuthService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+=======
             _userRepo = userRepo ?? throw new ArgumentNullException(nameof(userRepo), "User repository không được null.");
             _firebaseAuthService = firebaseAuthService ?? throw new ArgumentNullException(nameof(firebaseAuthService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger), "Logger không được null.");
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
             _mailService = mailService;
             _otpService = otpService;
-
         }
 
         public async Task<string?> LoginAsync(LoginModelViews model)
         {
-            var userRepo = _unitOfWork.GetRepository<User>();
-
-            // Kiểm tra user có tồn tại không
             var user = _userRepo.Entities
                 .Include(u => u.Role)
-                .FirstOrDefault(u => u.Email == model.Email);
+                .FirstOrDefault(u => u.Email == model.Email && u.Status == true);
+
             if (user == null || user.PasswordHash != HashHelper.ComputeSha256Hash(model.Password))
             {
                 return "Email hoặc mật khẩu không đúng";
             }
 
+<<<<<<< Updated upstream
             // Lấy thông tin vai trò
             var role = user.RoleId == 1 ? "Admin" : "User";
 
             var roleName = user.Role?.RoleName ?? "User";
             // Lấy danh sách quyền của người dùng (nếu có)
-            var permissions = new List<string>(); // Nếu có logic permission, lấy từ DB
+            var permissions = new List<string>(); 
 
             // Tạo token bằng TokenHelper
+=======
+>>>>>>> Stashed changes
             var token = TokenHelper.GenerateJwtToken(
-                          user,
-                          _configuration["JwtSettings:Secret"],
-                          _configuration["JwtSettings:Issuer"],
-                          _configuration["JwtSettings:Audience"],
-                          Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"])
-             );
+                user,
+                _configuration["JwtSettings:Secret"],
+                _configuration["JwtSettings:Issuer"],
+                _configuration["JwtSettings:Audience"],
+                Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"]));
 
             user.RefreshToken = token;
             await _userRepo.UpdateAsync(user);
@@ -83,6 +102,32 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<string?> LoginWithGoogleAsync(string idToken)
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            if (string.IsNullOrEmpty(idToken)) throw new ArgumentException("Token không được để trống.");
+
+            try
+            {
+                var decodedToken = await _firebaseAuthService.VerifyIdTokenAsync(idToken);
+                var email = decodedToken.Claims.ContainsKey("email") ? decodedToken.Claims["email"].ToString() : "No Email";
+                var userRecord = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(email);
+                var displayName = userRecord.DisplayName ?? email;
+
+                var user = _userRepo.Entities.FirstOrDefault(u => u.Email == email);
+
+                if (user == null)
+                {
+                    user = new User
+                    {
+                        Name = displayName,
+                        Email = email,
+                        RoleId = 2,
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow,
+                        Status = true
+=======
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
             if (string.IsNullOrEmpty(idToken))
             {
                 throw new ArgumentException("Token không được để trống.");
@@ -110,20 +155,46 @@ namespace HealthyCareAssistant.Service.Service
                         RoleId = 2, // Mặc định là User
                         CreatedAt = DateTime.UtcNow,
                         UpdatedAt = DateTime.UtcNow
+<<<<<<< HEAD
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
                     };
 
                     await _userRepo.InsertAsync(user);
                     await _unitOfWork.SaveAsync();
                 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+                else if (user.Status != true)
+                {
+                    return "Tài khoản đã bị khóa.";
+                }
+
+=======
 
                 // Tạo JWT token
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+
+                // Tạo JWT token
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
                 return TokenHelper.GenerateJwtToken(
                     user,
                     _configuration["JwtSettings:Secret"],
                     _configuration["JwtSettings:Issuer"],
                     _configuration["JwtSettings:Audience"],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"]));
+=======
                     Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"])
                 );
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+                    Convert.ToInt32(_configuration["JwtSettings:ExpiryMinutes"])
+                );
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
             }
             catch (Exception ex)
             {
@@ -131,59 +202,59 @@ namespace HealthyCareAssistant.Service.Service
                 return null;
             }
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 
         public async Task<string> RegisterAsync(RegisterModelViews model)
         {
-            // Chỉ chấp nhận RoleID 1 (Admin) hoặc 2 (User), mặc định là User
             int assignedRoleId = (model.RoleId == 1 || model.RoleId == 2) ? model.RoleId : 2;
 
-            // Kiểm tra xem Role có tồn tại không
-            var role = await _unitOfWork.GetRepository<Role>().Entities
-                .FirstOrDefaultAsync(r => r.RoleId == assignedRoleId);
+            var role = await _unitOfWork.GetRepository<Role>().Entities.FirstOrDefaultAsync(r => r.RoleId == assignedRoleId);
+            if (role == null) return $"Lỗi: RoleID {assignedRoleId} không tồn tại trong hệ thống.";
 
-            if (role == null)
-            {
-                return $"Lỗi: RoleID {assignedRoleId} không tồn tại trong hệ thống.";
-            }
-            var userRepo = _unitOfWork.GetRepository<User>();
-
-            // Kiểm tra Email đã tồn tại chưa
             var existingUser = _userRepo.Entities.FirstOrDefault(u => u.Email == model.Email);
-            if (existingUser != null)
-            {
-                return "Email already exists.";
-            }
+            if (existingUser != null) return "Email already exists.";
 
-            // Hash mật khẩu
-            string hashedPassword = HashHelper.ComputeSha256Hash(model.Password);
-
-            // Tạo user mới
             var user = new User
             {
                 Name = model.Name,
                 Email = model.Email,
-                PasswordHash = hashedPassword,
+                PasswordHash = HashHelper.ComputeSha256Hash(model.Password),
                 PhoneNumber = model.PhoneNumber,
                 RoleId = model.RoleId,
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                Status = true
             };
 
-            await userRepo.InsertAsync(user);
+            await _userRepo.InsertAsync(user);
             await _unitOfWork.SaveAsync();
 
             return "User registered successfully.";
         }
 
-
         public async Task<(IEnumerable<UserModelView> users, int totalElement, int totalPage)> GetAllUsersPaginatedAsync(int page, int pageSize)
         {
-            var totalElement = await _userRepo.Entities.CountAsync();
+            var totalElement = await _userRepo.Entities.Where(u => u.Status == true && u.RoleId == 2).CountAsync();
             var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
 
             var users = await _userRepo.Entities
+<<<<<<< HEAD
+<<<<<<< HEAD
+                .Where(u => u.Status == true && u.RoleId == 2)
+                .Include(u => u.Role)
+=======
                 .Include(u => u.Role) // Include bảng Role để lấy RoleName
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+                .Include(u => u.Role) // Include bảng Role để lấy RoleName
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
                 .OrderBy(u => u.UserId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
@@ -203,14 +274,15 @@ namespace HealthyCareAssistant.Service.Service
             return (users, totalElement, totalPage);
         }
 
-
-
-
-        // 2️ Lấy User theo ID
         public async Task<UserModelView> GetUserByIdAsync(int userId)
         {
-            var user = await _userRepo.GetByIdAsync(userId);
-            if (user == null || user.RoleId != 2) return null;
+            var user = await _userRepo.Entities
+                .FirstOrDefaultAsync(u => u.UserId == userId && u.RoleId == 2);
+
+            if (user == null || user.Status != true)
+            {
+                return null;
+            }
 
             return new UserModelView
             {
@@ -223,7 +295,7 @@ namespace HealthyCareAssistant.Service.Service
             };
         }
 
-        // 3️ Tạo User mới
+
         public async Task<string> CreateUserAsync(UserCreateRequest request)
         {
             var existingUser = await _userRepo.Entities.AnyAsync(u => u.Email == request.Email);
@@ -236,9 +308,10 @@ namespace HealthyCareAssistant.Service.Service
                 PasswordHash = HashHelper.ComputeSha256Hash(request.Password),
                 PhoneNumber = request.PhoneNumber,
                 Fcmtoken = request.Fcmtoken,
-                RoleId = 2, // Mặc định là User
+                RoleId = 2,
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UpdatedAt = DateTime.UtcNow,
+                Status = true
             };
 
             await _userRepo.InsertAsync(newUser);
@@ -246,11 +319,11 @@ namespace HealthyCareAssistant.Service.Service
             return "User tạo thành công.";
         }
 
-        // 4️ Cập nhật User
         public async Task<string> UpdateUserAsync(int userId, UserUpdateRequest request)
         {
-            var user = await _userRepo.GetByIdAsync(userId);
-            if (user == null || user.RoleId != 2) return "Không tìm thấy user.";
+            var user = await _userRepo.Entities.FirstOrDefaultAsync(u => u.UserId == userId && u.RoleId == 2);
+            if (user == null) return "Không tìm thấy user.";
+            if (user.Status != true) return "User đã bị xóa.";
 
             user.Name = request.Name;
             user.PhoneNumber = request.PhoneNumber;
@@ -262,21 +335,25 @@ namespace HealthyCareAssistant.Service.Service
             return "User cập nhật thành công.";
         }
 
-        // 5️ Xóa User
         public async Task<string> DeleteUserAsync(int userId)
         {
             var user = await _userRepo.GetByIdAsync(userId);
             if (user == null || user.RoleId != 2) return "Không tìm thấy user.";
+            if (user.Status != true) return "User đã bị xóa.";
 
-            await _userRepo.DeleteAsync(userId);
+            user.Status = false;
+            user.UpdatedAt = DateTime.UtcNow;
+
+            await _userRepo.UpdateAsync(user);
             await _unitOfWork.SaveAsync();
-            return "User đã bị xóa.";
+
+            return "User đã bị xoá.";
         }
 
         public async Task<IEnumerable<UserModelView>> SearchUsersAsync(string keyword)
         {
             return await _userRepo.Entities
-                .Where(u => u.RoleId == 2 &&
+                .Where(u => u.RoleId == 2 && u.Status == true &&
                            (u.Name.Contains(keyword) || u.PhoneNumber.Contains(keyword)))
                 .Select(u => new UserModelView
                 {
@@ -289,21 +366,15 @@ namespace HealthyCareAssistant.Service.Service
                 })
                 .ToListAsync();
         }
+
         public async Task<bool> ForgotPasswordAsync(string email)
         {
-            Console.WriteLine($"[ForgotPassword] Checking email: {email}");
-
             var user = await _userRepo.Entities.FirstOrDefaultAsync(u => u.Email == email);
-            if (user == null)
-            {
-                Console.WriteLine($"[ForgotPassword] Email {email} not found in database.");
-                return false;
-            }
+            if (user == null || user.Status != true) return false;
 
             string otp = _otpService.GenerateOtp();
             await _otpService.StoreOtpAsync(email, otp);
 
-            // Kiểm tra nếu `user.Name` bị null
             string userName = string.IsNullOrWhiteSpace(user.Name) ? "User" : user.Name;
 
             var mailData = new EmailData
@@ -314,51 +385,37 @@ namespace HealthyCareAssistant.Service.Service
                 EmailBody = $"Mã OTP của bạn là: <b>{otp}</b>. Mã này có hiệu lực trong 5 phút."
             };
 
-            Console.WriteLine($"[ForgotPassword] Preparing to send email to: {mailData.EmailToId} with name: {mailData.EmailToName}");
-
             return await _mailService.SendEmailAsync(mailData);
         }
-
 
         public async Task<bool> ResetPasswordAsync(ResetPasswordModel model)
         {
             var user = await _userRepo.Entities.FirstOrDefaultAsync(u => u.Email == model.Email);
-            if (user == null)
-            {
-                Console.WriteLine("[ResetPassword] User not found.");
-                return false;
-            }
+            if (user == null || user.Status != true) return false;
 
             bool isOtpValid = await _otpService.ValidateOtpAsync(model.Email, model.Otp);
-            if (!isOtpValid)
-            {
-                Console.WriteLine("[ResetPassword] OTP is invalid.");
-                return false;
-            }
+            if (!isOtpValid) return false;
 
             user.PasswordHash = HashHelper.ComputeSha256Hash(model.NewPassword);
             await _userRepo.UpdateAsync(user);
             await _unitOfWork.SaveAsync();
 
-            Console.WriteLine("[ResetPassword] Password reset successful.");
             return true;
         }
-
 
         public async Task<bool> ValidatePasswordAsync(User user, string inputPassword)
         {
             string hashedInput = HashHelper.ComputeSha256Hash(inputPassword);
-            return hashedInput == user.PasswordHash; 
+            return hashedInput == user.PasswordHash;
         }
+
         public async Task<UserModelView?> GetUserByIdAsync(string userId)
         {
             var user = await _userRepo.Entities
                 .Include(u => u.Role)
-                .FirstOrDefaultAsync(u => u.UserId.ToString() == userId);
+                .FirstOrDefaultAsync(u => u.UserId.ToString() == userId && u.Status == true);
 
             return user == null ? null : new UserModelView(user);
         }
-
     }
 }
-

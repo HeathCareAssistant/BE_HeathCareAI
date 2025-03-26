@@ -29,6 +29,23 @@ public partial class User
 
     public string Otp { get; set; }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+    public string Image { get; set; }
+
+    public bool? Status { get; set; }
+
+>>>>>>> Stashed changes
+=======
+    public string Image { get; set; }
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+    public string Image { get; set; }
+
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
     public virtual ICollection<MedicineCabinet> MedicineCabinets { get; set; } = new List<MedicineCabinet>();
 
     public virtual ICollection<MessageHistory> MessageHistories { get; set; } = new List<MessageHistory>();

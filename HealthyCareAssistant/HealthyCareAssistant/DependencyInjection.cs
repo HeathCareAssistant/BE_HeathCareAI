@@ -15,6 +15,16 @@ using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Repo.UnitOfWork;
 using Microsoft.OpenApi.Models;
 using HealthyCareAssistant.Service.Service.firebase;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+using HealthyCareAssistant.ModelViews.FirebaseSetting;
+using HealthyCareAssistant.Extention;
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+using HealthyCareAssistant.ModelViews.FirebaseSetting;
+using HealthyCareAssistant.Extention;
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 
 namespace HealthyCareAssistant.API
 {
@@ -27,6 +37,7 @@ namespace HealthyCareAssistant.API
             services.AddSwaggerGen();
             services.AddServices();
             services.AddLogging();
+            
        
         }
 
@@ -117,30 +128,23 @@ namespace HealthyCareAssistant.API
         {
             services.AddSwaggerGen(option =>
             {
-                // Chỉ đăng ký SwaggerDoc 1 lần
-                if (!option.SwaggerGeneratorOptions.SwaggerDocs.ContainsKey("v1"))
+                option.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    option.SwaggerDoc("v1", new OpenApiInfo
-                    {
-                        Title = "HealthyCareAssistant API",
-                        Version = "v1",
-                        Description = "API documentation for HealthyCareAssistant"
-                    });
-                }
+                    Title = "HealthyCareAssistant API",
+                    Version = "v1",
+                    Description = "API documentation for HealthyCareAssistant"
+                });
 
-                // Kiểm tra trước khi thêm "Bearer" vào SecurityDefinition
-                if (!option.SchemaGeneratorOptions.SchemaFilters.Any(x => x.ToString() == "Bearer"))
+                // Cấu hình Bearer Token
+                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                    {
-                        Name = "Authorization",
-                        Type = SecuritySchemeType.Http,
-                        Scheme = "Bearer",
-                        BearerFormat = "JWT",
-                        In = ParameterLocation.Header,
-                        Description = "Enter 'Bearer' followed by a space and your JWT token."
-                    });
-                }
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' followed by a space and your JWT token."
+                });
 
                 option.AddSecurityRequirement(new OpenApiSecurityRequirement
         {
@@ -156,8 +160,12 @@ namespace HealthyCareAssistant.API
                 new string[] {}
             }
         });
+
+                //  Hỗ trợ multipart/form-data cho upload file
+                option.OperationFilter<SwaggerFileOperationFilter>();
             });
         }
+
 
 
 
@@ -174,6 +182,8 @@ namespace HealthyCareAssistant.API
             services.AddScoped<IGenericRepository<Reminder>, GenericRepository<Reminder>>();
             services.AddScoped<IGenericRepository<ReminderDrug>, GenericRepository<ReminderDrug>>();
 
+
+
             // Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDrugService, DrugService>();
@@ -184,6 +194,18 @@ namespace HealthyCareAssistant.API
             services.AddMemoryCache();
             services.AddSingleton<FirebaseAuthService>();
             services.AddScoped<AuthService>();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            services.AddScoped<IFirebaseStorageService, FirebaseStorageService>();
+            services.AddScoped<IChatbotService, Service.Service.ChatbotService>();
+            services.AddHttpClient();
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+            services.AddScoped<IFirebaseStorageService, FirebaseStorageService>();
+            services.AddScoped<IChatbotService, Service.Service.ChatbotService>();
+            services.AddHttpClient();
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
             // Firebase Cloud Messaging (FCM) Service
             //services.AddScoped<IFcmService, FcmService>();
         }

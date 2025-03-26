@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
@@ -18,6 +20,10 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
@@ -38,3 +44,95 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.sourcelink.json
+=======
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.dll
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.dll
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.pdb
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.pdb
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.AssemblyReference.cache
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfoInputs.cache
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfo.cs
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.CoreCompileInputs.cache
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyC.9794AED3.Up2Date
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\refint\HealthyCareAssistant.ModelViews.dll
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
+C:\Users\Cicca.Mini\Downloads\BE_HeathCareAI-9b85613d9ea1664f3a9df156fa3a8aac7ce1fdad\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.pdb
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.pdb
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.AssemblyReference.cache
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.GeneratedMSBuildEditorConfig.editorconfig
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfoInputs.cache
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfo.cs
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.CoreCompileInputs.cache
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.sourcelink.json
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyC.9794AED3.Up2Date
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\refint\HealthyCareAssistant.ModelViews.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.dll
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.dll
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.pdb
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.pdb
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.AssemblyReference.cache
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.GeneratedMSBuildEditorConfig.editorconfig
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfoInputs.cache
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfo.cs
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.CoreCompileInputs.cache
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.sourcelink.json
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyC.9794AED3.Up2Date
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\refint\HealthyCareAssistant.ModelViews.dll
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
+D:\Shool\Temps\7\SWD\Src\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.deps.json
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.runtimeconfig.json
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Contact.Repo.pdb
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\bin\Debug\net8.0\HealthyCareAssistant.Core.pdb
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.AssemblyReference.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfoInputs.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.AssemblyInfo.cs
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.csproj.CoreCompileInputs.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.sourcelink.json
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyC.9794AED3.Up2Date
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\refint\HealthyCareAssistant.ModelViews.dll
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.pdb
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\HealthyCareAssistant.ModelViews.genruntimeconfig.cache
+C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.ModelViews\obj\Debug\net8.0\ref\HealthyCareAssistant.ModelViews.dll
+<<<<<<< HEAD
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+=======
+>>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+>>>>>>> Stashed changes

@@ -20,23 +20,22 @@ namespace HealthyCareAssistant.Service.Config
                 throw new ArgumentException("Expiry time must be greater than 0.");
             }
 
-       
             string normalizedRole = user.Role?.RoleName?.Trim();
 
             var claims = new List<Claim>
-            {
-                new Claim("id", user.UserId.ToString()), // User ID
-                new Claim("name", user.Name), // Username
-                new Claim("email", user.Email) // Email
-            };
+    {
+        new Claim("id", user.UserId.ToString()), // User ID
+        new Claim("name", user.Name), // Username
+        new Claim("email", user.Email), // Email
+        new Claim("phone_number", user.PhoneNumber ?? string.Empty) //  PhoneNumber
+    };
 
- 
             if (!string.IsNullOrEmpty(normalizedRole))
             {
-                claims.Add(new Claim("role", normalizedRole)); 
+                claims.Add(new Claim("role", normalizedRole));
             }
 
-            claims.Add(new Claim("exp", DateTimeOffset.UtcNow.AddMinutes(expiryMinutes).ToUnixTimeSeconds().ToString())); // Expiration time
+            claims.Add(new Claim("exp", DateTimeOffset.UtcNow.AddMinutes(expiryMinutes).ToUnixTimeSeconds().ToString()));
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -51,6 +50,7 @@ namespace HealthyCareAssistant.Service.Config
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
 
     }
 }

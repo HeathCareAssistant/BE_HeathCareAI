@@ -6,6 +6,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Service\\Service\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -44,6 +45,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
 =======
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -65,7 +70,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -112,6 +120,9 @@
     {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -124,10 +135,13 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -180,6 +194,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
@@ -198,6 +213,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
               "DocumentIndex": 2,
               "Title": "TokenRqGoogleLogin.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
@@ -209,7 +226,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.133Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.133Z"
 >>>>>>> Stashed changes
@@ -233,7 +254,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.152Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.152Z"
 >>>>>>> Stashed changes
@@ -254,6 +279,7 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "ViewState": "AgIAAFoAAAAAAAAAAAAkwH4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< Updated upstream
@@ -269,6 +295,8 @@
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
               "ViewState": "AgIAAE8AAAAAAAAAAAAYwH4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T07:04:09.154Z"
@@ -277,6 +305,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -290,6 +321,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
 =======
               "WhenOpened": "2025-03-26T07:04:09.156Z"
@@ -301,12 +333,17 @@
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
               "WhenOpened": "2025-03-26T07:04:09.156Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -320,12 +357,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -337,6 +377,9 @@
               "DocumentIndex": 7,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -352,12 +395,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -369,6 +415,9 @@
               "DocumentIndex": 8,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -384,12 +433,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -401,6 +453,9 @@
               "DocumentIndex": 9,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -416,7 +471,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.331Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.331Z"
 >>>>>>> Stashed changes
@@ -465,11 +524,19 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+=======
+              "WhenOpened": "2025-03-26T07:04:09.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.336Z"
             },
@@ -505,7 +572,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "DocumentIndex": 11,
+=======
+              "DocumentIndex": 12,
+>>>>>>> Stashed changes
 =======
               "DocumentIndex": 12,
 >>>>>>> Stashed changes
@@ -522,6 +593,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -559,6 +631,12 @@
             {
               "$type": "Document",
 >>>>>>> Stashed changes
+=======
+              "WhenOpened": "2025-03-26T07:04:09.341Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> Stashed changes
               "DocumentIndex": 13,
               "Title": "TokenRequest.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
@@ -570,7 +648,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.343Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.343Z"
 >>>>>>> Stashed changes
@@ -594,7 +676,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.345Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.345Z"
 >>>>>>> Stashed changes
@@ -618,7 +704,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.346Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.346Z"
 >>>>>>> Stashed changes
@@ -642,7 +732,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.142Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.348Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.348Z"
 >>>>>>> Stashed changes
@@ -666,7 +760,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.142Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.35Z"
+>>>>>>> Stashed changes
 =======
               "WhenOpened": "2025-03-26T07:04:09.35Z"
 >>>>>>> Stashed changes

@@ -45,7 +45,10 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.pdb
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\ref\HealthyCareAssistant.Contract.Service.dll
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 <<<<<<< HEAD
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contract.Service\obj\Debug\net8.0\HealthyCareAssistant.Contract.Service.sourcelink.json
@@ -135,4 +138,7 @@ C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCa
 >>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 =======
 >>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

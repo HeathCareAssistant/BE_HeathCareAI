@@ -41,7 +41,10 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.genruntimeconfig.cache
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\ref\HealthyCareAssistant.Contact.Repo.dll
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 <<<<<<< HEAD
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Contact.Repo\obj\Debug\net8.0\HealthyCareAssistant.Contact.Repo.sourcelink.json
@@ -123,4 +126,7 @@ C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCa
 >>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 =======
 >>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

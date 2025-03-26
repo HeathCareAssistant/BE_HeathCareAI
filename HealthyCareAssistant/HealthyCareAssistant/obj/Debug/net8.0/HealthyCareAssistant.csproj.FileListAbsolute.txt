@@ -1198,6 +1198,9 @@ C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCa
 =======
 >>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

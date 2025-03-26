@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthyCareAssistant.Contact.Repo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08c3b2c89f778e8911a79ef258a6f59138856ef8")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85ac2443e515d85ea495ae928b33b054ae23144e")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("HealthyCareAssistant.Contact.Repo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthyCareAssistant.Contact.Repo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

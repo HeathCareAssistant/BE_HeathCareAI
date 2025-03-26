@@ -54,7 +54,10 @@ C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssis
 C:\Users\84868\Downloads\BE\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant.Service\obj\Debug\net8.0\ref\HealthyCareAssistant.Service.dll
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 <<<<<<< HEAD
@@ -163,6 +166,9 @@ C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCa
 =======
 >>>>>>> 23c07a1f76d014faf8df54e413d12f4cac51d327
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

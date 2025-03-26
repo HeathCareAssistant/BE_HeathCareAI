@@ -414,14 +414,40 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "FilterByCategory",
-    "RelativePath": "api/drugs/filter/category",
+    "Method": "GetRelated",
+    "RelativePath": "api/drugs/related",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "category",
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "FilterOrSearch",
+    "RelativePath": "api/drugs/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -440,104 +466,14 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "FilterByCompany",
-    "RelativePath": "api/drugs/filter/company",
+    "Method": "GetTop",
+    "RelativePath": "api/drugs/top",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "companyName",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "FilterByDrugGroup",
-    "RelativePath": "api/drugs/filter/group",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "group",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetRelatedByCompany",
-    "RelativePath": "api/drugs/related/company",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetRelatedByIngredient",
-    "RelativePath": "api/drugs/related/ingredient/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "SearchByIngredient",
-    "RelativePath": "api/drugs/search/ingredient",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ingredient",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "SearchByName",
-    "RelativePath": "api/drugs/search/name",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "name",
+        "Name": "type",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -548,36 +484,6 @@
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetTopCompaniesByDrugs",
     "RelativePath": "api/drugs/top-companies",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetTopNewRegisteredDrugs",
-    "RelativePath": "api/drugs/top-new-registered",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetTopSearchedDrugs",
-    "RelativePath": "api/drugs/top-searched",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "GetTopWithdrawnDrugs",
-    "RelativePath": "api/drugs/top-withdrawn",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

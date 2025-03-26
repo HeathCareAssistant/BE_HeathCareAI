@@ -436,77 +436,21 @@
         }
       }
     },
-    "/api/drugs/search/name": {
+    "/api/drugs/search": {
       "get": {
         "tags": [
           "Drug"
         ],
         "parameters": [
           {
-            "name": "name",
+            "name": "type",
             "in": "query",
             "schema": {
               "type": "string"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/drugs/search/ingredient": {
-      "get": {
-        "tags": [
-          "Drug"
-        ],
-        "parameters": [
+          },
           {
-            "name": "ingredient",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/drugs/filter/company": {
-      "get": {
-        "tags": [
-          "Drug"
-        ],
-        "parameters": [
-          {
-            "name": "companyName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/drugs/filter/category": {
-      "get": {
-        "tags": [
-          "Drug"
-        ],
-        "parameters": [
-          {
-            "name": "category",
+            "name": "value",
             "in": "query",
             "schema": {
               "type": "string"
@@ -538,7 +482,7 @@
         }
       }
     },
-    "/api/drugs/related/ingredient/{id}": {
+    "/api/drugs/related": {
       "get": {
         "tags": [
           "Drug"
@@ -546,28 +490,13 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/drugs/related/company": {
-      "get": {
-        "tags": [
-          "Drug"
-        ],
-        "parameters": [
+          },
           {
-            "name": "id",
+            "name": "type",
             "in": "query",
             "schema": {
               "type": "string"
@@ -581,34 +510,19 @@
         }
       }
     },
-    "/api/drugs/top-searched": {
+    "/api/drugs/top": {
       "get": {
         "tags": [
           "Drug"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
-        }
-      }
-    },
-    "/api/drugs/top-new-registered": {
-      "get": {
-        "tags": [
-          "Drug"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/drugs/top-withdrawn": {
-      "get": {
-        "tags": [
-          "Drug"
         ],
         "responses": {
           "200": {
@@ -631,6 +545,48 @@
     },
     "/api/drugs/{drugId}/image/upload": {
       "post": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "drugId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/{drugId}/image/update": {
+      "put": {
         "tags": [
           "Drug"
         ],
@@ -713,8 +669,30 @@
         }
       }
     },
-    "/api/drugs/{drugId}/image/uploads": {
-      "post": {
+    "/api/drugs/{drugId}/images": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "drugId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/{drugId}/pdf/update": {
+      "put": {
         "tags": [
           "Drug"
         ],
@@ -734,17 +712,14 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "files": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "binary"
-                    }
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
                   }
                 }
               },
               "encoding": {
-                "files": {
+                "file": {
                   "style": "form"
                 }
               }
@@ -832,45 +807,6 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/drugs/filter/group": {
-      "get": {
-        "tags": [
-          "Drug"
-        ],
-        "parameters": [
-          {
-            "name": "group",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
-            }
-          },
-          {
-            "name": "pageSize",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 20
             }
           }
         ],

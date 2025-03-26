@@ -60,32 +60,10 @@ namespace HealthyCareAssistant.Controllers
             return result ? Ok(new { message = "Deleted successfully" }) : NotFound();
         }
 
-        [HttpGet("search/name")]
-        public async Task<IActionResult> SearchByName([FromQuery] string name)
+        [HttpGet("search")]
+        public async Task<IActionResult> FilterOrSearch([FromQuery] string type, [FromQuery] string value, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var drugs = await _drugService.SearchByNameAsync(name);
-            return Ok(drugs);
-        }
-
-        [HttpGet("search/ingredient")]
-        public async Task<IActionResult> SearchByIngredient([FromQuery] string ingredient)
-        {
-            var drugs = await _drugService.SearchByIngredientAsync(ingredient);
-            return Ok(drugs);
-        }
-
-        [HttpGet("filter/company")]
-        public async Task<IActionResult> FilterByCompany([FromQuery] string companyName)
-        {
-            var drugs = await _drugService.FilterByCompanyAsync(companyName);
-            return Ok(drugs);
-        }
-
-        [HttpGet("filter/category")]
-        public async Task<IActionResult> FilterByCategory([FromQuery] string category, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
-        {
-            var (drugs, totalElement, totalPage) = await _drugService.FilterByCategoryAsync(category, page, pageSize);
-
+            var (drugs, totalElement, totalPage) = await _drugService.SearchDrugsAsync(type, value, page, pageSize);
             return Ok(new
             {
                 totalElement,
@@ -96,26 +74,21 @@ namespace HealthyCareAssistant.Controllers
             });
         }
 
-        [HttpGet("related/ingredient/{id}")]
-        public async Task<IActionResult> GetRelatedByIngredient(string id)
+
+        [HttpGet("related")]
+        public async Task<IActionResult> GetRelated([FromQuery] string id, [FromQuery] string type)
         {
-            var drugs = await _drugService.GetRelatedByIngredientAsync(id);
-            return Ok(drugs);
+            var result = await _drugService.GetRelatedDrugsAsync(id, type);
+            return Ok(result);
         }
 
-        [HttpGet("related/company")]
-        public async Task<IActionResult> GetRelatedByCompany([FromQuery] string id)
+        [HttpGet("top")]
+        public async Task<IActionResult> GetTop([FromQuery] string type)
         {
-            var drugs = await _drugService.GetRelatedByCompanyAsync(id);
-            return Ok(drugs);
+            var result = await _drugService.GetTopDrugsByTypeAsync(type);
+            return Ok(result);
         }
 
-        [HttpGet("top-searched")]
-        public async Task<IActionResult> GetTopSearchedDrugs()
-        {
-            var drugs = await _drugService.GetTopSearchedDrugsAsync();
-            return Ok(drugs);
-        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] UpdateDrugModelView model)
@@ -124,27 +97,14 @@ namespace HealthyCareAssistant.Controllers
             return result ? Ok(new { message = "Updated successfully" }) : NotFound();
         }
 
-
-        [HttpGet("top-new-registered")]
-        public async Task<IActionResult> GetTopNewRegisteredDrugs()
-        {
-            var drugs = await _drugService.GetTopNewRegisteredDrugsAsync();
-            return Ok(drugs);
-        }
-
-        [HttpGet("top-withdrawn")]
-        public async Task<IActionResult> GetTopWithdrawnDrugs()
-        {
-            var drugs = await _drugService.GetTopWithdrawnDrugsAsync();
-            return Ok(drugs);
-        }
-
         [HttpGet("top-companies")]
         public async Task<IActionResult> GetTopCompaniesByDrugs()
         {
             var companies = await _drugService.GetTopCompaniesByDrugsAsync();
             return Ok(companies);
         }
+
+
         [HttpPost("{drugId}/image/upload")]
         [Consumes("multipart/form-data")]
         public async Task<IActionResult> UploadDrugImage(string drugId, [FromForm] DrugImageUploadModel model)
@@ -233,21 +193,6 @@ namespace HealthyCareAssistant.Controllers
                 return NotFound(new { message = result });
 
             return Ok(new { message = result });
-        }
-
-        [HttpGet("filter/group")]
-        public async Task<IActionResult> FilterByDrugGroup([FromQuery] string group, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
-        {
-            var (drugs, totalElement, totalPage) = await _drugService.FilterByDrugGroupAsync(group, page, pageSize);
-
-            return Ok(new
-            {
-                totalElement,
-                totalPage,
-                currentPage = page,
-                pageSize,
-                data = drugs
-            });
         }
 
 

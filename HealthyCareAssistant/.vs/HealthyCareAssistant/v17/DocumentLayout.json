@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Service\\Service\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,20 +42,70 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\firebase_adminsdk.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\firebase_adminsdk.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Service\\Service\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\DependencyInjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\DependencyInjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\AuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Service\\Service\\AuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\TokenHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Service\\Config\\TokenHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+=======
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,7 +133,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,6 +149,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
@@ -110,6 +162,8 @@
             },
             {
               "$type": "Document",
+=======
+>>>>>>> Stashed changes
               "DocumentIndex": 2,
               "Title": "TokenRqGoogleLogin.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
@@ -118,7 +172,11 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRqGoogleLogin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.133Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -130,11 +188,15 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\firebase\\FirebaseAuthService.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.152Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\UserService.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\UserService.cs",
@@ -142,8 +204,12 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\UserService.cs",
               "ViewState": "AgIAAFoAAAAAAAAAAAAkwH4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-03-26T07:04:09.154Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -155,7 +221,11 @@
               "RelativeToolTip": "HealthyCareAssistant\\Controllers\\AuthController.cs",
               "ViewState": "AgIAALYAAAAAAAAAAAApwEgAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.156Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -167,11 +237,19 @@
               "RelativeToolTip": "HealthyCareAssistant\\DependencyInjection.cs",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAIwL4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+=======
+              "WhenOpened": "2025-03-26T07:04:09.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+>>>>>>> Stashed changes
               "Title": "appsettings.json",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\appsettings.json",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\appsettings.json",
@@ -179,11 +257,19 @@
               "RelativeToolTip": "HealthyCareAssistant\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.111Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+=======
+              "WhenOpened": "2025-03-26T07:04:09.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+>>>>>>> Stashed changes
               "Title": "AuthService.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Service\\AuthService.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Service\\AuthService.cs",
@@ -191,11 +277,19 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+=======
+              "WhenOpened": "2025-03-26T07:04:09.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+>>>>>>> Stashed changes
               "Title": "TokenHelper.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
@@ -203,11 +297,40 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Config\\TokenHelper.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAkwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.331Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\Program.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Program.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T07:04:09.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "HealthyCareAssistant\\Controllers\\UserController.cs",
+              "ToolTip": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\Controllers\\UserController.cs",
+              "RelativeToolTip": "HealthyCareAssistant\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T07:04:09.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "IUserService.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
@@ -215,11 +338,19 @@
               "RelativeToolTip": "HealthyCareAssistant.Contract.Service\\Interface\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+=======
+              "WhenOpened": "2025-03-26T07:04:09.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+>>>>>>> Stashed changes
               "Title": "firebase_adminsdk.json",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant\\firebase_adminsdk.json",
               "RelativeDocumentMoniker": "HealthyCareAssistant\\firebase_adminsdk.json",
@@ -231,7 +362,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 11,
+=======
+              "DocumentIndex": 12,
+>>>>>>> Stashed changes
               "Title": "LoginRqGoogle.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
               "RelativeDocumentMoniker": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
@@ -239,6 +374,7 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\LoginRqGoogle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
             },
             {
@@ -255,6 +391,12 @@
             },
             {
               "$type": "Document",
+=======
+              "WhenOpened": "2025-03-26T07:04:09.341Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> Stashed changes
               "DocumentIndex": 13,
               "Title": "TokenRequest.cs",
               "DocumentMoniker": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
@@ -263,7 +405,11 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\TokenRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.343Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -275,7 +421,11 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Config\\HashHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.345Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -287,7 +437,11 @@
               "RelativeToolTip": "HealthyCareAssistant.ModelViews\\AuthModelViews\\OtpRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.127Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.346Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -299,7 +453,11 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.142Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.348Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -311,7 +469,11 @@
               "RelativeToolTip": "HealthyCareAssistant.Service\\Service\\MailSerivce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2025-03-26T07:15:46.142Z"
+=======
+              "WhenOpened": "2025-03-26T07:04:09.35Z"
+>>>>>>> Stashed changes
             }
           ]
         }

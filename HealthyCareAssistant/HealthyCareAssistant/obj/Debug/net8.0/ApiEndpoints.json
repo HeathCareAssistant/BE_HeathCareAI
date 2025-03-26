@@ -414,6 +414,16 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "GetAllCompanies",
+    "RelativePath": "api/drugs/companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetRelated",
     "RelativePath": "api/drugs/related",
     "HttpMethod": "GET",

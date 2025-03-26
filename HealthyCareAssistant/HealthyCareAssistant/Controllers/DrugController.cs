@@ -103,7 +103,12 @@ namespace HealthyCareAssistant.Controllers
             var companies = await _drugService.GetTopCompaniesByDrugsAsync();
             return Ok(companies);
         }
-
+        [HttpGet("companies")]
+        public async Task<IActionResult> GetAllCompanies()
+        {
+            var companies = await _drugService.GetAllCompaniesAsync();
+            return Ok(new { total = companies.Count(), data = companies });
+        }
 
         [HttpPost("{drugId}/image/upload")]
         [Consumes("multipart/form-data")]

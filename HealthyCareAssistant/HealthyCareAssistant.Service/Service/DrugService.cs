@@ -345,6 +345,15 @@ namespace HealthyCareAssistant.Service.Service
                 .Take(10)
                 .ToListAsync();
         }
+        public async Task<IEnumerable<string>> GetAllCompaniesAsync()
+        {
+            return await _drugRepo.Entities
+                .Where(d => !string.IsNullOrEmpty(d.CongTySx))
+                .Select(d => d.CongTySx)
+                .Distinct()
+                .OrderBy(name => name)
+                .ToListAsync();
+        }
 
     }
 }

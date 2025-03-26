@@ -20,6 +20,6 @@ namespace HealthyCareAssistant.Contract.Service.Interface
         Task<bool> UpdateDrugAsync(string id, UpdateDrugModelView updatedDrug);
         Task<IEnumerable<DrugModelView>> GetTopDrugsByTypeAsync(string type); // new | withdrawn | searched
         Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync();
-
+        Task<IEnumerable<string>> GetAllCompaniesAsync();
     }
 }

@@ -85,6 +85,21 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<string> CreateDrugAsync(DrugModelView drugModel)
         {
+            // Kiểm tra trùng DrugId
+            var existingDrugById = await _drugRepo.GetByIdAsync(drugModel.DrugId);
+            if (existingDrugById != null)
+            {
+                throw new Exception("DrugId already exists");
+            }
+
+            // Kiểm tra trùng SoDangKy
+            var existingDrugBySoDangKy = _drugRepo.GetAll()
+                .FirstOrDefault(d => d.SoDangKy == drugModel.SoDangKy);
+            if (existingDrugBySoDangKy != null)
+            {
+                throw new Exception("Số đăng ký đã tồn tại trong hệ thống.");
+            }
+
             var drug = new Drug
             {
                 DrugId = drugModel.DrugId,

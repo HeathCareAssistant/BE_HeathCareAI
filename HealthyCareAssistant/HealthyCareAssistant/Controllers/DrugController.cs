@@ -49,8 +49,15 @@ namespace HealthyCareAssistant.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] DrugModelView model)
         {
-            var result = await _drugService.CreateDrugAsync(model);
-            return Ok(new { message = result });
+            try
+            {
+                var result = await _drugService.CreateDrugAsync(model);
+                return Ok(new { message = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]

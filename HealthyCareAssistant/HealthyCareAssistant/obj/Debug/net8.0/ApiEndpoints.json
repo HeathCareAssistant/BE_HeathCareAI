@@ -492,6 +492,27 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
+    "Method": "CreateCabinet",
+    "RelativePath": "api/medicine-cabinet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.ModelViews.MedicineCabinetModelViews.CreateCabinetWithDrugsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
     "Method": "UpdateCabinet",
     "RelativePath": "api/medicine-cabinet/{cabinetId}",
     "HttpMethod": "PUT",
@@ -571,29 +592,8 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
-    "Method": "CreateCabinet",
-    "RelativePath": "api/medicine-cabinet/create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "request",
-        "Type": "HealthyCareAssistant.ModelViews.MedicineCabinetModelViews.CreateCabinetWithDrugsRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.MedicineCabinetController",
     "Method": "CreateEmptyCabinet",
-    "RelativePath": "api/medicine-cabinet/create-empty",
+    "RelativePath": "api/medicine-cabinet/empty",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -627,6 +627,27 @@
       {
         "Name": "userId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
+    "Method": "CreateReminder",
+    "RelativePath": "api/reminders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "HealthyCareAssistant.ModelViews.ReminderModelViews.CreateReminderRequest",
         "IsRequired": true
       }
     ],
@@ -696,27 +717,6 @@
       {
         "Name": "reminderId",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthyCareAssistant.Controllers.ReminderController",
-    "Method": "CreateReminder",
-    "RelativePath": "api/reminders/create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "request",
-        "Type": "HealthyCareAssistant.ModelViews.ReminderModelViews.CreateReminderRequest",
         "IsRequired": true
       }
     ],

@@ -31,6 +31,8 @@ public partial class User
 
     public string Image { get; set; }
 
+    public bool? Status { get; set; }
+
     public virtual ICollection<MedicineCabinet> MedicineCabinets { get; set; } = new List<MedicineCabinet>();
 
     public virtual ICollection<MessageHistory> MessageHistories { get; set; } = new List<MessageHistory>();

@@ -379,7 +379,6 @@ F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\obj\Debug\net8.0\HealthyCareAssistant.sourcelink.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\appsettings.Development.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\appsettings.json
-F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\HealthyCareAssistant.exe
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\HealthyCareAssistant.deps.json
 F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\HealthyCareAssistant.runtimeconfig.json

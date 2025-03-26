@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\84868\\Downloads\\BE_SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {}
+    "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\84868\\Downloads\\BE_SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {
+    "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\84868\\Downloads\\BE_SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
+        "projectUniqueName": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
         "projectName": "HealthyCareAssistant.Core",
-        "projectPath": "C:\\Users\\84868\\Downloads\\BE_SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
-        "packagesPath": "C:\\Users\\84868\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\84868\\Downloads\\BE_SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\obj\\",
+        "projectPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\HealthyCareAssistant.Core.csproj",
+        "packagesPath": "C:\\Users\\Cicca.Mini\\.nuget\\packages\\",
+        "outputPath": "F:\\TempSchool\\7\\SWD392\\BE_HeathCareAI\\HealthyCareAssistant\\HealthyCareAssistant.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\84868\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cicca.Mini\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\Cicca.Mini\\Documents\\BellyBabe": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +45,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -83,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

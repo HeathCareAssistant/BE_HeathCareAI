@@ -28,7 +28,7 @@ namespace HealthyCareAssistant.Controllers
         /// <summary>
         /// Tạo nhắc nhở (One-Time hoặc Lặp Lại)
         /// </summary>
-        [HttpPost("create")]
+        [HttpPost()]
         public async Task<IActionResult> CreateReminder(int userId, [FromBody] CreateReminderRequest request)
         {
             var result = await _reminderService.CreateReminderAsync(userId, request);

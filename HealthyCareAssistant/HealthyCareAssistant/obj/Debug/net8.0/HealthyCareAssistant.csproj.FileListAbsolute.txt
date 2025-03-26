@@ -975,3 +975,4 @@ C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCa
 C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\obj\Debug\net8.0\HealthyCareAssistant.pdb
 C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\obj\Debug\net8.0\HealthyCareAssistant.genruntimeconfig.cache
 C:\Users\84868\Downloads\BE_SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\obj\Debug\net8.0\ref\HealthyCareAssistant.dll
+F:\TempSchool\7\SWD392\BE_HeathCareAI\HealthyCareAssistant\HealthyCareAssistant\bin\Debug\net8.0\swd392-b1abf-firebase-adminsdk-fbsvc-3a97c6102a.json

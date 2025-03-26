@@ -240,7 +240,7 @@ namespace HealthyCareAssistant.Service.Service
                         query = query.Where(d => d.UpdatedAt.HasValue && d.UpdatedAt >= DateTime.UtcNow.AddMonths(-1));
                         break;
                     case DrugStatusType.Inactive:
-                        query = query.Where(d => d.IsHide == false);
+                        query = query.Where(d => d.IsHide == true);
                         break;
                 }
             }

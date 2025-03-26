@@ -61,17 +61,17 @@ namespace HealthyCareAssistant.Controllers
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> FilterOrSearch([FromQuery] string type, [FromQuery] string value, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
+        public async Task<IActionResult> Search([FromQuery] DrugSearchRequest request, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
-            var (drugs, totalElement, totalPage) = await _drugService.SearchDrugsAsync(type, value, page, pageSize);
-            return Ok(new
-            {
-                totalElement,
-                totalPage,
-                currentPage = page,
-                pageSize,
-                data = drugs
-            });
+            var (drugs, total, totalPage) = await _drugService.SearchDrugsAsync(request, page, pageSize);
+            return Ok(new { total, totalPage, page, pageSize, data = drugs });
+        }
+
+        [HttpGet("filter")]
+        public async Task<IActionResult> Filter([FromQuery] DrugFilterRequest request, [FromQuery] int page = 1, [FromQuery] int pageSize = 20)
+        {
+            var (drugs, total, totalPage) = await _drugService.FilterDrugsAsync(request, page, pageSize);
+            return Ok(new { total, totalPage, page, pageSize, data = drugs });
         }
 
 

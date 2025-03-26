@@ -7,6 +7,7 @@ using DotNetEnv;
 using HealthyCareAssistant.ModelViews.MailModelViews;
 using HealthyCareAssistant.ModelViews.FirebaseSetting;
 using HealthyCareAssistant.Service.Config;
+using System.Text.Json.Serialization;
 namespace HealthyCareAssistant
 {
     public class Program
@@ -24,15 +25,19 @@ namespace HealthyCareAssistant
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("EmailSettings"));
             builder.Services.Configure<IFirebaseSetting>(builder.Configuration.GetSection("Firebase"));
             builder.Services.Configure<CozeSettings>(builder.Configuration.GetSection("CozeSettings"));
-  
+
             builder.Services.AddControllers();
 
             // Đăng ký các dịch vụ cần thiết
-            builder.Services.AddConfig(builder.Configuration); 
+            builder.Services.AddConfig(builder.Configuration);
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+     .AddJsonOptions(opt =>
+     {
+         opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+     });
             builder.Services.AddEndpointsApiExplorer();
-           
+
             //builder.Services.AddSwaggerGen();
 
             // Cấu hình CORS cho phép tất cả các nguồn gốc
@@ -63,8 +68,8 @@ namespace HealthyCareAssistant
             app.UseAuthentication();
             app.UseAuthorization();
 
-                app.UseSwagger();
-                app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 

@@ -443,17 +443,77 @@
         ],
         "parameters": [
           {
-            "name": "type",
+            "name": "Name",
             "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "value",
+            "name": "Ingredient",
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "Company",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/filter": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "parameters": [
+          {
+            "name": "Group",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DrugGroupType"
+            }
+          },
+          {
+            "name": "Category",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DrugCategoryType"
+            }
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DrugStatusType"
             }
           },
           {
@@ -532,6 +592,18 @@
       }
     },
     "/api/drugs/top-companies": {
+      "get": {
+        "tags": [
+          "Drug"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/drugs/companies": {
       "get": {
         "tags": [
           "Drug"
@@ -817,7 +889,7 @@
         }
       }
     },
-    "/api/medicine-cabinet/create-empty": {
+    "/api/medicine-cabinet/empty": {
       "post": {
         "tags": [
           "MedicineCabinet"
@@ -853,7 +925,7 @@
         }
       }
     },
-    "/api/medicine-cabinet/create": {
+    "/api/medicine-cabinet": {
       "post": {
         "tags": [
           "MedicineCabinet"
@@ -1072,7 +1144,7 @@
         }
       }
     },
-    "/api/reminders/create": {
+    "/api/reminders": {
       "post": {
         "tags": [
           "Reminder"
@@ -1551,6 +1623,20 @@
         },
         "additionalProperties": false
       },
+      "DrugCategoryType": {
+        "enum": [
+          "ThuocKeDon",
+          "ThuocKhongKeDon"
+        ],
+        "type": "string"
+      },
+      "DrugGroupType": {
+        "enum": [
+          "TanDuoc",
+          "DongDuoc"
+        ],
+        "type": "string"
+      },
       "DrugModelView": {
         "type": "object",
         "properties": {
@@ -1703,6 +1789,15 @@
           }
         },
         "additionalProperties": false
+      },
+      "DrugStatusType": {
+        "enum": [
+          "Created",
+          "Approved",
+          "Updated",
+          "Inactive"
+        ],
+        "type": "string"
       },
       "ForgotPasswordModel": {
         "type": "object",

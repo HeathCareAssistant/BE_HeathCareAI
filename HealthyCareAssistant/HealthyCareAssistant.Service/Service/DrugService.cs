@@ -3,6 +3,7 @@ using HealthyCareAssistant.Contact.Repo.IUOW;
 using HealthyCareAssistant.Contract.Service.Interface;
 using HealthyCareAssistant.ModelViews.DrugModelViews;
 using HealthyCareAssistant.ModelViews.FirebaseSetting;
+using HealthyCareAssistant.Service.Config;
 using HealthyCareAssistant.Service.Service.firebase;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -133,33 +134,104 @@ namespace HealthyCareAssistant.Service.Service
             var drug = await _drugRepo.GetByIdAsync(id);
             if (drug == null) return false;
 
-            await _drugRepo.DeleteAsync(id);
+            drug.IsHide = true;
+            drug.UpdatedAt = DateTime.UtcNow;
+
+            await _drugRepo.UpdateAsync(drug);
             await _unitOfWork.SaveAsync();
             return true;
         }
 
-        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> SearchDrugsAsync(string type, string value, int page, int pageSize)
+        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> SearchDrugsAsync(DrugSearchRequest request, int page, int pageSize)
         {
             var query = _drugRepo.Entities.AsQueryable();
 
-            if (!string.IsNullOrEmpty(value))
-            {
-                value = value.ToLower();
+            if (!string.IsNullOrEmpty(request.Name))
+                query = query.Where(d => d.TenThuoc != null && d.TenThuoc.Contains(request.Name));
+            if (!string.IsNullOrEmpty(request.Ingredient))
+                query = query.Where(d => d.HoatChat != null && d.HoatChat.Contains(request.Ingredient));
+            if (!string.IsNullOrEmpty(request.Company))
+                query = query.Where(d => d.CongTySx != null && d.CongTySx.Contains(request.Company));
 
-                if (type == "name")
-                    query = query.Where(d => d.TenThuoc != null && d.TenThuoc.ToLower().Contains(value));
-                else if (type == "ingredient")
-                    query = query.Where(d => d.HoatChat != null && d.HoatChat.ToLower().Contains(value));
-                else if (type == "company")
-                    query = query.Where(d => d.CongTySx != null && d.CongTySx.ToLower().Contains(value));
-                else if (type == "category")
-                    query = query.Where(d => d.PhanLoai != null && d.PhanLoai.ToLower().Contains(value));
-                else if (type == "group")
-                    query = query.Where(d => d.NhomThuoc != null && d.NhomThuoc.ToLower().Contains(value));
+            var totalElement = await query.CountAsync();
+            var totalPage = (int)Math.Ceiling(totalElement / (double) pageSize);
+
+            var drugs = await query.OrderBy(d => d.DrugId)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(d => new DrugModelView
+                {
+                    DrugId = d.DrugId,
+                    TenThuoc = d.TenThuoc,
+                    DotPheDuyet = d.DotPheDuyet,
+                    SoQuyetDinh = d.SoQuyetDinh,
+                    PheDuyet = d.PheDuyet,
+                    HieuLuc = d.HieuLuc,
+                    SoDangKy = d.SoDangKy,
+                    HoatChat = d.HoatChat,
+                    PhanLoai = d.PhanLoai,
+                    NongDo = d.NongDo,
+                    TaDuoc = d.TaDuoc,
+                    BaoChe = d.BaoChe,
+                    DongGoi = d.DongGoi,
+                    TieuChuan = d.TieuChuan,
+                    TuoiTho = d.TuoiTho,
+                    CongTySx = d.CongTySx,
+                    CongTySxCode = d.CongTySxCode,
+                    NuocSx = d.NuocSx,
+                    DiaChiSx = d.DiaChiSx,
+                    CongTyDk = d.CongTyDk,
+                    NuocDk = d.NuocDk,
+                    DiaChiDk = d.DiaChiDk,
+                    GiaKeKhai = d.GiaKeKhai,
+                    HuongDanSuDung = d.HuongDanSuDung,
+                    HuongDanSuDungBn = d.HuongDanSuDungBn,
+                    NhomThuoc = d.NhomThuoc,
+                    IsHide = d.IsHide,
+                    Rate = d.Rate,
+                    RutSdk = d.RutSdk,
+                    FileName = d.FileName,
+                    State = d.State,
+                    CreatedAt = d.CreatedAt,
+                    UpdatedAt = d.UpdatedAt,
+                    Images = d.Images,
+                    SearchCount = d.SearchCount
+                })
+                .ToListAsync();
+
+            return (drugs, totalElement, totalPage);
+        }
+
+        public async Task<(IEnumerable<DrugModelView> drugs, int totalElement, int totalPage)> FilterDrugsAsync(DrugFilterRequest request, int page, int pageSize)
+        {
+            var query = _drugRepo.Entities.AsQueryable();
+
+            if (request.Group != null)
+                query = query.Where(d => d.NhomThuoc != null && d.NhomThuoc.Contains(EnumHelper.GetEnumValue(request.Group.Value)));
+
+            if (request.Category != null)
+                query = query.Where(d => d.PhanLoai != null && d.PhanLoai.Contains(EnumHelper.GetEnumValue(request.Category.Value)));
+
+            if (request.Status != null)
+            {
+                switch (request.Status)
+                {
+                    case DrugStatusType.Created:
+                        break;
+                    case DrugStatusType.Approved:
+                        query = query.Where(d => d.PheDuyet != null && !string.IsNullOrEmpty(d.SoDangKy));
+                        break;
+                    case DrugStatusType.Updated:
+                        query = query.Where(d => d.UpdatedAt.HasValue && d.UpdatedAt >= DateTime.UtcNow.AddMonths(-1));
+                        break;
+                    case DrugStatusType.Inactive:
+                        query = query.Where(d => d.IsHide == false);
+                        break;
+                }
             }
 
-            int totalElement = await query.CountAsync();
-            int totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
+            var totalElement = await query.CountAsync();
+            var totalPage = (int)Math.Ceiling(totalElement / (double)pageSize);
 
             var drugs = await query.OrderBy(d => d.DrugId)
                 .Skip((page - 1) * pageSize)

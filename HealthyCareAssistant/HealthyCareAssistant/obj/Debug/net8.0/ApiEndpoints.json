@@ -424,6 +424,42 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
+    "Method": "Filter",
+    "RelativePath": "api/drugs/filter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Group",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
     "Method": "GetRelated",
     "RelativePath": "api/drugs/related",
     "HttpMethod": "GET",
@@ -445,19 +481,24 @@
   },
   {
     "ContainingType": "HealthyCareAssistant.Controllers.DrugController",
-    "Method": "FilterOrSearch",
+    "Method": "Search",
     "RelativePath": "api/drugs/search",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "type",
+        "Name": "Name",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "value",
+        "Name": "Ingredient",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Company",
         "Type": "System.String",
         "IsRequired": false
       },

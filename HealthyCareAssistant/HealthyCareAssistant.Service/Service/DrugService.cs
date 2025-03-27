@@ -70,7 +70,8 @@ namespace HealthyCareAssistant.Service.Service
                     CreatedAt = d.CreatedAt,
                     UpdatedAt = d.UpdatedAt,
                     Images =d.Images,
-                    SearchCount = d.SearchCount
+                    SearchCount = d.SearchCount,
+                    Status = d.Status
                 })
                 .ToListAsync();
 
@@ -85,20 +86,20 @@ namespace HealthyCareAssistant.Service.Service
 
         public async Task<string> CreateDrugAsync(DrugModelView drugModel)
         {
-            // Kiểm tra trùng DrugId
             var existingDrugById = await _drugRepo.GetByIdAsync(drugModel.DrugId);
             if (existingDrugById != null)
-            {
                 throw new Exception("DrugId already exists");
-            }
 
-            // Kiểm tra trùng SoDangKy
             var existingDrugBySoDangKy = _drugRepo.GetAll()
                 .FirstOrDefault(d => d.SoDangKy == drugModel.SoDangKy);
             if (existingDrugBySoDangKy != null)
-            {
                 throw new Exception("Số đăng ký đã tồn tại trong hệ thống.");
-            }
+
+            string status;
+            if (!string.IsNullOrEmpty(drugModel.SoDangKy) && drugModel.PheDuyet != null)
+                status = "Approved";
+            else
+                status = "Created";
 
             var drug = new Drug
             {
@@ -134,15 +135,17 @@ namespace HealthyCareAssistant.Service.Service
                 FileName = drugModel.FileName,
                 State = drugModel.State,
                 CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow,
+                UpdatedAt = null, 
                 Images = drugModel.Images,
-                SearchCount = drugModel.SearchCount ?? 0
+                SearchCount = drugModel.SearchCount ?? 0,
+                Status = status
             };
 
             await _drugRepo.InsertAsync(drug);
             await _unitOfWork.SaveAsync();
             return "Drug created successfully";
         }
+
 
         public async Task<bool> DeleteDrugAsync(string id)
         {
@@ -210,7 +213,8 @@ namespace HealthyCareAssistant.Service.Service
                     CreatedAt = d.CreatedAt,
                     UpdatedAt = d.UpdatedAt,
                     Images = d.Images,
-                    SearchCount = d.SearchCount
+                    SearchCount = d.SearchCount,
+                    Status = d.Status
                 })
                 .ToListAsync();
 
@@ -229,20 +233,8 @@ namespace HealthyCareAssistant.Service.Service
 
             if (request.Status != null)
             {
-                switch (request.Status)
-                {
-                    case DrugStatusType.Created:
-                        break;
-                    case DrugStatusType.Approved:
-                        query = query.Where(d => d.PheDuyet != null && !string.IsNullOrEmpty(d.SoDangKy));
-                        break;
-                    case DrugStatusType.Updated:
-                        query = query.Where(d => d.UpdatedAt.HasValue && d.UpdatedAt >= DateTime.UtcNow.AddMonths(-1));
-                        break;
-                    case DrugStatusType.Inactive:
-                        query = query.Where(d => d.IsHide == true);
-                        break;
-                }
+                var statusString = EnumHelper.GetEnumValue(request.Status.Value);
+                query = query.Where(d => d.Status != null && d.Status == statusString);
             }
 
             var totalElement = await query.CountAsync();
@@ -287,7 +279,8 @@ namespace HealthyCareAssistant.Service.Service
                     CreatedAt = d.CreatedAt,
                     UpdatedAt = d.UpdatedAt,
                     Images = d.Images,
-                    SearchCount = d.SearchCount
+                    SearchCount = d.SearchCount,
+                    Status = d.Status
                 })
                 .ToListAsync();
 
@@ -341,7 +334,8 @@ namespace HealthyCareAssistant.Service.Service
                 CreatedAt = d.CreatedAt,
                 UpdatedAt = d.UpdatedAt,
                 Images = d.Images,
-                SearchCount = d.SearchCount
+                SearchCount = d.SearchCount,
+                Status = d.Status
             }).ToListAsync();
         }
 
@@ -412,13 +406,33 @@ namespace HealthyCareAssistant.Service.Service
             drug.State = updatedDrug.State;
             drug.Images = updatedDrug.Images;
 
-            // Cập nhật thời gian
             drug.UpdatedAt = DateTime.UtcNow;
+
+            if (!string.IsNullOrEmpty(drug.SoDangKy) && drug.PheDuyet != null)
+            {
+                if (drug.Status == "Approved")
+                {
+                    drug.Status = "Updated";
+                }
+                else if (drug.Status == "Created")
+                {
+                    drug.Status = "Created"; // vẫn là Created
+                }
+                else if (drug.Status == "Updated")
+                {
+                    drug.Status = "Updated"; // giữ nguyên
+                }
+            }
+            else
+            {
+                drug.Status = "Created";
+            }
 
             await _drugRepo.UpdateAsync(drug);
             await _unitOfWork.SaveAsync();
             return true;
         }
+
         public async Task<IEnumerable<object>> GetTopCompaniesByDrugsAsync()
         {
             return await _drugRepo.Entities

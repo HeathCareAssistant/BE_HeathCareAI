@@ -77,6 +77,8 @@ public partial class Drug
 
     public int? SearchCount { get; set; }
 
+    public string Status { get; set; }
+
     public virtual ICollection<MedicineCabinetDrug> MedicineCabinetDrugs { get; set; } = new List<MedicineCabinetDrug>();
 
     public virtual ICollection<ReminderDrug> ReminderDrugs { get; set; } = new List<ReminderDrug>();

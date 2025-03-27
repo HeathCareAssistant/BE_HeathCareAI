@@ -77,5 +77,7 @@ namespace HealthyCareAssistant.ModelViews.DrugModelViews
         public string Images { get; set; }
 
         public int? SearchCount { get; set; }
+
+        public string Status { get; set; }
     }
 }
